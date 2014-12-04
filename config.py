@@ -2,6 +2,7 @@ import os
 class Config(object):
     DEBUG = False
 
+    MONGODB_SETTINGS = {'DB': "www-gov"}
     SECRET_KEY = os.environ['SECRET_KEY']
     REGISTRY_BASE_URL = os.environ['REGISTRY_BASE_URL']
     REGISTRY_CONSUMER_KEY = os.environ['REGISTRY_CONSUMER_KEY']
