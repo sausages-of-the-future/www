@@ -1,0 +1,8 @@
+{% if service %}
+  <link rel="icon" href="{{url_for('static', filename='images/' + service.slug + '_icon.png')}}" />
+  <link rel="apple-touch-icon-precomposed" href="{{url_for('static', filename='images/' + service.slug + '_icon.png')}}" />
+{% else %}
+  <link rel="icon" href="{{url_for('static', filename='images/icon.png')}}" />
+  <link rel="apple-touch-icon-precomposed" href="{{url_for('static', filename='images/icon.png')}}" />
+{% endif %}
+
