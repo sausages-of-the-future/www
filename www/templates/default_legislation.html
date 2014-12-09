@@ -1,0 +1,20 @@
+{% extends "base_service.html" %}
+{% block service_page_title %}{{service.name}} - legislation{% endblock%}
+{% block service_title %}{{service.name}} - legislation{% endblock%}
+{% block service_content %}
+  <div class="row">
+    <div class="small-12 columns">
+      {% if service.legislation %}
+        <ul>
+          {% for legislation_item in service.legislation %}
+            <li>
+            <a href="{{legislation_item.url}}">{{legislation_item.title}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>There is no legislation for this service</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

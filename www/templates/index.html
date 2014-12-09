@@ -3,24 +3,21 @@
 {% block content %}
   <div class="row">
     <div class="small-12 columns">
-        <h3>Welcome to GOV.UK</h3>
-        <form action="/search" method="get">
-          <input type="text" name="q">
-          <button type="submit" class="postfix button">Search</button>
-        </form>
+      <h3>Welcome</h3>
+      <form action="/search" method="get">
+        <input type="text" name="q">
+        <button type="submit" class="postfix button">Search</button>
+      </form>
 
       <ul class="side-nav">
         <li>
           <a href="{{config['REGISTRY_BASE_URL']}}">Your data</a>
         </li>
-        <li>
-          <a href="{{config['FISHING_BASE_URL']}}">Fishing</a>
-        </li>
-        <li>
-          <a href="{{config['ORGANISATIONS_BASE_URL']}}">Starting a company or charity</a>
-        </li>
+        {% for service in services %}
+          <li><a href="{{url_for('service', service_slug=service.slug)}}">{{service.name}}</a></li>
+        {% endfor %}
      </ul>
- 
+
     </div>
   </div>
 {% endblock %}

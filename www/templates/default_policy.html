@@ -1,0 +1,23 @@
+{% extends "base_service.html" %}
+{% block service_page_title %}{{service.name}} - policy{% endblock%}
+{% block service_title %}{{service.name}} - policy{% endblock%}
+{% block service_content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <h3>{{service.name}} - policy</h3>
+      {% if service.policies %}
+        {% for policy in service.policies %}
+          <p class="policy">
+            {{policy|cucumber|safe}}
+          </p>
+        {% endfor %}
+        <p>
+          <a href="#">View history</a>
+        </p>
+      {% else %}
+        <p>There are no policies for this service</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
+
