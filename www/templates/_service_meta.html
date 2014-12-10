@@ -3,9 +3,29 @@
   <div>
     <h3>About this service</h3>
     <p>
-      This service is run by <a href="#">XXX</a>, it passed its service assessment 
-      on 01/09/2018 and the last user AGM was on 05/06/2019.
+      The responsible minister is the <a href="#">{{service.minister}}</a> and it uses data from
+      {% for register in service.registers %}
+        <a href="#">
+          {% if loop.last and not loop.first %}
+            and 
+          {% endif %}
+          {{register|lower}}
+        </a>
+        {% if service.registers|length > 1 %}
+          registers.
+        {% else %}
+          register.
+        {% endif %}
+      {% endfor %}
     </p>
+    <p>
+      It passed its service assessment
+      on 01/09/2018 and the last user AGM was on 05/06/2019. <a href="{{url_for('performance', service_slug=service.slug)}}">View current performance</a>.
+    </p>
+    <p>
+      Read <a href="{{url_for('legislation', service_slug=service.slug)}}">legislation</a> and <a href="{{url_for('policy', service_slug=service.slug)}}">policies</a> this service implements,.
+    </p>
+
   </div>
 </div>
 </div>

@@ -1,23 +1,16 @@
 {% extends "base.html" %}
-{% block title %}Welcome to ALPHAGOV{% endblock%}
+{% block title %}Welcome{% endblock%}
 {% block content %}
   <div class="row">
     <div class="small-12 columns">
-      <h3>Welcome</h3>
-      <form action="/search" method="get">
-        <input type="text" name="q">
-        <button type="submit" class="postfix button">Search</button>
-      </form>
-
       <ul class="side-nav">
-        <li>
-          <a href="{{config['REGISTRY_BASE_URL']}}">Your data</a>
-        </li>
         {% for service in services %}
           <li><a href="{{url_for('service', service_slug=service.slug)}}">{{service.name}}</a></li>
         {% endfor %}
+        <li>
+          <a href="{{config['REGISTRY_BASE_URL']}}">Permissions and catalog</a>
+        </li>
      </ul>
-
     </div>
   </div>
 {% endblock %}

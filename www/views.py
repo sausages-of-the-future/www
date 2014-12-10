@@ -30,7 +30,8 @@ def service(service_slug):
     except (DoesNotExist, ValidationError):
         abort(404)
 
-    return render_template(get_scaffold_or_template(service_slug, 'service'), service=service)
+    service_base_url = app.config[service.service_base_url_config]
+    return render_template(get_scaffold_or_template(service_slug, 'service'), service=service, service_base_url=service_base_url)
 
 @app.route("/<service_slug>/policy")
 def policy(service_slug):

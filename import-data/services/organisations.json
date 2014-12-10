@@ -1,0 +1,9 @@
+{
+  "name": "Companies and organsiations",
+  "minister": "Minister for business",
+  "registers": ["Licences", "Organisations"],
+  "slug": "organsiations",
+  "service_base_url_config": "ORGANISATIONS_BASE_URL",
+  "policies": [],
+  "legislation": []
+}
