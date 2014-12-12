@@ -51,25 +51,25 @@ def legislation(service_slug):
 
     return render_template(get_scaffold_or_template(service_slug, 'legislation'), service=service)
 
-@app.route("/<service_slug>/<things_slug>/<thing_slug>")
+@app.route("/<service_slug>/o/<things_slug>/<thing_slug>")
 def thing(service_slug, things_slug, thing_slug):
     try:
         service = models.Service.objects.get(slug=service_slug)
     except (DoesNotExist, ValidationError):
         abort(404)
 
-    return render_template(get_scaffold_or_template(service_slug, 'policy'), service=service)
+    return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service)
 
 @app.route("/search")
 def search_results():
     search_term = request.args.get('q', '')
     scope = request.args.get('scope', '')
     results = [
-            {'url': '/organisations/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Group Ltd'},
-            {'url': '/organisations/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Ltd'},
-            {'url': '/organisations/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Community Federation CIC'},
-            {'url': '/organisations/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Digital'},
-            {'url': '/organisations/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Charitable Trust'},
+            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Group Ltd'},
+            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Ltd'},
+            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Community Federation CIC'},
+            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Digital'},
+            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Charitable Trust'},
               ]
     return render_template('search-results.html', results=results, search_term=search_term, scope=scope)
 
