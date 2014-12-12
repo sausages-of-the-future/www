@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock%}
+{% block content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <h1>Search results</h1>
+      <form>
+        <input type="hidden" name="scope" value="{{scope}}"/>
+      </form>
+      <ul class="side-nav">
+        {% for result in results %}
+          <li><a href="{{result.url}}">{{result.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

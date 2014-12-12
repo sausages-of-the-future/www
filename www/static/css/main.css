@@ -14,14 +14,17 @@ body, h1, h2,h3, h4, h5 .button, table {
 .header {
   background:#333;
   margin-bottom: 10px;
+  box-shadow:1px 1px 1px #000;
 }
 
 .header.service, .header.service .top-bar {
   background:#008CBA;
+  box-shadow:1px 1px 1px #075d79;
 }
 
 .header.registry, .header.registry .top-bar{
   background:#DE770F;
+  box-shadow:1px 1px 1px #fafafa;
 }
 
 .top-bar {
@@ -108,4 +111,28 @@ ul.side-nav li > a:after {
   color:#808080;
   border: 1px solid #DFDFDF;
   border--bottom:none;
+}
+
+.panel {
+   background:#fff;
+   border-color:#ddd;
+   box-shadow: 1px 1px 1px #fafafa;
+   padding-bottom:2.5rem;
+   padding-top:2rem;
+}
+
+.panel.ticket {
+  text-align:center;
+}
+
+.panel.ticket p.validity {
+  margin-bottom:7px;
+}
+
+.panel.ticket span.reference-number {
+  background:#333;
+  color:#fff;
+  padding:5px 8px;
+}
+.panel.ticket img {
 }
