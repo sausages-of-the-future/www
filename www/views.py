@@ -58,7 +58,8 @@ def thing(service_slug, things_slug, thing_slug):
     except (DoesNotExist, ValidationError):
         abort(404)
 
-    return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service)
+    service_base_url = app.config[service.service_base_url_config]
+    return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url)
 
 @app.route("/search")
 def search_results():
