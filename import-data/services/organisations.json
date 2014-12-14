@@ -1,5 +1,5 @@
 {
-  "name": "Start &amp; manage an organisation",
+  "name": "Start & manage an organisation",
   "minister": "Minister for business",
   "registers": ["Licences", "Organisations"],
   "slug": "organisations",

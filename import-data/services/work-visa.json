@@ -1,0 +1,13 @@
+{
+  "name": "Work in the UK",
+  "minister": "Minister for work",
+  "registers": ["Visas", "Organisations"],
+  "slug": "work-visa",
+  "service_base_url_config": "",
+  "policies": [],
+  "legislation": [],
+  "guides": [
+    {"title": "Guide for sponsor organisations", "slug": "sponsors"},
+    {"title": "Types of visa", "slug": "types"}
+  ]
+}

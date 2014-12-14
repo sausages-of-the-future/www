@@ -23,6 +23,10 @@ def index():
     services = models.Service.objects.all()
     return render_template('index.html', services=services)
 
+@app.route("/notes/<note_slug>")
+def note(note_slug):
+    return render_template('note_%s.html' % note_slug)
+
 @app.route("/<service_slug>")
 def service(service_slug):
     try:
@@ -30,7 +34,7 @@ def service(service_slug):
     except (DoesNotExist, ValidationError):
         abort(404)
 
-    service_base_url = app.config[service.service_base_url_config]
+    service_base_url = app.config.get(service.service_base_url_config, '')
     return render_template(get_scaffold_or_template(service_slug, 'service'), service=service, service_base_url=service_base_url)
 
 @app.route("/<service_slug>/policy")
