@@ -1,14 +1,71 @@
 {% extends "base.html" %}
 {% block title %}{% block service_page_title %}{% endblock %} {% endblock %}
 {% block content %}
-  <div class="row">
-    <div class="small-12 columns">
-      <h1>{% block service_title %} {% endblock %}</h1>
-      {% block service_content %}
-      {% endblock %}
-     </div>
-  </div>
-{% include '_service_meta.html'%}
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+      <nav class="tab-bar"> 
+        <section class="left-small"> 
+          <a class="left-off-canvas-toggle" href="#"><i class="fa fa-info-circle"></i></a> 
+        </section> 
+        <section class="middle tab-bar-section"> 
+          <h1 class="title">IDEALGOV <em>{{service.name}}</em></h1>
+        </section>
+        <section class="right-small"> 
+          <a class="right-off-canvas-toggle menu-icon" href="#">
+            <i class="fa fa-book"></i>
+          </a> 
+        </section> 
+
+      </nav>
+        <section class="main-section">
+          <div class="row">
+            <div class="small-12 columns">
+              {% block service_content %}
+
+              {% endblock %}
+            </div>
+          </div>
+        </section>
+
+        <aside class="left-off-canvas-menu">
+        <h3>About</h3>
+        <p>
+          The <a href="#">{{service.minister}}</a> is ressponsible for this service and it uses data from
+          {% for register in service.registers %}
+            <a href="#">
+              {% if loop.last and not loop.first %}
+                and 
+              {% endif %}
+              {{register|lower}}
+            </a>
+            {% if loop.last %}
+              {% if service.registers|length > 1 %}
+                registers.
+              {% else %}
+                register.
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </p>
+        <ul class="off-canvas-list">
+          <li><a href="{{url_for('performance', service_slug=service.slug)}}">Performance</a></li>
+          <li><a href="{{url_for('legislation', service_slug=service.slug)}}">Legislation</a></li> 
+          <li><a href="{{url_for('policy', service_slug=service.slug)}}">Policy tests</a></li>
+        </ul>
+       </aside> 
+
+        <a class="exit-off-canvas"></a>
+        <aside class="right-off-canvas-menu"> 
+          <ul class="off-canvas-list"> 
+          <li><label>Guides</label></li>
+          {% for guide in service.guides %}
+          <li><a href="#">{{guide.title}}</a></li>
+          {% endfor %}
+        </ul> 
+      </aside> 
+
+      </div> 
+    </div>
 {% endblock %}
 
 

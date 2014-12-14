@@ -3,6 +3,7 @@
     <title>{% block title %}{% endblock%} | IDEALGOV</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='vendor/roboto-slab-fontface/roboto-slab-fontface.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='vendor/foundation/css/foundation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery/dist/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/foundation/js/foundation.js') }}"></script>
@@ -13,16 +14,9 @@
     {% block head %} {% endblock %}
   </head>
   <body>
-    <div class="header">
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-          <h1><a href="/">IDEALGOV</a></h1>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
+    {% block content %}
+    
+    {% endblock %}
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         <div class="row">
@@ -38,8 +32,5 @@
       {% endif %}
     {% endwith %}
 
-    {% block content %}
-
-    {% endblock %}
   </body>
 </html>

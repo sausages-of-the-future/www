@@ -9,22 +9,65 @@ body, h1, h2,h3, h4, h5 .button, table {
 /*a {*/
   /*text-decoration:underline;*/
 /*}*/
+.right-off-canvas-toggle, .left-off-canvas-toggle {
+  text-align:center;
+  font-size:1.3rem;
+}
+
+.left-off-canvas-menu p {
+  padding: 0.66667rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom:0;
+}
+
+.left-off-canvas-menu a {
+  color:rgba(255, 255, 255, 0.7);
+  text-decoration:underline;
+}
+
+.left-off-canvas-menu h3 {
+  padding: 0.3rem 0.9375rem;
+  color: #999;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: none repeat scroll 0% 0% #444;
+  border-top: 1px solid #5E5E5E;
+  border-bottom: medium none;
+  margin: 0px;
+}
+
+.tab-bar {
+  margin-bottom:1rem;
+}
+.tab-bar h1 {
+  font-weight:normal;
+}
+
+.tab-bar .fa  {
+    text-indent: 0;
+    width: 2.8125rem;
+    height: 2.8125rem;
+    display: block;
+    line-height: 3.060rem;
+    padding: 0px;
+    color: #FFF;
+    position: relative;
+    transform: translate3d(0px, 0px, 0px);
+}
 
 /* Header */
 .header {
   background:#333;
   margin-bottom: 10px;
-  box-shadow:1px 1px 1px #000;
 }
 
 .header.service, .header.service .top-bar {
   background:#008CBA;
-  box-shadow:1px 1px 1px #075d79;
 }
 
 .header.registry, .header.registry .top-bar{
   background:#DE770F;
-  box-shadow:1px 1px 1px #fafafa;
 }
 
 .top-bar {
@@ -36,9 +79,6 @@ body, h1, h2,h3, h4, h5 .button, table {
   font-size:1.3rem;
 }
 
-.top-bar ul.title-area {
-  width:50%;
-}
 
 .top-bar a {
   text-decoration:none;
@@ -76,6 +116,7 @@ ul.side-nav {
   border: solid 1px #dfdfdf;
   padding:0;
   border-bottom:0;
+  margin-bottom:2rem;
 }
 
 ul.side-nav li {
@@ -135,4 +176,9 @@ ul.side-nav li > a:after {
   padding:5px 8px;
 }
 .panel.ticket img {
+}
+
+.banner {
+  text-align:center;
+  margin:3rem 0;
 }

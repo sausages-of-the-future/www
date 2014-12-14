@@ -3,14 +3,71 @@
 {% block content %}
   <div class="row">
     <div class="small-12 columns">
+      <div class="banner">
+        <h1>Welcome to IdealGov</h1>
+        <h3 class="subheader">
+          How a digitally native state could work
+        </h3>
+      </div>
+      <h3>Example services</h3>
       <ul class="side-nav">
         {% for service in services %}
           <li><a href="{{url_for('service', service_slug=service.slug)}}">{{service.name}}</a></li>
         {% endfor %}
+     </ul>
+
+     <h3>Registries</h3>
+     <ul class="side-nav">
+       <li>
+         <a href="{{config['REGISTRY_BASE_URL']}}">Permissions and catalog</a>
+       </li>
+     </ul>
+
+      <h3>Shared platforms</h3>
+      <ul class="side-nav">
+       <li>
+          <a href="">Payments</a>
+        </li>
         <li>
-          <a href="{{config['REGISTRY_BASE_URL']}}">Permissions and catalog</a>
+          <a href="">Performance</a>
+        </li>
+        <li>
+          <a href="">Search</a>
+        </li>
+        <li>
+          <a href="">Identity verification</a>
+        </li>
+        <li>
+          <a href="">Notifications</a>
         </li>
      </ul>
+
+     <h3>Organisations and roles</h3>
+     <ul class="side-nav">
+       <li>
+         <a href="">Ministers</a>
+       </li>
+       <li>
+         <a href="">Service managers</a>
+       </li>
+       <li>
+         <a href="">Chief registrars</a>
+       </li>
+       <li>
+         <a href="">Registries</a>
+       </li>
+       <li>
+         <a href="">Local authorities &amp; devolved administrations</a>
+       </li>
+       <li>
+         <a href="">3rd sector digital public services</a>
+       </li>
+       <li>
+        <a href="">Private sector</a>
+       </li>
+     </ul>
+
+
     </div>
   </div>
 {% endblock %}

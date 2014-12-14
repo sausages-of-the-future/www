@@ -2,16 +2,14 @@
 {% block service_page_title %}Companies &amp; organisations{% endblock%}
 {% block service_title %}Companies &amp; organisations{% endblock%}
 {% block service_content %}
-  <p>
-    Start a new organsiation or manage and find information about existing ones.
-  </p>
-
-  <h2>Search organsiations</h2>
+  <h2>Search</h2>
+  <p>Find information about organisations, or sign in to manage one.</p>
   <form action ="/search" method="GET">
     <input type="hidden" name="scope" value="organisation"/>
     <input name="q" type="text">
     <button type="submit" class="button expand">Search</button>
   </form>
+  <hr></hr>
   <h2>Start a new organsiation</h2>
   <p>
     Instantly start a new company, non-profit or partnership.
@@ -19,17 +17,4 @@
   <p>
     <a href="{{service_base_url}}/start" class="button expand">Start a new organsiation</a>	
   </p>
-  <h2>Information</h2>
-  <ul class="side-nav">
-    <li>
-      <a href="">Guide for directors</a>
-    </li>
-    <li>
-      <a href="">Guide for trustees</a>
-    </li>
-    <li>
-      <a href="">Types of organsiation</a>
-    </li>
-  </ul>
 {% endblock %}
-

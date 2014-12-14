@@ -3,12 +3,13 @@
   <div>
     <h3>About this service</h3>
     <p>
-      The responsible minister is the <a href="#">{{service.minister}}</a> and it uses data from
+      The responsible minister is the <a href="#">{{service.minister}}</a> 
+      and it uses data from
       {% for register in service.registers %}
-        <a href="#">
           {% if loop.last and not loop.first %}
-            and 
+            and
           {% endif %}
+        <a href="#">
           {{register|lower}}
         </a>
         {% if service.registers|length > 1 %}
@@ -25,7 +26,6 @@
     <p>
       Read <a href="{{url_for('legislation', service_slug=service.slug)}}">legislation</a> and <a href="{{url_for('policy', service_slug=service.slug)}}">policies</a> this service implements,.
     </p>
-
   </div>
 </div>
 </div>

@@ -22,6 +22,7 @@ class ImportData(Command):
                 service_.legislation = service['legislation']
                 service_.minister= service['minister']
                 service_.registers = service['registers']
+                service_.guides = service['guides']
                 service_.service_base_url_config = service['service_base_url_config']
                 service_.save()
 

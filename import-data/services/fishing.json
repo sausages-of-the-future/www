@@ -14,5 +14,9 @@
   "legislation": [
     {"title": "Water Resources Act 1991", "url": "http://www.legislation.gov.uk/ukpga/1991/57/contents"},
     {"title": "Salmon and Freshwater Fisheries Act 1975", "url": "http://www.legislation.gov.uk/ukpga/1975/51"}
+  ],
+  "guides": [
+    {"title": "Types of licence", "slug": "types"},
+    {"title": "Commercial Inland Fishing", "slug": "commercial"}
   ]
 }
