@@ -6,6 +6,10 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
+      <h2>{{thing.name}}</h2>
+      {% if thing.activities %}
+        <p>{{thing.activities}}</p>
+      {% endif %}
       <a href="{{service_base_url}}/manage" class="button expand">Manage this organisation</a>	
     </div>
   </div>

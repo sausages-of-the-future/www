@@ -1,7 +1,9 @@
 from flask import Flask, request, redirect, render_template, url_for, session, flash, abort
 from mongoengine import DoesNotExist, ValidationError
-from www import app, models
+from www import app, models, forms
 import os
+import requests
+import json
 
 def get_scaffold_or_template(service_slug, template_type):
     template = '%s_%s.html' % (service_slug, template_type)
@@ -46,6 +48,21 @@ def policy(service_slug):
 
     return render_template(get_scaffold_or_template(service_slug, 'policy'), service=service)
 
+@app.route("/<service_slug>/complain", methods=['GET', 'POST'])
+def complain(service_slug):
+    sent = False
+    form = forms.ComplaintForm(request.form)
+    try:
+        service = models.Service.objects.get(slug=service_slug)
+    except (DoesNotExist, ValidationError):
+        abort(404)
+
+    if request.method == 'POST':
+        if form.validate():
+            sent = True
+    return render_template(get_scaffold_or_template(service_slug, 'complain'), service=service, form=form, sent=sent)
+
+
 @app.route("/<service_slug>/legislation")
 def legislation(service_slug):
     try:
@@ -59,23 +76,25 @@ def legislation(service_slug):
 def thing(service_slug, things_slug, thing_slug):
     try:
         service = models.Service.objects.get(slug=service_slug)
+        thing_uri = "%s/%s/%s" % (app.config['REGISTRY_BASE_URL'], things_slug, thing_slug)
+        thing = requests.get(thing_uri).json()
     except (DoesNotExist, ValidationError):
         abort(404)
 
     service_base_url = app.config[service.service_base_url_config]
-    return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url)
+    return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url, thing=thing)
 
 @app.route("/search")
 def search_results():
     search_term = request.args.get('q', '')
     scope = request.args.get('scope', '')
-    results = [
-            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Group Ltd'},
-            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Ltd'},
-            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Community Federation CIC'},
-            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Digital'},
-            {'url': '/organisations/o/organisations/7d4ae8099a7a742be63dba33cd9062ea', 'title': 'Sunway Charitable Trust'},
-              ]
+    results = []
+    if scope == 'organisation':
+
+        data = requests.get("%s/organisations" % app.config['REGISTRY_BASE_URL'])
+        for item in data.json():
+            split = item['uri'].split('/')
+            results.append({'url': '/organisations/o/organisations/%s' % split[len(split) - 1], 'title': item['name']})
     return render_template('search-results.html', results=results, search_term=search_term, scope=scope)
 
 @app.route("/<service_slug>/performance")

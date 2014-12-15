@@ -1,0 +1,24 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "base_service.html" %}
+{% block service_page_title %}{{service.name}} - complain{% endblock%}
+{% block service_title %}{{service.name}} - complain{% endblock%}
+{% block service_content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Make a complaint</h2>
+      {% if not sent %}
+        <form action="" method="post">
+          {{ render_field(form.email) }}
+          {{ render_field(form.message) }}
+          <button type="submit" class="button expand">Send</button>
+        </form>
+       {% else %}
+        <p>
+          Your message has been sent to the team that runs this service.
+          Service managers and ministers reguarly monitor levels of complaints.
+        </p>
+       {% endif %}
+    </div>
+  </div>
+{% endblock %}
+
