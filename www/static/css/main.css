@@ -2,6 +2,7 @@
 body {
   margin-bottom:100px;
 }
+
 /* Typography */
 body, h1, h2,h3, h4, h5 .button, table {
   font-family: 'Roboto Slab', serif;
@@ -43,7 +44,9 @@ body, h1, h2,h3, h4, h5 .button, table {
 .tab-bar h1 {
   font-weight:normal;
 }
-
+.tab-bar a {
+  text-decoration:none;
+}
 .tab-bar .fa  {
     text-indent: 0;
     width: 2.8125rem;
