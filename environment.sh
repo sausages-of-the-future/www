@@ -5,6 +5,7 @@ export CSRF_ENABLED=True
 export SECURITY_PASSWORD_HASH='bcrypt'
 export REGISTRY_BASE_URL='http://registry.gov.local'
 export ORGANISATIONS_BASE_URL='http://organisations.gov.local'
+export LOCALGOV_BASE_URL='http://localgov.gov.local'
 export FISHING_BASE_URL='http://fishing.gov.local'
 export BASE_URL='http://www.gov.local'
 export MONGODB_DB='www_gov'

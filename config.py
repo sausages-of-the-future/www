@@ -8,6 +8,7 @@ class Config(object):
     REGISTRY_CONSUMER_SECRET = os.environ['REGISTRY_CONSUMER_SECRET']
     ORGANISATIONS_BASE_URL = os.environ['ORGANISATIONS_BASE_URL']
     FISHING_BASE_URL = os.environ['FISHING_BASE_URL']
+    LOCALGOV_BASE_URL = os.environ['LOCALGOV_BASE_URL']
     BASE_URL = os.environ['BASE_URL']
     MONGODB_DB = os.environ['MONGODB_DB']
     MONGODB_HOST = os.environ['MONGODB_HOST']
