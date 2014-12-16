@@ -6,5 +6,6 @@ from flask.ext.mongoengine import MongoEngine
 app = Flask(__name__)
 app.config.from_object(os.environ.get('SETTINGS'))
 db = MongoEngine(app)
+cors = CORS(app)
 
 from www import views
