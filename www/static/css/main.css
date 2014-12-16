@@ -44,9 +44,10 @@ body, h1, h2,h3, h4, h5 .button, table {
 .tab-bar h1 {
   font-weight:normal;
 }
-.tab-bar a {
-  text-decoration:none;
+.tab-bar h1 a {
+  color:#fff;
 }
+
 .tab-bar .fa  {
     text-indent: 0;
     width: 2.8125rem;
