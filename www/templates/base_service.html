@@ -3,29 +3,28 @@
 {% block content %}
   <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
-      <nav class="tab-bar"> 
-        <section class="left-small"> 
+      <nav class="tab-bar">
+        <section class="left-small">
           <a class="left-off-canvas-toggle" href="#"><i class="fa fa-info-circle"></i></a> 
         </section> 
-        <section class="middle tab-bar-section"> 
-          <h1 class="title"><a href="/{{service.slug}}">IDEALGOV <em>{{service.name}}</em></a></h1>
+        <section class="middle tab-bar-section">
+          <h1 class="title"><a href="/{{service.slug}}">{{service.name}}</a></h1>
         </section>
-        <section class="right-small"> 
+        <section class="right-small">
           <a class="right-off-canvas-toggle menu-icon" href="#">
             <i class="fa fa-book"></i>
-          </a> 
-        </section> 
-
-      </nav>
-        <section class="main-section">
-          <div class="row">
-            <div class="small-12 columns">
-              {% block service_content %}
-
-              {% endblock %}
-            </div>
-          </div>
+          </a>
         </section>
+      </nav>
+      <section class="main-section">
+        <div class="row">
+          <div class="small-12 columns">
+            {% block service_content %}
+
+            {% endblock %}
+          </div>
+        </div>
+      </section>
 
         <aside class="left-off-canvas-menu">
         <h3>About</h3>
