@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Search{% endblock%}
 {% block content %}
-  <nav class="tab-bar">
-   <section class="middle tab-bar-section"> 
-     <h1 class="title">IDEALGOV <em>Search</em></h1>
-    </section>
-  </nav>
+  <div class="header">
+    <nav class="top-bar" data-topbar>
+      <h1 class="title"><a href="{{url_for('search_results')}}">Search</a></h1>
+    </nav>
+  </div>
   <div class="row">
     <div class="small-12 columns">
       <h1>Search results</h1>
