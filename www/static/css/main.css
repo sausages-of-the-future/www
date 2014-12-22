@@ -116,6 +116,7 @@ ul.verified-facts {
 }
 form ul.verified-facts {
   padding: 0.4rem 1.33333rem 0.4rem 0.4rem;
+  display:none;
 }
 
 ul.verified-facts span {
