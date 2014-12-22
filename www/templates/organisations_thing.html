@@ -6,7 +6,9 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
-      <span class="round info label right">{{thing.organisation_type.replace('-',' ').upper()}}</span>
+      {% if thing.organisation_type %}
+        <span class="round info label right">{{thing.organisation_type.replace('-',' ').upper()}}</span>
+      {% endif %}
       <h2>{{thing.name}}</h2>
       {% if thing.activities %}
         <p>{{thing.activities}}</p>
@@ -27,7 +29,7 @@
       <hr/>
       <h3>Registered address</h3>
       <p>
-        Transworld House, 100 City Road, London, EC1Y 2BP
+        <a href="#">Transworld House, 100 City Road, London, EC1Y 2BP</a>
       </p>
 
       <hr/>
