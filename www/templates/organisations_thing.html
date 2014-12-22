@@ -1,16 +1,80 @@
 {% extends "base_service.html" %}
 {% block head %}
 {% endblock %}
-{% block service_page_title %}Sunway Community Federation CIC{% endblock%}
-{% block service_title %}Sunway Community Federation CIC{% endblock%}
+{% block service_page_title %}{{thing.name}}{% endblock%}
+{% block service_title %}{{thing.name}}{% endblock%}
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
+      <span class="round info label right">{{thing.organisation_type.replace('-',' ').upper()}}</span>
       <h2>{{thing.name}}</h2>
       {% if thing.activities %}
         <p>{{thing.activities}}</p>
       {% endif %}
+      
+      <hr/>
+      <h3>Directors</h3>
+      <ul class="small-block-grid-2">
+        <li>
+          <h4>Karen Smith</h4>
+          <p>Director</p>          
+        </li>
+        <li>
+          <h4>Simon Calver</h4>
+          <p>Director</p>
+        </li>
+      </ul>
+      <hr/>
+      <h3>Registered address</h3>
+      <p>
+        Transworld House, 100 City Road, London, EC1Y 2BP
+      </p>
+
+      <hr/>
+      <h3>History</h3>
+      <table class="table">
+        <tr>
+          <td>30 July 2014</td>
+          <td>
+            <a href="#">Return of allotment of shares - 24/07/14 statement of capital GBP 1996.177204</a>
+          </td>
+        </tr>
+        <tr>
+          <td>26 June 2014</td>
+          <td>
+            <a href="#">Return of allotment of shares - 25/06/14 statement of capital GBP 1983.290204</a>
+          </td>
+        </tr>
+        <tr>
+          <td>13 May 2014</td>
+          <td>
+              <a href="#">Appointment of director - director appointed Simon Calver</a>
+          </td>
+        </tr>
+        <tr>
+          <td>13 May 2014</td>
+          <td><a href="#">Annual Return 07/05/14</a></td>
+        </tr>
+      </table>
+
+      <h3>Licences and registrations</h3>
+      <ul>
+        <li>Data protection registered</li>
+        <li>Greenhouse gas emissions permit</li>
+        <li>Seed marketing licence</li>
+      </ul>
+      
+      <hr/>
       <a href="{{service_base_url}}/manage" class="button expand">Manage this organisation</a>	
     </div>
   </div>
+  <div class="row meta">
+    <div class="small-12 columns">
+      <div>
+        The data on this page is avalible as <a href="{{request.path}}.json">JSON</a> and <a href="{{request.path}}.xml">XML</a>, <a href="{{request.path}}.csv">a speadsheet (CSV format)</a>. 
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}

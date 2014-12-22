@@ -73,7 +73,8 @@ def legislation(service_slug):
     return render_template(get_scaffold_or_template(service_slug, 'legislation'), service=service)
 
 @app.route("/<service_slug>/o/<things_slug>/<thing_slug>")
-def thing(service_slug, things_slug, thing_slug):
+@app.route("/<service_slug>/o/<things_slug>/<thing_slug>.<format>")
+def thing(service_slug, things_slug, thing_slug, format="html"):
     try:
         service = models.Service.objects.get(slug=service_slug)
         thing_uri = "%s/%s/%s" % (app.config['REGISTRY_BASE_URL'], things_slug, thing_slug)
@@ -82,7 +83,13 @@ def thing(service_slug, things_slug, thing_slug):
         abort(404)
 
     service_base_url = app.config[service.service_base_url_config]
-    return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url, thing=thing)
+
+    if format == "html":
+        return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url, thing=thing)
+    elif format == "json":
+        return json.dumps(thing)
+    else:
+       abort(404)
 
 @app.route("/search")
 def search_results():

@@ -1,20 +1,11 @@
 {% extends "base_service.html" %}
-{% block service_page_title %}Companies &amp; organisations{% endblock%}
-{% block service_title %}Companies &amp; organisations{% endblock%}
+{% block service_page_title %}Organisations{% endblock%}
+{% block service_title %}Organisations{% endblock%}
 {% block service_content %}
-  <h2>Search</h2>
-  <p>Find information about organisations, or sign in to manage one.</p>
   <form action ="/search" method="GET">
     <input type="hidden" name="scope" value="organisation"/>
+    <label for="q">Search by name</label>
     <input name="q" type="text">
     <button type="submit" class="button expand">Search</button>
   </form>
-  <hr></hr>
-  <h2>Start a new organsiation</h2>
-  <p>
-    Instantly start a new company, non-profit or partnership.
-  </p>
-  <p>
-    <a href="{{service_base_url}}/start" class="button expand">Start a new organsiation</a>	
-  </p>
 {% endblock %}
