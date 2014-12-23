@@ -30,7 +30,7 @@ body, h1, h2,h3, h4, h5 .button, table {
   text-decoration:underline;
 }
 
-.left-off-canvas-menu h3 {
+.left-off-canvas-menu h3, .right-off-canvas-menu h3 {
   padding: 0.3rem 0.9375rem;
   color: #999;
   font-size: 0.875rem;
@@ -70,8 +70,38 @@ body, h1, h2,h3, h4, h5 .button, table {
   margin-bottom: 10px;
 }
 
-.header.service, .header.service .top-bar {
+.header.service, .header.service .top-bar, 
+.off-canvas-wrap.service .tab-bar,
+.off-canvas-wrap.service .left-off-canvas-menu,
+.off-canvas-wrap.service .right-off-canvas-menu {
   background:#008CBA;
+}
+
+.off-canvas-wrap.service .left-off-canvas-menu p,
+.off-canvas-wrap.service .right-off-canvas-menu p,
+.off-canvas-wrap.service .left-off-canvas-menu a,
+.off-canvas-wrap.service .right-off-canvas-menu a {
+  color:#fff;
+}
+
+.off-canvas-wrap.service .left-off-canvas-menu h3,
+.off-canvas-wrap.service .right-off-canvas-menu h3 {
+  background:#008CBA;
+  color:#fff;
+  border-bottom: solid 1px #1c84a6;
+}
+
+.off-canvas-wrap.service ul.off-canvas-list li a {
+  border-bottom-color: #1c84a6;
+}
+
+.off-canvas-wrap.service ul.off-canvas-list li a:hover {
+  background:#1c84a6;
+}
+
+.off-canvas-wrap.service .left-small,
+.off-canvas-wrap.service .right-small {
+  border-color: #1c84a6;
 }
 
 .header.registry, .header.registry .top-bar{
@@ -204,4 +234,10 @@ ul.side-nav li > a:after {
 
 textarea {
   height:200px;
+}
+
+
+.tabs.full-3 dd {
+  width: 33.333%;
+  text-align:center;
 }

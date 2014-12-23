@@ -85,7 +85,7 @@ def thing(service_slug, things_slug, thing_slug, format="html"):
     service_base_url = app.config[service.service_base_url_config]
 
     if format == "html":
-        return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url, thing=thing)
+        return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url, thing=thing, thing_slug=thing_slug)
     elif format == "json":
         return json.dumps(thing)
     else:
@@ -97,7 +97,6 @@ def search_results():
     scope = request.args.get('scope', '')
     results = []
     if scope == 'organisation':
-
         data = requests.get("%s/organisations" % app.config['REGISTRY_BASE_URL'])
         for item in data.json():
             split = item['uri'].split('/')

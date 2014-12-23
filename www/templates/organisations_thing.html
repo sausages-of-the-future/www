@@ -13,9 +13,8 @@
       {% if thing.activities %}
         <p>{{thing.activities}}</p>
       {% endif %}
-      
       <hr/>
-      <h3>Directors</h3>
+      <h3>Directors and officers</h3>
       <ul class="small-block-grid-2">
         <li>
           <h4>Karen Smith</h4>
@@ -65,9 +64,8 @@
         <li>Greenhouse gas emissions permit</li>
         <li>Seed marketing licence</li>
       </ul>
-      
       <hr/>
-      <a href="{{service_base_url}}/manage" class="button expand">Manage this organisation</a>	
+      <a href="{{service_base_url}}/manage/{{thing_slug}}" class="button expand">Manage this organisation</a>	
     </div>
   </div>
   <div class="row meta">
@@ -77,6 +75,5 @@
       </div>
     </div>
   </div>
-
 
 {% endblock %}
