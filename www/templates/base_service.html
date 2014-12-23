@@ -12,7 +12,7 @@
         </section>
         <section class="right-small">
           <a class="right-off-canvas-toggle menu-icon" href="#">
-            <i class="fa fa-book"></i>
+            <i class="fa fa-search"></i>
           </a>
         </section>
       </nav>
@@ -58,10 +58,30 @@
         <a class="exit-off-canvas"></a>
         <aside class="right-off-canvas-menu"> 
           <ul class="off-canvas-list"> 
-          <li><label>Guides</label></li>
-          {% for guide in service.guides %}
-          <li><a href="#">{{guide.title}}</a></li>
-          {% endfor %}
+          <li><label for="q">Search guides</label></li>
+            <li>
+              <form action"/search" method="get">
+                <div class="row">
+                  <div class="small-12 columns">
+                    <div class="row collapse">
+                      <div class="small-10 columns">
+                        <input type="text" name="q" />
+                      </div>
+                      <div class="small-2 columns">
+                        <button type="submit" class="button postfix">GO</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </li>
+          </ul>
+        <ul class="off-canvas-list"> 
+            <li><h3>Most relevant</h3></li>
+            {% for guide in service.guides %}
+              <li><a href="#">{{guide.title}}</a></li>
+            {% endfor %}
+            <li><a href="#">Browse all &hellip; </a></li>
         </ul> 
       </aside> 
 

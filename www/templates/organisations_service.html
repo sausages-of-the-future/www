@@ -4,8 +4,29 @@
 {% block service_content %}
   <form action ="/search" method="GET">
     <input type="hidden" name="scope" value="organisation"/>
-    <label for="q">Search by name</label>
-    <input name="q" type="text">
+    <h2>Find an organisation</h2>
+    <input name="q" type="text" placeholder="organisaiton or director name">
     <button type="submit" class="button expand">Search</button>
   </form>
+  <hr/>
+  <div class="row">
+    <div class="small-6 columns">
+      <h3>Organisation account</h3>
+      <p>
+          Sign in to view real-time taxes and renew licences for your organisation.
+      </p>
+      <p>
+        <a href="{{service_base_url}}/manage" class="button expand">Go to account</a> 
+      </p>
+    </div>
+    <div class="small-6 columns">
+        <h3>New organisation</h3>
+        <p>
+           Instantly start a new company, non-profit or partnership and appoint directors or trustees.
+        </p>
+        <p>
+            <a href="{{service_base_url}}/start" class="button expand">Start a new organsiation</a> 
+        </p>
+    </div>
+  </div>
 {% endblock %}

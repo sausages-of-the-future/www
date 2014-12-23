@@ -52,21 +52,26 @@ body, h1, h2,h3, h4, h5 .button, table {
   color:#fff;
 }
 
-.tab-bar .fa  {
-    text-indent: 0;
-    width: 2.8125rem;
-    height: 2.8125rem;
-    display: block;
-    line-height: 3.060rem;
-    padding: 0px;
-    color: #FFF;
-    position: relative;
-    transform: translate3d(0px, 0px, 0px);
+.tab-bar .fa {
+  text-indent: 0;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  display: block;
+  line-height: 3.060rem;
+  padding: 0px;
+  color: #FFF;
+  position: relative;
 }
 
-/* Header */
+.fa.notification {
+  color:#F04124;
+  font-size:16px;
+  position:absolute;
+  top:-8px; right:-8px;
+}
+
 .header {
-  background:#333;
+  background:#333333;
   margin-bottom: 10px;
 }
 
@@ -98,6 +103,23 @@ body, h1, h2,h3, h4, h5 .button, table {
 .off-canvas-wrap.service ul.off-canvas-list li a:hover {
   background:#1c84a6;
 }
+
+ul.off-canvas-list .round.alert.label {
+  position:relative;
+  top:-3px;
+  margin-right:5px;
+  font-weight:bold;
+}
+
+ul.off-canvas-list form {
+  padding: 0 4px;
+}
+
+ul.off-canvas-list form .columns {
+  padding:10px 5px 0px 3px;
+  height:57px;
+}
+
 
 .off-canvas-wrap.service .left-small,
 .off-canvas-wrap.service .right-small {
