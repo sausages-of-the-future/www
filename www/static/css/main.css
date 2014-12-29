@@ -4,9 +4,15 @@ body {
 }
 
 /* Typography */
-body, h1, h2,h3, h4, h5 .button, table {
+body, h1, h2,h3, h4, h5 .button, table, label {
   font-family: 'Roboto Slab', serif;
 }
+
+label {
+  font-size:1.1rem;
+  font-weight:bold;
+}
+
 /*a {*/
   /*text-decoration:underline;*/
 /*}*/
@@ -161,14 +167,26 @@ table {
 /* Verified facts */
 ul.verified-facts {
   margin:0;
-  border:solid 2px #43AC6A;;
+  border:solid 2px #43AC6A;
   padding: 0.77778rem 1.33333rem 0.77778rem 0.77778rem;
   color:#fff;
   margin-bottom:1.11111rem;
 }
+ ul.verified-facts a {
+  color:#43AC6A;
+  text-decoration:underline;
+ }
+
+ ul.verified-facts .pending, ul.verified-facts .pending a {
+  color:#808080;
+ }
+
+ ul.verified-facts .pending span {
+  font-weight:bold;
+ }
+
 form ul.verified-facts {
   padding: 0.4rem 1.33333rem 0.4rem 0.4rem;
-  display:none;
 }
 
 ul.verified-facts span {
@@ -204,6 +222,20 @@ ul.side-nav li a {
 ul.side-nav li > a:after {
   content: "❭";
   float:right;
+}
+
+/* Done */
+div.done {
+  text-align:center;
+  color:#fff;
+  background: #333;
+}
+
+div.done h2, div.done p {
+  color:#fff;
+}
+div.done p {
+  font-size:1.2rem;
 }
 
 /* Footer */
