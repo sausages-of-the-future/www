@@ -119,11 +119,18 @@ form .hint {
   background:#1c84a6;
 }
 
+ul.off-canvas-list label {
+  font-size:0.875rem;
+}
 ul.off-canvas-list .round.alert.label {
   position:relative;
   top:-3px;
   margin-right:5px;
   font-weight:bold;
+}
+
+ul.off-canvas-list .fa { 
+    margin-right:14px;
 }
 
 ul.off-canvas-list form {

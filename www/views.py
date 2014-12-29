@@ -6,7 +6,7 @@ import requests
 import json
 
 def get_scaffold_or_template(service_slug, template_type):
-    template = '%s_%s.html' % (service_slug, template_type)
+    template = '%s_%s.html' % (service_slug.replace('-', '_'), template_type)
     if not os.path.exists('%s/%s/%s' % (os.path.dirname(os.path.abspath(__file__))
 , app.template_folder, template)):
         template = 'default_%s.html' % template_type
