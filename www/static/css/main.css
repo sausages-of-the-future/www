@@ -13,6 +13,15 @@ label {
   font-weight:bold;
 }
 
+.checkbox label {
+  display:inline!important;
+}
+
+form .hint {
+  border-bottom:solid 1px #ccc;
+  padding:0 0 1rem 0;
+}
+
 /*a {*/
   /*text-decoration:underline;*/
 /*}*/
@@ -231,8 +240,11 @@ div.done {
   background: #333;
 }
 
-div.done h2, div.done p {
+div.done h2, div.done p, div.done a {
   color:#fff;
+}
+div.done a {
+  text-decoration:underline;
 }
 div.done p {
   font-size:1.2rem;
@@ -262,6 +274,14 @@ div.done p {
    box-shadow: 1px 1px 1px #fafafa;
    padding-bottom:2.5rem;
    padding-top:2rem;
+   position:relative;
+}
+
+.panel .fa-bookmark {
+  position:absolute;
+  top:0;
+  right:20px;
+  color:#CF2A0E;
 }
 
 .panel.ticket {
