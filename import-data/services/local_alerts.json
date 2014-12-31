@@ -1,0 +1,13 @@
+{
+  "name": "Local alerts",
+  "minister": "Minister for local government",
+  "registers": ["Notices"],
+  "slug": "local-alerts",
+  "service_base_url_config": "",
+  "policies": [],
+  "legislation": [],
+  "guides": [
+    {"title": "The planning process", "slug": "planning-process"},
+    {"title": "The licencing process", "slug": "licencing-process"}
+  ]
+}
