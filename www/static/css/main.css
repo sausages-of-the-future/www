@@ -17,6 +17,8 @@ label {
   display:inline!important;
 }
 
+.label.expand {width:100%;}
+
 .hint {
   border-bottom:solid 1px #ccc;
   padding:0 0 1rem 0;
