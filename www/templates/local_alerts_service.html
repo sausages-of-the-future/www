@@ -4,13 +4,27 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
-      <h3>1) Choose area of interest</h3>
-      <div id="map" class="large-map"></div>
-      <p>
-        <span class="label expand">~ <span id="example_count">12</span> notifications a week</span>
-      </p>
-      <h3>2) Choose type of alerts</h3>
-      <h3>3) Choose notification type</h3>
+      <p>Alerts of what is happening near you from central and local government</p>
+      <form action="" method="post">
+        <h3>1) Choose area of interest</h3>
+        <div id="map" class="large-map"></div>
+        <p>
+          <span class="label expand">~ <span id="example_count">12</span> notifications a week</span>
+        </p>
+        <h3>2) Choose type of alerts</h3>
+        <ul>
+          <li><label><input type="checkbox"/> Planning applications</label></li>
+          <li><label><input type="checkbox"/> Parking suspensions</label></li>
+          <li><label><input type="checkbox"/> Licencing applications</label></li>
+        </ul>
+
+        <h3>3) Choose notification type</h3>
+        <ul>
+          <li><label><input type="checkbox"/> Email</label></li>
+          <li><label><input type="checkbox"/> SMS</label></li>
+          <li><label><input type="checkbox"/> RSS</label></li>
+        </ul>
+      </form>
     </div>
   </div>
   <script type="text/javascript">
