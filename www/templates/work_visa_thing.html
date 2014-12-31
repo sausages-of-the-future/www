@@ -1,0 +1,58 @@
+{% extends "base_service.html" %}
+{% block head %}
+{% endblock %}
+{% block service_page_title %}{{thing.name}}{% endblock%}
+{% block service_title %}{{thing.name}}{% endblock%}
+{% block service_content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>{{thing.name}}</h2>
+      <p>
+        This is a list of all of the UK-wide shortage occupations. It also lists the minimum salary requirements.
+      </p>
+      {% if thing['list_data'] %}
+        <table>
+         <thead>
+           <tr>
+              <th>Sector</th>
+              <th>Job titles</th>
+              <th>Salary</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in thing['list_data'] %}
+              <tr>
+                <td>{{item.category}}</td>
+                <td>
+                  <ul>
+                    {% for title in item['job-titles'] %}
+                      <li>{{title}}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+                <td>
+                  <dl>
+                    {% for k, v in item['salary'].items() %}
+                      <dt>{{k}}</dt>
+                      <dd>&pound; {{v|format_money}}</dd>
+                    {% endfor %}
+                  </dl>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        There are currently no occupations that are in listed as being short of workers
+      {% endif %}
+    </div>
+  </div>
+  <div class="row meta">
+    <div class="small-12 columns">
+      <div>
+        The data on this page is avalible as <a href="{{request.path}}.json">JSON</a> and <a href="{{request.path}}.xml">XML</a>, <a href="{{request.path}}.csv">a speadsheet (CSV format)</a>. 
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

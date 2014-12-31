@@ -19,7 +19,10 @@ def cucumber_filter(s):
     s = s.replace('When', '<br/><strong>When</strong>')
     s = s.replace('Then', '<br/><strong>Then</strong>')
     return '<p class="policy">%s</p>' % s
-
+@app.template_filter('format_money')
+def format_money_filter(value):
+    return "{:,.2f}".format(value)
+    
 @app.route("/")
 def index():
     services = models.Service.objects.all()
@@ -28,6 +31,24 @@ def index():
 @app.route("/notes/<note_slug>")
 def note(note_slug):
     return render_template('note_%s.html' % note_slug)
+
+@app.route("/work-visa")
+def work_visa_service():
+    # custom one for this service, as need to get some other info
+    try:
+        service = models.Service.objects.get(slug='work-visa')
+    except (DoesNotExist, ValidationError):
+        abort(404)
+
+    lists_uri = "%s/lists" % (app.config['REGISTRY_BASE_URL'])
+    lists = requests.get(lists_uri).json()
+    occupation_list_id = ''
+    for list_ in lists:
+        if list_['name'] == "Shortage occupation list":
+            occupation_list_id = list_['uri'].split('/')[len(list_['uri'].split('/') ) -1]
+
+    service_base_url = app.config.get(service.service_base_url_config, '')
+    return render_template('work_visa_service.html', service=service, service_base_url=service_base_url, occupation_list_id=occupation_list_id)
 
 @app.route("/<service_slug>")
 def service(service_slug):
@@ -38,6 +59,7 @@ def service(service_slug):
 
     service_base_url = app.config.get(service.service_base_url_config, '')
     return render_template(get_scaffold_or_template(service_slug, 'service'), service=service, service_base_url=service_base_url)
+
 
 @app.route("/<service_slug>/policy")
 def policy(service_slug):

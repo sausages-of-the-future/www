@@ -3,11 +3,12 @@
   "minister": "Minister for work",
   "registers": ["Visas", "Organisations"],
   "slug": "work-visa",
-  "service_base_url_config": "",
+  "service_base_url_config": "WORK_UK_BASE_URL",
   "policies": [],
   "legislation": [],
   "guides": [
     {"title": "Guide for sponsor organisations", "slug": "sponsors"},
+    {"title": "Advertising a job", "slug": "advertise"},
     {"title": "Types of visa", "slug": "types"}
   ]
 }

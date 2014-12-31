@@ -17,7 +17,7 @@ label {
   display:inline!important;
 }
 
-form .hint {
+.hint {
   border-bottom:solid 1px #ccc;
   padding:0 0 1rem 0;
 }
@@ -322,4 +322,10 @@ textarea {
 .tabs.full-3 dd {
   width: 33.333%;
   text-align:center;
+}
+
+/* Maps */
+.large-map {
+  height: 300px;
+  margin-bottom:1rem;
 }
