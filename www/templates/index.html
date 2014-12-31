@@ -14,7 +14,7 @@
         {% for service in services %}
           <li><a href="{{url_for('service', service_slug=service.slug)}}">{{service.name}}</a></li>
         {% endfor %}
-        <li><a href="{{config['LOCALGOV_BASE_URL']}}/parking-permit">Get a parking permit (Local authority)</a></li>
+        <li><a href="{{config['LOCALGOV_BASE_URL']}}">Local authority</a></li>
      </ul>
 
      <h3>Registries</h3>
