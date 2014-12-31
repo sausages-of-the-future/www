@@ -6,17 +6,22 @@
     <div class="small-12 columns">
       <h3>1) Choose area of interest</h3>
       <div id="map" class="large-map"></div>
-      <span class="label expand">~ <span id="example_count">12</span> notifications a week</span>
+      <p>
+        <span class="label expand">~ <span id="example_count">12</span> notifications a week</span>
+      </p>
       <h3>2) Choose type of alerts</h3>
       <h3>3) Choose notification type</h3>
     </div>
   </div>
   <script type="text/javascript">
+
     var map = L.map('map').setView([51.505, -0.09], 13);
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/memespring.kkkihcd2/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18
 }).addTo(map);
+    
+    map.locate({setView: true, maxZoom: 16});
 
     map.on('moveend', function(e) {
       zoom = Math.floor((20 - map.getZoom()) * (Math.random()*3));
