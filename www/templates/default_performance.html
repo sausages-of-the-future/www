@@ -7,6 +7,73 @@
   <div class="row">
     <div class="small-12 columns">
       <h2>Performance</h2>
+      <div id="charts"></div>
     </div>
   </div>
+  <script>
+    stats = {{stats|safe}}
+    google.load('visualization', '1', {packages: ['corechart']});
+    google.setOnLoadCallback(drawCharts);
+
+    $(window).resize(function(){
+        $('#charts').html('');
+        drawCharts();
+    });
+
+    function drawCharts() {
+
+
+        for (var i = stats.length - 1; i >= 0; i--) {
+            $('#charts').append('<h3>' + stats[i]['name'] +'</h3><div id="chart_' + i +'"></div>')
+
+            y_name = stats[i]['name']
+            rows = []
+            for (var j = stats[i]['data'].length - 1; j >= 0; j--) {
+                stats[i]['data'][j]
+                 rows.push([new Date(stats[i]['data'][j]['date']['year'], stats[i]['data'][j]['date']['month'], stats[i]['data'][j]['date']['day']), stats[i]['data'][j]['value']])
+            };
+            drawChart("chart_" + i, y_name, rows);
+        };
+    }
+
+
+
+    function drawChart(div_id, y_name, rows) {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'X');
+      data.addColumn('number');
+
+      data.addRows(rows);
+
+      var options = {
+        
+        chartArea: {
+            left: 20,
+            top:20
+        },
+        height: 300,
+        width: '100%',
+        legend: {
+          position: 'none'
+        },
+        hAxis: {
+        },
+        vAxis: {
+          viewWindow: {
+            min: 0,
+            max: 100
+          }
+        }
+      };
+
+      var chart = new google.visualization.LineChart(
+        document.getElementById(div_id)
+      );
+
+      chart.draw(data, options);
+
+    }
+      
+  </script>
 {% endblock %}

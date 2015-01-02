@@ -23,6 +23,10 @@ class ImportData(Command):
                 service_.minister= service['minister']
                 service_.registers = service['registers']
                 service_.guides = service['guides']
+                try:
+                    service_.stats = service['stats']
+                except:
+                    pass
                 service_.service_base_url_config = service['service_base_url_config']
                 service_.save()
 

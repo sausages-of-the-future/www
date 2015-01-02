@@ -7,6 +7,7 @@ class Service(DynamicDocument):
     service_base_url_config = StringField()
     policies = ListField(StringField())
     legislation = ListField(DictField())
+    stats = ListField(DictField())
     registers = ListField(StringField())
     minister = StringField()
 

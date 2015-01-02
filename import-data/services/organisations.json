@@ -10,5 +10,9 @@
     {"title": "Guide for Directors", "slug": "directors"},
     {"title": "Guide for Trustees", "slug": "trustees"},
     {"title": "Types of organisation", "slug": "types"}
+  ],
+  "stats": [
+    {"name": "Price per transaction"},
+    {"name": "Organisation creation time"}
   ]
 }

@@ -20,9 +20,9 @@
 
         <h3>3) Choose notification type</h3>
         <ul>
-          <li><label><input type="checkbox"/> Email</label></li>
-          <li><label><input type="checkbox"/> SMS</label></li>
-          <li><label><input type="checkbox"/> RSS</label></li>
+          <li><label><input type="radio"/> Email</label></li>
+          <li><label><input type="radio"/> SMS</label></li>
+          <li><label><input type="radio"/> RSS</label></li>
         </ul>
         <button type="submit" class="button expand">Create alert</button>
       </form>
@@ -47,7 +47,7 @@
     map.locate({setView: true, maxZoom: 16});
 
     map.on('moveend', function(e) {
-      zoom = Math.floor((20 - map.getZoom()) * (Math.random()*3));
+      zoom = Math.floor((20 - map.getZoom()) + (Math.random()*3));
       $('#example_count').html(zoom);
     });
 

@@ -1,6 +1,8 @@
 from flask import Flask, request, redirect, render_template, url_for, session, flash, abort
 from mongoengine import DoesNotExist, ValidationError
 from www import app, models, forms
+from datetime import datetime, timedelta
+import random
 import os
 import requests
 import json
@@ -11,6 +13,17 @@ def get_scaffold_or_template(service_slug, template_type):
 , app.template_folder, template)):
         template = 'default_%s.html' % template_type
     return template
+
+def fake_timeseris_data(min, max):
+    result =  []
+    ends = datetime.today()
+    duration = 365
+    count = duration
+    while count >= 0:
+        date = ends - timedelta(days=count)
+        result.append({'date': {"day": date.day, "month": date.month, "year": date.year}, 'value': random.randint(min, max)})
+        count = count - 1
+    return result
 
 #filters
 @app.template_filter('cucumber')
@@ -127,9 +140,14 @@ def search_results():
 
 @app.route("/<service_slug>/performance")
 def performance(service_slug):
+
     try:
         service = models.Service.objects.get(slug=service_slug)
     except (DoesNotExist, ValidationError):
         abort(404)
 
-    return render_template(get_scaffold_or_template(service_slug, 'performance'), service=service)
+    stats = []
+    for stat in service.stats:
+        stats.append({"name": stat['name'], "data": fake_timeseris_data(25, 75)})
+
+    return render_template(get_scaffold_or_template(service_slug, 'performance'), service=service, stats=json.dumps(stats))
