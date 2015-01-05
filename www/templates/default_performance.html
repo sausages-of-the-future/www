@@ -6,7 +6,7 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
-      <h2>Performance</h2>
+      <h2>{{service.name}} - service performance </h2>
       <div id="charts"></div>
     </div>
   </div>
@@ -32,13 +32,13 @@
                 stats[i]['data'][j]
                  rows.push([new Date(stats[i]['data'][j]['date']['year'], stats[i]['data'][j]['date']['month'], stats[i]['data'][j]['date']['day']), stats[i]['data'][j]['value']])
             };
-            drawChart("chart_" + i, y_name, rows);
+            drawChart("chart_" + i, y_name, rows, stats[i]['y_max']);
         };
     }
 
 
 
-    function drawChart(div_id, y_name, rows) {
+    function drawChart(div_id, y_name, rows, y_max) {
 
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'X');
@@ -49,7 +49,7 @@
       var options = {
         
         chartArea: {
-            left: 20,
+            left: 40,
             top:20
         },
         height: 300,
@@ -62,7 +62,7 @@
         vAxis: {
           viewWindow: {
             min: 0,
-            max: 100
+            max: y_max
           }
         }
       };

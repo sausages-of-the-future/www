@@ -21,7 +21,7 @@ def fake_timeseris_data(min, max):
     count = duration
     while count >= 0:
         date = ends - timedelta(days=count)
-        result.append({'date': {"day": date.day, "month": date.month, "year": date.year}, 'value': random.randint(min, max)})
+        result.append({'date': {"day": date.day, "month": date.month, "year": date.year}, 'value': random.uniform(min, max)})
         count = count - 1
     return result
 
@@ -148,6 +148,6 @@ def performance(service_slug):
 
     stats = []
     for stat in service.stats:
-        stats.append({"name": stat['name'], "data": fake_timeseris_data(25, 75)})
+        stats.append({"name": stat['name'], "data": fake_timeseris_data(stat['min'], stat['max']), "y_max": stat['y_max']})
 
     return render_template(get_scaffold_or_template(service_slug, 'performance'), service=service, stats=json.dumps(stats))
