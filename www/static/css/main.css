@@ -96,6 +96,14 @@ label {
   margin-bottom: 10px;
 }
 
+.iglogo {
+  background:#fff;
+  color:#333!important;
+  border-radius: 4px;
+  padding:0 4px 0 5px;
+  margin-right:5px;
+}
+
 .header.service, .header.service .top-bar, 
 .off-canvas-wrap.service .tab-bar,
 .off-canvas-wrap.service .left-off-canvas-menu,
