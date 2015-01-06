@@ -21,7 +21,9 @@ label {
   margin:0;
 }
 
-.label.expand {width:100%;}
+.label.expand {
+  width:100%;
+}
 
 .hint {
   border-bottom:solid 1px #ccc;
@@ -102,6 +104,14 @@ label {
   border-radius: 4px;
   padding:0 4px 0 5px;
   margin-right:5px;
+}
+
+.header.registry .iglogo {
+  color:#DE770F!important;
+}
+
+.header.service .iglogo {
+  color:#008CBA!important;
 }
 
 .header.service, .header.service .top-bar, 
