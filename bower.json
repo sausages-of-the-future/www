@@ -16,7 +16,7 @@
     "habitat/static/vendor"
   ],
   "dependencies": {
-    "foundation": "zurb/bower-foundation#~5.2.2",
+    "foundation": "zurb/bower-foundation#~5.5",
     "roboto-slab-fontface": "*"
   }
 }

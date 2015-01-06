@@ -2,6 +2,7 @@ from flask import Flask, request, redirect, render_template, url_for, session, f
 from mongoengine import DoesNotExist, ValidationError
 from www import app, models, forms
 from datetime import datetime, timedelta
+import dateutil.parser
 import random
 import os
 import requests
@@ -32,10 +33,16 @@ def cucumber_filter(s):
     s = s.replace('When', '<br/><strong>When</strong>')
     s = s.replace('Then', '<br/><strong>Then</strong>')
     return '<p class="policy">%s</p>' % s
+
 @app.template_filter('format_money')
 def format_money_filter(value):
     return "{:,.2f}".format(value)
-    
+
+@app.template_filter('format_date')
+def format_date_filter(value):
+    date = dateutil.parser.parse(str(value))
+    return date.strftime('%A %d %B')
+
 @app.route("/")
 def index():
     services = models.Service.objects.all()
@@ -87,6 +94,7 @@ def policy(service_slug):
 def complain(service_slug):
     sent = False
     form = forms.ComplaintForm(request.form)
+    agm_date = datetime.now() + timedelta(days=random.randint(5, 130))
     try:
         service = models.Service.objects.get(slug=service_slug)
     except (DoesNotExist, ValidationError):
@@ -95,7 +103,7 @@ def complain(service_slug):
     if request.method == 'POST':
         if form.validate():
             sent = True
-    return render_template(get_scaffold_or_template(service_slug, 'complain'), service=service, form=form, sent=sent)
+    return render_template(get_scaffold_or_template(service_slug, 'complain'), service=service, form=form, sent=sent, agm_date=agm_date)
 
 
 @app.route("/<service_slug>/legislation")

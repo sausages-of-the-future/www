@@ -5,13 +5,59 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
-      <h2>Make a complaint</h2>
+      <h2>Complaints and feedback</h2>
       {% if not sent %}
-        <form action="" method="post">
-          {{ render_field(form.email) }}
-          {{ render_field(form.message) }}
-          <button type="submit" class="button expand">Send</button>
-        </form>
+        <p>
+          There are several ways for you to send your feedback on the {{service.name}} service:
+        </p>
+        <ol class="accordion" data-accordion>
+          <li class="accordion-navigation">
+            <a href="#panel_meeting">1) Attend the user annual general meeting</a>
+            <div id="panel_meeting" class="content">
+              <p>
+                The user annual general meeting is your opertunity to directly put your questions and suggestions directly to the <a href="">service manager</a> and the <a href="">{{service.minister}}</a>.
+              </p>
+              <p>
+                The next user annual general meeting is on <a href="#">{{agm_date|format_date}}</a> at the <a href="#">Manchester Conference Centre</a>. You can <a href="">read the report form last years meeting.</a>
+              </p>
+            </div>
+          </li>
+          <li class="accordion-navigation">
+            <a href="#panel_consultation">2) Respond to a consultation or survey <span class="round alert label">2</span></a>
+            <div id="panel_consultation" class="content">
+              <p>
+                The service team reguarly hold consultations and run surveys about major changes to the service.
+                There are currently two open:
+              </p>
+              <ul>
+                <li>
+                  <a href="#">
+                    Pricing changes - closes {{agm_date|format_date}}
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Closure rules - closes {{agm_date|format_date}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-navigation">
+            <a href="#panel_contact">3) Send feedback directly</a>
+            <div id="panel_contact" class="content active">
+              <p>
+                Send feedback to the team that run this service. The 
+                minister's office also regulary checks feedback from users.
+              </p>
+              <form action="" method="post">
+                {{ render_field(form.email) }}
+                {{ render_field(form.message) }}
+                <button type="submit" class="button expand">Send</button>
+              </form>
+            </div>
+          </li>
+        </ol>
        {% else %}
         <p>
           Your message has been sent to the team that runs this service.

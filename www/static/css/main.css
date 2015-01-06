@@ -17,6 +17,10 @@ label {
   display:inline!important;
 }
 
+.button.tiny {
+  margin:0;
+}
+
 .label.expand {width:100%;}
 
 .hint {
@@ -320,7 +324,6 @@ textarea {
   height:200px;
 }
 
-
 .tabs.full-3 dd {
   width: 33.333%;
   text-align:center;
@@ -330,4 +333,9 @@ textarea {
 .large-map {
   height: 300px;
   margin-bottom:1rem;
+}
+
+/* accordian */
+.accordion {
+  margin-left:0;
 }
