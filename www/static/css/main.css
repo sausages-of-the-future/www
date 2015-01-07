@@ -23,6 +23,7 @@ label {
 
 .label.expand {
   width:100%;
+  font-size:1rem;
 }
 
 .hint {
@@ -237,6 +238,10 @@ ul.verified-facts span {
   top:2px;
 }
 
+form ul {
+    list-style-type:none;
+    margin:1rem 0 1rem 0;
+}
 
 ul.verified-facts li {
   list-style-type:none;
