@@ -15,15 +15,13 @@
       {% endif %}
       <hr/>
       <h3>Directors and officers</h3>
-      <ul class="small-block-grid-2">
-        <li>
-          <h4>Karen Smith</h4>
-          <p>Director</p>          
-        </li>
-        <li>
-          <h4>Simon Calver</h4>
-          <p>Director</p>
-        </li>
+      <ul class="small-block-grid-{{thing.directors|length}}">
+        {% for director in thing.directors %}
+          <li>
+            <h4>{{director}}</h4>
+            <p>Director</p>
+          </li>
+        {% endfor %}
       </ul>
       <hr/>
       <h3>Registered address</h3>
@@ -65,13 +63,13 @@
         <li>Seed marketing licence</li>
       </ul>
       <hr/>
-      <a href="{{service_base_url}}/manage/{{thing_slug}}" class="button expand">Manage this organisation</a>	
+      <a href="{{service_base_url}}/manage/{{thing_slug}}" class="button expand">Manage this organisation</a>
     </div>
   </div>
   <div class="row meta">
     <div class="small-12 columns">
       <div>
-        The data on this page is avalible as <a href="{{request.path}}.json">JSON</a> and <a href="{{request.path}}.xml">XML</a>, <a href="{{request.path}}.csv">a speadsheet (CSV format)</a>. 
+        The data on this page is avalible as <a href="{{request.path}}.json">JSON</a> and <a href="{{request.path}}.xml">XML</a>, <a href="{{request.path}}.csv">a speadsheet (CSV format)</a>.
       </div>
     </div>
   </div>
