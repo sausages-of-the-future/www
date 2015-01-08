@@ -209,13 +209,20 @@ table {
 /* Verified facts */
 ul.verified-facts {
   margin:0;
-  border:solid 2px #43AC6A;
+  border:solid 2px #DE770F;
+  border-top:solid 10px #DE770F;
   padding: 0.77778rem 1.33333rem 0.77778rem 0.77778rem;
   color:#fff;
   margin-bottom:1.11111rem;
 }
+
+ul.verified-facts li {
+  list-style-type:none;
+  color:#DE770F;
+}
+
  ul.verified-facts a {
-  color:#43AC6A;
+  color:#DE770F;
   text-decoration:underline;
  }
 
@@ -241,11 +248,6 @@ ul.verified-facts span {
 form ul {
     list-style-type:none;
     margin:1rem 0 1rem 0;
-}
-
-ul.verified-facts li {
-  list-style-type:none;
-  color:#43AC6A;
 }
 
 /* Secondary nav */
