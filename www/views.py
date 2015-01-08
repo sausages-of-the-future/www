@@ -1,12 +1,30 @@
-from flask import Flask, request, redirect, render_template, url_for, session, flash, abort
-from mongoengine import DoesNotExist, ValidationError
-from www import app, models, forms
-from datetime import datetime, timedelta
-import dateutil.parser
-import random
 import os
 import requests
 import json
+import random
+from datetime import datetime, timedelta
+import dateutil.parser
+
+from flask import (
+    Flask,
+    request,
+    redirect,
+    render_template,
+    url_for,
+    session,
+    flash,
+    abort,
+    current_app
+)
+
+from mongoengine import DoesNotExist, ValidationError
+
+from www import (
+    app,
+    models,
+    forms,
+    redis_client
+)
 
 def get_scaffold_or_template(service_slug, template_type):
     template = '%s_%s.html' % (service_slug.replace('-', '_'), template_type)
@@ -25,6 +43,11 @@ def fake_timeseris_data(min, max):
         result.append({'date': {"day": date.day, "month": date.month, "year": date.year}, 'value': random.uniform(min, max)})
         count = count - 1
     return result
+
+def send_location_data(service_slug):
+    data = {"application": "www", "text": service_slug}
+    app.logger.info('sending location data %s' % data)
+    redis_client.publish('location', json.dumps(data))
 
 #filters
 @app.template_filter('cucumber')
@@ -74,6 +97,9 @@ def work_visa_service():
 def service(service_slug):
     try:
         service = models.Service.objects.get(slug=service_slug)
+
+        send_location_data(service_slug)
+
     except (DoesNotExist, ValidationError):
         abort(404)
 
@@ -122,6 +148,12 @@ def thing(service_slug, things_slug, thing_slug, format="html"):
         service = models.Service.objects.get(slug=service_slug)
         thing_uri = "%s/%s/%s" % (app.config['REGISTRY_BASE_URL'], things_slug, thing_slug)
         thing = requests.get(thing_uri).json()
+
+        current_app.logger.info("service slug %s" % service.slug)
+        current_app.logger.info("service name %s" % service.name)
+        current_app.logger.info("thing_uri is %s" % thing_uri)
+
+
     except (DoesNotExist, ValidationError):
         abort(404)
 
