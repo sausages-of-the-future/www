@@ -44,8 +44,9 @@ def fake_timeseris_data(min, max):
         count = count - 1
     return result
 
-def send_location_data(service_slug):
-    data = {"application": "www", "text": service_slug}
+
+def send_location_data(origin, message):
+    data = {"application": origin, "message": message}
     app.logger.info('sending location data %s' % data)
     redis_client.publish('location', json.dumps(data))
 
@@ -98,7 +99,7 @@ def service(service_slug):
     try:
         service = models.Service.objects.get(slug=service_slug)
 
-        send_location_data(service_slug)
+        send_location_data(app.config['BASE_URL'], service.name)
 
     except (DoesNotExist, ValidationError):
         abort(404)
