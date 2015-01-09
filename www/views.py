@@ -149,11 +149,6 @@ def thing(service_slug, things_slug, thing_slug, format="html"):
         thing_uri = "%s/%s/%s" % (app.config['REGISTRY_BASE_URL'], things_slug, thing_slug)
         thing = requests.get(thing_uri).json()
 
-        current_app.logger.info("service slug %s" % service.slug)
-        current_app.logger.info("service name %s" % service.name)
-        current_app.logger.info("thing_uri is %s" % thing_uri)
-
-
     except (DoesNotExist, ValidationError):
         abort(404)
 
