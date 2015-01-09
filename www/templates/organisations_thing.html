@@ -58,9 +58,15 @@
 
       <h3>Licences and registrations</h3>
       <ul>
-        <li>Data protection registered</li>
-        <li>Greenhouse gas emissions permit</li>
-        <li>Seed marketing licence</li>
+        {% if thing.register_data %}
+          <li><a href="{{ thing.register_data }}">Data protection registered</a></li>
+        {% endif %}
+        {% if thing.register_employer %}
+          <li><a href="{{ thing.register_employer }}">Registered as an Employer</a></li>
+        {% endif %}
+
+        <!-- <li>Greenhouse gas emissions permit</li>
+        <li>Seed marketing licence</li> -->
       </ul>
       <hr/>
       <a href="{{service_base_url}}/manage/{{thing_slug}}" class="button expand">Manage this organisation</a>
