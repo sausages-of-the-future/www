@@ -13,6 +13,7 @@ class Config(object):
     BASE_URL = os.environ['BASE_URL']
     MONGODB_DB = os.environ['MONGODB_DB']
     MONGODB_HOST = os.environ['MONGODB_HOST']
+    REDISCLOUD_URL = os.environ['REDISCLOUD_URL']
 
 class DevelopmentConfig(Config):
     DEBUG = True
