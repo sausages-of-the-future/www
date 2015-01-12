@@ -45,8 +45,12 @@ def format_date_filter(value):
 
 @app.route("/")
 def index():
+    return render_template('index.html')
+
+@app.route("/start")
+def start():
     services = models.Service.objects.all()
-    return render_template('index.html', services=services)
+    return render_template('start.html', services=services)
 
 @app.route("/notes/<note_slug>")
 def note(note_slug):
@@ -79,7 +83,6 @@ def service(service_slug):
 
     service_base_url = app.config.get(service.service_base_url_config, '')
     return render_template(get_scaffold_or_template(service_slug, 'service'), service=service, service_base_url=service_base_url)
-
 
 @app.route("/<service_slug>/policy")
 def policy(service_slug):

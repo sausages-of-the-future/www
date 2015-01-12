@@ -12,6 +12,8 @@
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery/dist/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/foundation/js/foundation.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/foundation/js/foundation/foundation.alert.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/foundation/js/foundation/foundation.joyride.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery.cookie/jquery.cookie.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/leaflet/dist/leaflet.js') }}"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='javascript/main.js') }}"></script>
@@ -35,5 +37,8 @@
         </div>
       {% endif %}
     {% endwith %}
+
+    {% block joyride %}
+    {% endblock %}
   </body>
 </html>

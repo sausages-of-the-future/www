@@ -272,6 +272,16 @@ ul.side-nav li > a:after {
   float:right;
 }
 
+ul.side-nav li > a.notbuilt, ul.side-nav li > a.notbuilt:hover {
+  color:#ccc;
+  background-color: #fff;
+  cursor: default!important;
+}
+
+ul.side-nav li > a.notbuilt:after {
+  content: none;
+}
+
 /* Done */
 div.done {
   text-align:center;
@@ -354,10 +364,29 @@ textarea {
   text-align:center;
 }
 
+.tabs.full-2 dd {
+  width: 50%;
+  text-align:center;
+}
+
 /* Maps */
 .large-map {
   height: 300px;
   margin-bottom:1rem;
+}
+
+.large-map .bounds {
+    height: 80%;
+    border: 5px solid rgb(207, 42, 14);
+    z-index: 99;
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+}
+
+.joyride-tip-guide {
+  z-index:9999;
 }
 
 /* accordian */

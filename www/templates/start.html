@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Idealgov{% endblock%}
+{% block content %}
+  <div class="header">
+    <nav class="top-bar" data-topbar>
+      <h1 class="title"><a href="/" class="iglogo">IG</a> <a href="{{url_for('search_results')}}">Government</a></h1>
+    </nav>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="panel">
+        <form action="/search" method="get">
+          <p>Welcome to central government</p>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="row collapse">
+                <div class="small-10 columns">
+                  <input type="text" placeholder="Search">
+                </div>
+                <div class="small-2 columns">
+                  <a href="#" class="button postfix">Go</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h3>Popular services</h3>
+      <ul class="services small-block-grid-2">
+        {% for service in services %}
+          <li>
+            <a href="{{url_for('service', service_slug=service.slug)}}">
+              {{service.name}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}
