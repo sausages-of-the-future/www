@@ -8,6 +8,11 @@
   "legislation": [],
   "guides": [
     {"title": "The planning process", "slug": "planning-process"},
-    {"title": "The licencing process", "slug": "licencing-process"}
+    {"title": "The licensing process", "slug": "licensing-process"}
+  ],
+  "stats": [
+    {"name": "Number of sign ups", "min": 2.1, "max": 3.5, "y_max": 15},
+    {"name": "Price per transaction (pence)", "min": 1.2, "max": 2.1, "y_max": 200},
+    {"name": "Number of complaints per day", "min": 50, "max": 120, "y_max": 500}
   ]
 }

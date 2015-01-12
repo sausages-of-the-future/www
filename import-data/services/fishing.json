@@ -18,5 +18,11 @@
   "guides": [
     {"title": "Types of licence", "slug": "types"},
     {"title": "Commercial Inland Fishing", "slug": "commercial"}
+  ],
+  "stats": [
+    {"name": "Number of licences issued", "min": 2.1, "max": 3.5, "y_max": 15},
+    {"name": "Number of prosecutions", "min": 2.1, "max": 3.5, "y_max": 15},
+    {"name": "Price per transaction (pence)", "min": 11.2, "max": 12.1, "y_max": 200},
+    {"name": "Number of complaints per day", "min": 50, "max": 120, "y_max": 500}
   ]
 }
