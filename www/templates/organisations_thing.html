@@ -59,10 +59,16 @@
       <h3>Licences and registrations</h3>
       <ul>
         {% if thing.register_data %}
-          <li><a href="{{ thing.register_data }}">Data protection registered</a></li>
+          <li>
+            Data protection registered
+            <a class="register-link" href="{{ thing.register_data }}"><i class="fa fa-list-alt fa-1"></i> view source</a>
+          </li>
         {% endif %}
         {% if thing.register_employer %}
-          <li>Registered as an Employer</li>
+          <li>
+            Registered as an Employer
+            <a class="register-link" href="#"><i class="fa fa-list-alt fa-1"></i> view source</a>
+          </li>
         {% endif %}
 
         <!-- <li>Greenhouse gas emissions permit</li>

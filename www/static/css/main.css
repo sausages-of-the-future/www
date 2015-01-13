@@ -8,6 +8,12 @@ body, h1, h2,h3, h4, h5 .button, table, label {
   font-family: 'Roboto Slab', serif;
 }
 
+a.register-link, a.register-link:hover {
+  color:#DE770F;
+  padding-left:0.5rem;
+  font-size:0.8rem;
+}
+
 label {
   font-size:1.1rem;
   font-weight:bold;
@@ -392,4 +398,20 @@ textarea {
 /* accordian */
 .accordion {
   margin-left:0;
+}
+
+/* things in registers*/
+.thing {
+  background:#fafafa;
+}
+
+.thing, .thing h4 {
+  font-family:monospace;
+  font-size:1rem;
+  font-weight:bold;
+}
+
+.thing h3 {
+  font-weight:bold;
+  padding-right:1rem;
 }
