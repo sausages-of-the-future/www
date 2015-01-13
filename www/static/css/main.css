@@ -12,6 +12,7 @@ a.register-link, a.register-link:hover {
   color:#DE770F;
   padding-left:0.5rem;
   font-size:0.8rem;
+  text-decoration:none!important;
 }
 
 label {
