@@ -1,9 +1,21 @@
 {% extends "note_base.html" %}
 {% block title %}Payment platform{% endblock%}
 {% block note_title %}Payments platform{% endblock%}
-{% block note_subtitle %}Tools for service teams to take and send payments{% endblock%}
+{% block note_subtitle %}Tools for service teams to take and send payments{% endblock %}
 {% block note_content %}
   <p>
-    Includes offline payment steps eg PayPoint.
+    The payment platform allows services team to quickly integrate payment into their service.
+  </p>
+  <p>
+      As well as online payment, it allows for offline payment steps (such as PayPoint) and payment via SMS.
+  </p>
+  <p>
+      The platform is managed by a single central team, but available to any
+      government organisation which chooses to use it.
+  </p>
+  <p>
+      You can see examples of where the payment platform is used in the 
+      <a href="{{config['LOCALGOV_BASE_URL']}}">City government</a> and 
+      <a href="{{url_for('service', service_slug='fishing')}}">fishing service</a>
   </p>
 {% endblock %}
