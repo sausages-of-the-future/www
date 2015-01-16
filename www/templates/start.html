@@ -1,9 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Idealgov{% endblock%}
+{% block title %}GOV.UK{% endblock%}
 {% block content %}
   <div class="header">
     <nav class="top-bar" data-topbar>
-      <h1 class="title"><a href="/" class="iglogo">IG</a> <a href="{{url_for('search_results')}}">Government</a></h1>
+      <h1 class="title">
+        <a href="{{url_for('search_results')}}">
+          <img id="header_crown" src="{{url_for('static', filename='images/crown_white.png')}}"/>
+          GOV.UK
+        </a>
+      </h1>
     </nav>
   </div>
   <div class="row">

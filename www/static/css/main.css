@@ -5,7 +5,35 @@ body {
 
 /* Typography */
 body, h1, h2,h3, h4, h5 .button, table, label {
-  font-family: 'Roboto Slab', serif;
+  /*font-family: 'Roboto Slab', serif;*/
+  font-family: 'nta', Arial, Helvetica;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight:bold;
+}
+
+.tab-bar #header_crown {
+  height: 27px;
+  padding-left: 4px;
+  margin-top: -4px;
+}
+
+.tab-bar h1 {
+  font-size: 1.35rem;
+  text-align:left;
+}
+
+.top-bar #header_crown {
+  height: 27px; 
+  margin-top: -11px;
+  margin-right: 3px;
+  text-align:left;
+}
+
+.top-bar h1.title {
+  padding-top: 6px;
+  font-size: 1.35rem;
 }
 
 a.register-link, a.register-link:hover {
@@ -76,9 +104,7 @@ label {
 .tab-bar {
   margin-bottom:1rem;
 }
-.tab-bar h1 {
-  font-weight:normal;
-}
+
 .tab-bar h1 a {
   color:#fff;
 }
@@ -255,6 +281,10 @@ ul.verified-facts span {
 form ul {
     list-style-type:none;
     margin:1rem 0 1rem 0;
+}
+
+form ul li {
+  margin:1rem 0 1rem 0;
 }
 
 /* Secondary nav */

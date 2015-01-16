@@ -135,7 +135,6 @@ def complain(service_slug):
             sent = True
     return render_template(get_scaffold_or_template(service_slug, 'complain'), service=service, form=form, sent=sent, agm_date=agm_date)
 
-
 @app.route("/<service_slug>/legislation")
 def legislation(service_slug):
     try:
@@ -190,3 +189,12 @@ def performance(service_slug):
         stats.append({"name": stat['name'], "data": fake_timeseris_data(stat['min'], stat['max']), "y_max": stat['y_max']})
 
     return render_template(get_scaffold_or_template(service_slug, 'performance'), service=service, stats=json.dumps(stats))
+
+#specific pages
+@app.route("/fishing/byelaws")
+def fishing_bye_laws():
+    try:
+        service = models.Service.objects.get(slug='fishing')
+    except (DoesNotExist, ValidationError):
+        abort(404)
+    return render_template('fishing_thing.html', service=service)
