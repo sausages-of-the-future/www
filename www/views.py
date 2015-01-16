@@ -22,8 +22,7 @@ from mongoengine import DoesNotExist, ValidationError
 from www import (
     app,
     models,
-    forms,
-    redis_client
+    forms
 )
 
 def get_scaffold_or_template(service_slug, template_type):
@@ -44,11 +43,6 @@ def fake_timeseris_data(min, max):
         count = count - 1
     return result
 
-
-def send_location_data(origin, message):
-    data = {"application": origin, "message": message}
-    app.logger.info('sending location data %s' % data)
-    redis_client.publish('location', json.dumps(data))
 
 #filters
 @app.template_filter('cucumber')
@@ -102,9 +96,6 @@ def work_visa_service():
 def service(service_slug):
     try:
         service = models.Service.objects.get(slug=service_slug)
-
-        send_location_data(app.config['BASE_URL'], service.name)
-
     except (DoesNotExist, ValidationError):
         abort(404)
 
