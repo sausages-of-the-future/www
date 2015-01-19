@@ -13,22 +13,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight:bold;
 }
 
+a {
+  color:#005EA5;
+}
+
 .tab-bar #header_crown {
   height: 27px;
   padding-left: 4px;
   margin-top: -4px;
 }
 
-.tab-bar h1 {
-  font-size: 1.35rem;
-  text-align:left;
-}
-
 .top-bar #header_crown {
   height: 27px; 
-  margin-top: -11px;
-  margin-right: 3px;
+  margin-top: -6px;
+  margin-right: 7px;
+  margin-left:4px;
+}
+
+.tab-bar h1, .top-bar h1 {
+  font-size: 1.35rem;
   text-align:left;
+  margin-top:3px;
+}
+
+.tab-bar a, .top-bar a {
+  text-decoration:none;
 }
 
 .top-bar h1.title {
@@ -43,18 +52,34 @@ a.register-link, a.register-link:hover {
   text-decoration:none!important;
 }
 
-label {
-  font-size:1.1rem;
-  font-weight:bold;
-}
-
 .checkbox label {
   display:inline!important;
 }
 
+.button {
+  background:#468b30;
+  border-bottom:5px solid #30642e;
+  font-family: 'nta', Arial, Helvetica!important;
+  font-weight:bold;
+  font-size: 1.35rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.button:hover, .button:focus {
+  background-color:#30642e;
+}
+
 .button.tiny {
   margin:0;
+  border-bottom:none;
 }
+
+.button.postfix {
+  font-size: 1rem;
+  padding-top: 2px;
+}
+
 
 .label.expand {
   width:100%;
@@ -140,19 +165,19 @@ label {
   margin-right:5px;
 }
 
-.header.registry .iglogo {
-  color:#DE770F!important;
-}
-
-.header.service .iglogo {
-  color:#008CBA!important;
-}
-
 .header.service, .header.service .top-bar, 
 .off-canvas-wrap.service .tab-bar,
 .off-canvas-wrap.service .left-off-canvas-menu,
 .off-canvas-wrap.service .right-off-canvas-menu {
-  background:#008CBA;
+  background:#333;
+}
+/*
+.header.service {
+  border-bottom:solid 10px #37a963;
+}*/
+
+.header.service .top-bar {
+  margin-bottom: 0;
 }
 
 .off-canvas-wrap.service .left-off-canvas-menu p,
@@ -201,25 +226,9 @@ ul.off-canvas-list form .columns {
   height:57px;
 }
 
-
-.off-canvas-wrap.service .left-small,
-.off-canvas-wrap.service .right-small {
-  border-color: #1c84a6;
-}
-
-.header.registry, .header.registry .top-bar{
-  background:#DE770F;
-}
-
 .top-bar {
   max-width: 62.5rem;
   margin:0 auto 15px auto;
-}
-
-.top-bar h1 {
-  font-size:1.125rem;
-  text-align:center;
-  padding-top:0.3rem;
 }
 
 @media only screen and (min-width: 64.063em) {
@@ -241,17 +250,16 @@ table {
 
 /* Verified facts */
 ul.verified-facts {
-  margin:0;
-  border:solid 2px #DE770F;
-  border-top:solid 10px #DE770F;
-  padding: 0.77778rem 1.33333rem 0.77778rem 0.77778rem;
+  margin:0.5rem 0 0 0;
+  padding: 0.77778rem 20px 0.77778rem 0.77778rem;
   color:#fff;
   margin-bottom:1.11111rem;
+  background: #2373b5 url(../images/verify_sheild.png) no-repeat right 15px  center;
+  background-size:35px;
 }
 
 ul.verified-facts li {
   list-style-type:none;
-  color:#DE770F;
 }
 
  ul.verified-facts a {
@@ -267,8 +275,26 @@ ul.verified-facts li {
   font-weight:bold;
  }
 
+form label {
+  padding-bottom:0.7rem;
+}
+
 form ul.verified-facts {
   padding: 0.4rem 1.33333rem 0.4rem 0.4rem;
+}
+
+form ul.radio li {
+  background:#eceded;
+  padding:15px 10px;
+  margin:0 0 0.7rem 0;
+}
+
+form ul.radio li label {
+  padding-bottom:0;
+}
+
+form ul.radio li input {
+  margin:0;
 }
 
 ul.verified-facts span {
@@ -284,7 +310,11 @@ form ul {
 }
 
 form ul li {
-  margin:1rem 0 1rem 0;
+  margin:1rem 0 0 0;
+}
+
+form .ul.radio {
+
 }
 
 /* Secondary nav */
@@ -445,4 +475,61 @@ textarea {
 .thing h3 {
   font-weight:bold;
   padding-right:1rem;
+}
+
+/* Verify */
+
+.verify h1 {
+  padding:0;
+  margin:1rem 0 1rem 0;
+  color:#fff;
+  text-align:center;
+  clear:both;
+}
+
+.verify_logo_small {
+  float:right;
+  height: 100px;
+  right: -27px;
+  position: relative;
+  top: -5px;
+}
+
+.verify .button {
+  background-color: #fff;
+  color:#2373b6;
+  border-bottom-color: #164e7c;
+}
+
+.verify .button.provider {
+  text-align:left;
+  padding-left:1rem;
+}
+
+.verify p a {
+  color:#fff;
+  text-decoration:underline;
+}
+
+.verify .button.provider:after {
+  content: "❭";
+  float:right;
+  font-weight: bold;
+  padding-right:10px;
+}
+
+.verify .hint {
+  border:none;
+  text-align:center;
+}
+
+.verify .columns {
+  background:#2373b6;
+  color:#fff;
+  border:solid 15px #fff;
+  min-height:600px;
+}
+
+.verify .button-group li {
+ padding:3px;
 }
