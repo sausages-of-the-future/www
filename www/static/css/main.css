@@ -1,3 +1,4 @@
+@charset "utf-8";
 body {
   margin-bottom:100px;
 }
@@ -19,12 +20,13 @@ a {
 .tab-bar #header_crown {
   height: 27px;
   padding-left: 4px;
-  margin-top: -4px;
+  position:absolute;
+  top:8px;
 }
 
 .top-bar #header_crown {
   height: 27px; 
-  margin-top: -6px;
+  margin-top: -10px;
   margin-right: 7px;
   margin-left:4px;
 }
@@ -51,7 +53,7 @@ a {
 }
 
 .top-bar h1.title {
-  padding-top: 6px;
+  padding-top: 7px;
   font-size: 1.35rem;
 }
 
@@ -364,7 +366,7 @@ ul.side-nav li a {
 }
 
 ul.side-nav li > a:after {
-  content: "❭";
+  content: "&#10095;";
   float:right;
 }
 
