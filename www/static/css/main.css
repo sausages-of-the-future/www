@@ -29,6 +29,13 @@ a {
   margin-left:4px;
 }
 
+.top-bar #header_crest {
+  height: 45px; 
+  margin-top: -3px;
+  margin-right: 7px;
+  margin-left:4px;
+}
+
 .tab-bar h1, .top-bar h1 {
   font-size: 1.35rem;
   text-align:center;
@@ -173,6 +180,13 @@ a.register-link, a.register-link:hover {
 .off-canvas-wrap.service .left-off-canvas-menu,
 .off-canvas-wrap.service .right-off-canvas-menu {
   background:#333;
+}
+
+.header.registry, .header.registry .top-bar, 
+.off-canvas-wrap.registry .tab-bar,
+.off-canvas-wrap.registry .left-off-canvas-menu,
+.off-canvas-wrap.registry .right-off-canvas-menu {
+  background:#2372b5;
 }
 /*
 .header.service {
@@ -510,18 +524,34 @@ textarea {
 
 /* things in registers*/
 .thing {
-  background:#fafafa;
+  background:#eceded;
+  border:none;
+  border-radius: 0;
+  margin-top:1rem;
 }
 
-.thing, .thing h4 {
+.thing, .thing h3, .thing h4 {
   font-family:monospace;
-  font-size:1rem;
   font-weight:bold;
+  font-weight:normal!important;
+}
+
+.thing h4 {
+  border-bottom:solid 2px #333;
+  padding-bottom:1rem;
 }
 
 .thing h3 {
   font-weight:bold;
   padding-right:1rem;
+}
+
+.thing .thing-footer {
+  border-top:solid 2px #333;
+  padding-top:3rem;
+  padding-left:200px;
+  background:url(../images/crest_grey.png) no-repeat 0 10px;
+  min-height:160px;
 }
 
 /* Verify */
