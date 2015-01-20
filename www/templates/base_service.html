@@ -60,7 +60,7 @@
         <a class="exit-off-canvas"></a>
         <aside class="right-off-canvas-menu"> 
           <ul class="off-canvas-list"> 
-          <li><label for="q">Search guides</label></li>
+          <li><label for="q">Search GOV.UK</label></li>
             <li>
               <form action"/search" method="get">
                 <div class="row">
@@ -79,7 +79,7 @@
             </li>
           </ul>
         <ul class="off-canvas-list"> 
-            <li><h3>Most relevant</h3></li>
+            <li><h3>Related content</h3></li>
             {% for guide in service.guides %}
               <li><a href="#">{{guide.title}}</a></li>
             {% endfor %}

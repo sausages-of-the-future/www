@@ -16,6 +16,11 @@ a {
   color:#005EA5;
 }
 
+
+p, dl, ul, label {
+  font-size:1.2rem;
+}
+
 .tab-bar #header_crown {
   height: 27px;
   padding-left: 4px;
@@ -268,12 +273,12 @@ table {
 /* Verified facts */
 ul.verified-facts {
   margin:0.5rem 0 0 0;
-  padding: 17px 20px 0.77778rem 0.77778rem;
+  padding: 22px 20px 0.77778rem 0.77778rem;
   color:#fff;
   margin-bottom:1.11111rem;
   background: #2373b5 url(../images/verify_sheild.png) no-repeat right 15px  top 15px;
   background-size:35px;
-  min-height: 60px
+  min-height: 75px
 }
 
 ul.verified-facts li {
