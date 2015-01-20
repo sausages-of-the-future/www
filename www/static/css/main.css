@@ -1,4 +1,3 @@
-@charset "utf-8";
 body {
   margin-bottom:100px;
 }
@@ -365,10 +364,10 @@ ul.side-nav li a {
   padding: 0.875rem 0.875rem!important;
 }
 
-ul.side-nav li > a:after {
+/*ul.side-nav li > a:after {
   content: "&#10095;";
   float:right;
-}
+}*/
 
 ul.side-nav li > a.notbuilt, ul.side-nav li > a.notbuilt:hover {
   color:#ccc;
@@ -589,13 +588,13 @@ textarea {
   text-decoration:underline;
 }
 
-.verify .button.provider:after {
+/*.verify .button.provider:after {
   content: "❭";
   float:right;
   font-weight: bold;
   padding-right:10px;
 }
-
+*/
 .verify .hint {
   border:none;
   text-align:center;
