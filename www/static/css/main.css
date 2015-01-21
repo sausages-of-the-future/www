@@ -492,6 +492,11 @@ textarea {
   height:200px;
 }
 
+.tabs.full-4 dd {
+  width: 25%;
+  text-align:center;
+}
+
 .tabs.full-3 dd {
   width: 33.333%;
   text-align:center;
