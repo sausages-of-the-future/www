@@ -189,3 +189,12 @@ def fishing_bye_laws():
     except (DoesNotExist, ValidationError):
         abort(404)
     return render_template('fishing_thing.html', service=service)
+
+#specific pages
+@app.route("/work/book-appointment")
+def work_book_appointment():
+    try:
+        service = models.Service.objects.get(slug='work')
+    except (DoesNotExist, ValidationError):
+        abort(404)
+    return render_template('work_book_appointment.html', service=service)
