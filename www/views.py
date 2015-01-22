@@ -198,3 +198,8 @@ def work_book_appointment():
     except (DoesNotExist, ValidationError):
         abort(404)
     return render_template('work_book_appointment.html', service=service)
+
+#internal tools (should really be a seperate app)
+@app.route("/internal/dashboard")
+def internal_dashboard():
+    return render_template('internal_dashboard.html')
