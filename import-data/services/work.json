@@ -1,0 +1,17 @@
+{
+  "name": "Find work",
+  "minister": "Minister for employment",
+  "registers": ["Income"],
+  "slug": "work",
+  "service_base_url_config": "WORK_BASE_URL",
+  "policies": [],
+  "legislation": [],
+  "guides": [
+    {"title": "Employment help in your area", "slug": "work-help"},
+    {"title": "Online training", "slug": "onlin-training"}
+  ],
+  "stats": [
+    {"name": "Price per transaction (pence)", "min": 11.2, "max": 12.1, "y_max": 200},
+    {"name": "Number of complaints per day", "min": 50, "max": 120, "y_max": 500}
+  ]
+}
