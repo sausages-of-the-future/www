@@ -35,13 +35,6 @@ p, dl, ul, label {
   margin-left:4px;
 }
 
-.top-bar #header_crest {
-  height: 45px; 
-  margin-top: -3px;
-  margin-right: 7px;
-  margin-left:4px;
-}
-
 .tab-bar h1, .top-bar h1 {
   font-size: 1.35rem;
   text-align:center;
@@ -172,31 +165,12 @@ a.register-link, a.register-link:hover {
   margin-bottom: 10px;
 }
 
-.iglogo {
-  background:#fff;
-  color:#333!important;
-  border-radius: 4px;
-  padding:0 4px 0 5px;
-  margin-right:5px;
-}
-
 .header.service, .header.service .top-bar, 
 .off-canvas-wrap.service .tab-bar,
 .off-canvas-wrap.service .left-off-canvas-menu,
 .off-canvas-wrap.service .right-off-canvas-menu {
   background:#333;
 }
-
-.header.registry, .header.registry .top-bar, 
-.off-canvas-wrap.registry .tab-bar,
-.off-canvas-wrap.registry .left-off-canvas-menu,
-.off-canvas-wrap.registry .right-off-canvas-menu {
-  background:#2372b5;
-}
-/*
-.header.service {
-  border-bottom:solid 10px #37a963;
-}*/
 
 .header.service .top-bar {
   margin-bottom: 0;
@@ -205,6 +179,7 @@ a.register-link, a.register-link:hover {
 ul.off-canvas-list label {
   font-size:0.875rem;
 }
+
 ul.off-canvas-list .round.alert.label {
   position:relative;
   top:-3px;
@@ -530,94 +505,7 @@ textarea {
   margin-left:0;
 }
 
-/* things in registers*/
-.thing {
-  background:#eceded;
-  border:none;
-  border-radius: 0;
-  margin-top:1rem;
-}
 
-.thing, .thing h3, .thing h4 {
-  font-family:monospace;
-  font-weight:bold;
-  font-weight:normal!important;
-}
-
-.thing h4 {
-  border-bottom:solid 2px #333;
-  padding-bottom:1rem;
-}
-
-.thing h3 {
-  font-weight:bold;
-  padding-right:1rem;
-}
-
-.thing .thing-footer {
-  border-top:solid 2px #333;
-  padding-top:3rem;
-  padding-left:200px;
-  background:url(../images/crest_grey.png) no-repeat 0 10px;
-  min-height:160px;
-}
-
-/* Verify */
-
-.verify h1 {
-  padding:0;
-  margin:1rem 0 1rem 0;
-  color:#fff;
-  text-align:center;
-  clear:both;
-}
-
-.verify_logo_small {
-  float:right;
-  height: 100px;
-  right: -27px;
-  position: relative;
-  top: -5px;
-}
-
-.verify .button {
-  background-color: #fff;
-  color:#2373b6;
-  border-bottom-color: #164e7c;
-}
-
-.verify .button.provider {
-  text-align:left;
-  padding-left:1rem;
-}
-
-.verify p a {
-  color:#fff;
-  text-decoration:underline;
-}
-
-/*.verify .button.provider:after {
-  content: "❭";
-  float:right;
-  font-weight: bold;
-  padding-right:10px;
-}
-*/
-.verify .hint {
-  border:none;
-  text-align:center;
-}
-
-.verify .columns {
-  background:#2373b6;
-  color:#fff;
-  border:solid 15px #fff;
-  min-height:600px;
-}
-
-.verify .button-group li {
- padding:3px;
-}
 
 /* Avatars */
 
