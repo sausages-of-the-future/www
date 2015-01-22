@@ -15,6 +15,7 @@ class Config(object):
     MONGODB_HOST = os.environ['MONGODB_HOST']
     REDISCLOUD_URL = os.environ['REDISCLOUD_URL']
     CATTLE_BASE_URL = os.environ['CATTLE_BASE_URL']
+    WORK_BASE_URL = os.environ['WORK_BASE_URL']
 
 class DevelopmentConfig(Config):
     DEBUG = True

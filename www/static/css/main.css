@@ -463,7 +463,18 @@ div.done p {
   color:#333;
 }
 
-.panel.ticket img {
+.panel.card {
+  position:relative;
+}
+
+.panel.card i {
+  position:absolute;
+  top:20px;
+  left:20px;
+}
+
+.panel.card {
+  padding-left:80px;
 }
 
 .banner {
@@ -473,6 +484,10 @@ div.done p {
 
 textarea {
   height:200px;
+}
+
+.tabs {
+  margin-bottom: 2rem!important;
 }
 
 .tabs.full-4 dd {
@@ -603,3 +618,39 @@ textarea {
 .verify .button-group li {
  padding:3px;
 }
+
+/* Avatars */
+
+.person {
+  margin-top:1rem;
+  margin-left: 0px;
+  margin-bottom: 1rem;
+}
+.person .photo {
+  background-color: #ccc;
+  border-radius: 100px;
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 15px;
+  overflow:hidden;
+}
+
+.person .photo img {
+  position:relative;
+}
+
+.person p {
+  position: relative;
+  top: 5px;
+}
+.person p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.person p:nth-child(3) {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+}              
