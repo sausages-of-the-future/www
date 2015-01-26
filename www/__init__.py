@@ -9,4 +9,7 @@ app.config.from_object(os.environ.get('SETTINGS'))
 db = MongoEngine(app)
 cors = CORS(app, resources={r"/static/*": {"origins": "*"}})
 
+from messenger import Connector
+locator = Connector(app)
+
 from www import views

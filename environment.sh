@@ -11,6 +11,6 @@ export FISHING_BASE_URL='http://fishing.gov.local'
 export BASE_URL='http://www.gov.local'
 export MONGODB_DB='www_gov'
 export MONGODB_HOST=127.0.0.1
-export REDISCLOUD_URL="redis://user:@localhost:6379"
+export REDISCLOUD_URL="redis://user:@127.0.0.1:6379"
 export CATTLE_BASE_URL="http://cattle.gov.local"
 export WORK_BASE_URL="http://work.gov.local"

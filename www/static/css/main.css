@@ -257,6 +257,18 @@ ul.verified-facts li {
   width:80%;
  }
 
+ul.todolist {
+  border-top: solid 1px #dfdfdf;
+  margin:1rem 0;
+  list-style-type: none;
+  margin-left:0;
+}
+
+ul.todolist li {
+  border-bottom: solid 1px #dfdfdf;
+  padding:0.5rem 1rem;
+}
+
 dl.inline {
   text-align:left;
 }

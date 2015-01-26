@@ -43,7 +43,6 @@ def fake_timeseris_data(min, max):
         count = count - 1
     return result
 
-
 #filters
 @app.template_filter('cucumber')
 def cucumber_filter(s):
