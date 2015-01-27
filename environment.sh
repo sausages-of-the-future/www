@@ -14,3 +14,4 @@ export MONGODB_HOST=127.0.0.1
 export REDISCLOUD_URL="redis://user:@127.0.0.1:6379"
 export CATTLE_BASE_URL="http://cattle.gov.local"
 export WORK_BASE_URL="http://work.gov.local"
+export INTERNAL_BASE_URL="http://internal.gov.local"

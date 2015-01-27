@@ -10,6 +10,7 @@ class Config(object):
     FISHING_BASE_URL = os.environ['FISHING_BASE_URL']
     WORK_UK_BASE_URL = os.environ['WORK_UK_BASE_URL']
     LOCALGOV_BASE_URL = os.environ['LOCALGOV_BASE_URL']
+    INTERNAL_BASE_URL = os.environ['INTERNAL_BASE_URL']
     BASE_URL = os.environ['BASE_URL']
     MONGODB_DB = os.environ['MONGODB_DB']
     MONGODB_HOST = os.environ['MONGODB_HOST']
