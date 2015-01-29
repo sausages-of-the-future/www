@@ -22,7 +22,8 @@ from mongoengine import DoesNotExist, ValidationError
 from www import (
     app,
     models,
-    forms
+    forms,
+    locator
 )
 
 def get_scaffold_or_template(service_slug, template_type):
@@ -62,6 +63,7 @@ def format_date_filter(value):
 
 @app.route("/")
 def index():
+    locator.send_message({ "active": "www" })
     return render_template('index.html')
 
 @app.route("/start")
