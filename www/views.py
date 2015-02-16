@@ -162,10 +162,12 @@ def search_results():
     scope = request.args.get('scope', '')
     results = []
     if scope == 'organisation':
-        data = requests.get("%s/organisations" % app.config['REGISTRY_BASE_URL'])
-        for item in data.json():
-            split = item['uri'].split('/')
-            results.append({'url': '/organisations/o/organisations/%s' % split[len(split) - 1], 'title': item['name']})
+        resp = requests.get("%s/organisations" % app.config['REGISTRY_BASE_URL'], params={'search_term': search_term})
+        if resp.status_code == 200:
+            for item in resp.json():
+                split = item['uri'].split('/')
+                results.append({'url': '/organisations/o/organisations/%s' % split[len(split) - 1], 'title': item['name']})
+
     return render_template('search-results.html', results=results, search_term=search_term, scope=scope)
 
 @app.route("/<service_slug>/performance")
