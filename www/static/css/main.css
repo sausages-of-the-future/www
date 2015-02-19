@@ -288,6 +288,7 @@ dl.inline dt {
 
 form label {
   padding-bottom:0.7rem;
+  white-space: normal;
 }
 
 form ul.verified-facts {
@@ -298,6 +299,7 @@ form ul.radio li {
   background:#eceded;
   padding:15px 10px;
   margin:0 0 0.7rem 0;
+  white-space: nowrap;
 }
 
 form ul.radio li label {
@@ -306,6 +308,11 @@ form ul.radio li label {
 
 form ul.radio li input {
   margin:0;
+}
+
+form ul.radio li input[type="radio"] {
+  vertical-align: top;
+  margin-top: 0.5rem;
 }
 
 ul.verified-facts span {
