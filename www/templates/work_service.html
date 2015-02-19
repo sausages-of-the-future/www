@@ -4,8 +4,15 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
+
+      <h3>Current jobseekers</h3>
+      <p>Sign in to see payments, appointments and progress.</p>
       <p>
         <a href="{{config.WORK_BASE_URL}}/job-seeker" class="button expand">Sign in</a>
+      </p>
+      <h3>New jobseekers</h3>
+      <p>Book an initial consultation.</p>
+      <p>
         <a href="{{url_for('work_book_appointment')}}" class="button expand">Book a consultation</a>
       </p>
       <h3>Job search tools</h3>
