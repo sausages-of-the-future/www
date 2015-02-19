@@ -2,17 +2,35 @@
 {% block service_page_title %}Organisations{% endblock %}
 {% block service_title %}Organisations{% endblock %}
 {% block service_content %}
-  <form action ="/search" method="GET">
-    <input type="hidden" name="scope" value="organisation"/>
-    <h2>Search organisations</h2>
-    <input name="q" type="text" placeholder="organisation or director name">
-    <button type="submit" class="button expand">Search</button>
-  </form>
-  <hr/>
   <div class="row">
     <div class="small-12 columns">
+      <h2>Search organisations</h2>
+      <form action ="/search" method="GET">
+        <div class="row collapse postfix-round">
+        <div class="small-9 columns">
+          <input type="hidden" name="scope" value="organisation"/>
+          <input name="q" type="text" placeholder="organisation or director name">
+        </div>
+        <div class="small-3 columns">
+          <input value="search" type="submit" class="button postfix">
+        </div>
+      </div>
+      </form>
+      <hr/>
+      <h2>Manage an organisation</h2>
       <p>
-          or <a href="{{service_base_url}}/manage">sign in</a> to view real-time taxes and renew licences for your organisation.
+        Manage people, licences, and real-time taxes for your organisation.
+      </p>
+      <p>
+        <a href="{{service_base_url}}/manage" class="button expand">Sign in to manage</a>
+      </p>
+      <hr/>
+      <h2>Start a new organisation</h2>
+      <p>
+        Set up a new company, charity or other organisation.
+      </p>
+      <p>
+        <a href="{{service_base_url}}/start" class="button expand">Start an organisation</a>
       </p>
     </div>
   </div>
