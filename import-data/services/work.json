@@ -1,5 +1,6 @@
 {
   "name": "Find work",
+  "description": "Tools for finding work and managing your benefits",
   "minister": "Minister for employment",
   "registers": ["Income"],
   "slug": "work",

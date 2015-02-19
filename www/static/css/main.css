@@ -21,6 +21,11 @@ p, dl, ul, label {
   font-size:1.2rem;
 }
 
+dl dd {
+  font-size:1.1rem;
+  margin-bottom:1.1rem;
+}
+
 .tab-bar #header_crown {
   height: 27px;
   padding-left: 4px;

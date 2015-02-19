@@ -1,6 +1,7 @@
 {
   "name": "Fishing",
   "slug": "fishing",
+  "description": "Apply for a rod licence, check local laws by your location",
   "service_base_url_config": "FISHING_BASE_URL",
   "minister": "Minister for the Environment",
   "registers": ["Licences"],

@@ -30,15 +30,18 @@
         </form>
       </div>
       <h3>Popular services</h3>
-      <ul class="services small-block-grid-2">
+      <dl>
         {% for service in services %}
-          <li>
+          <dt>
             <a href="{{url_for('service', service_slug=service.slug)}}">
               {{service.name}}
             </a>
-          </li>
+          </dt>
+          <dd>
+            {{service.description}}
+          </dd>
         {% endfor %}
-      </ul>
+      </dl>
 
     </div>
   </div>

@@ -17,6 +17,7 @@ class ImportData(Command):
                 service = json.loads(json_file.read().decode(encoding='UTF-8'))
                 service_ = models.Service()
                 service_.name = service['name']
+                service_.description = service['description']
                 service_.slug = service['slug']
                 service_.policies = service['policies']
                 service_.legislation = service['legislation']

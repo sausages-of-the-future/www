@@ -4,6 +4,7 @@ class Service(DynamicDocument):
 
     slug = StringField(required=True)
     name = StringField(required=True)
+    description = StringField()
     service_base_url_config = StringField()
     policies = ListField(StringField())
     legislation = ListField(DictField())

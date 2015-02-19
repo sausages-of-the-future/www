@@ -1,5 +1,6 @@
 {
   "name": "Local alerts",
+  "description": "Alerts for planning applications, licensing and parking suspensions from any local council",
   "minister": "Minister for local government",
   "registers": ["Notices"],
   "slug": "local-alerts",

@@ -1,5 +1,6 @@
 {
   "name": "Organisations",
+  "description": "Start and manage a business, charity or partnership. View open data on any organisation",
   "minister": "Minister for business",
   "registers": ["Licences", "Organisations"],
   "slug": "organisations",

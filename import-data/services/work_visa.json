@@ -1,5 +1,6 @@
 {
   "name": "Work in the UK",
+  "description": "Apply to work in the UK, prove that you are eligible to work in the UK to an employer or landlord.",
   "minister": "Minister for work",
   "registers": ["Visas", "Organisations"],
   "slug": "work-visa",
