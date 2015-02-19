@@ -32,6 +32,7 @@
       <h3>Popular services</h3>
       <dl>
         {% for service in services %}
+          {% if service.name != 'Start an organisation' %}
           <dt>
             <a href="{{url_for('service', service_slug=service.slug)}}">
               {{service.name}}
@@ -40,6 +41,7 @@
           <dd>
             {{service.description}}
           </dd>
+          {% endif %}
         {% endfor %}
       </dl>
 
