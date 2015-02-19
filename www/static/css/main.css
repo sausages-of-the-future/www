@@ -166,7 +166,7 @@ a.register-link, a.register-link:hover {
 }
 
 .header {
-  background:#333333;
+  background:#0B0C0C;
   margin-bottom: 10px;
 }
 
@@ -174,7 +174,7 @@ a.register-link, a.register-link:hover {
 .off-canvas-wrap.service .tab-bar,
 .off-canvas-wrap.service .left-off-canvas-menu,
 .off-canvas-wrap.service .right-off-canvas-menu {
-  background:#333;
+  background:#0B0C0C;
 }
 
 .header.service .top-bar {
@@ -209,6 +209,7 @@ ul.off-canvas-list form .columns {
 .top-bar {
   max-width: 62.5rem;
   margin:0 auto 15px auto;
+  background:#0B0C0C;
 }
 
 @media only screen and (min-width: 64.063em) {
@@ -559,3 +560,21 @@ textarea {
   font-weight: 400;
   color: #777;
 }              
+
+#central-welcome {
+  background:#005EA5;
+  position:relative;
+  top:-15px;
+  color:#fff;
+  padding-top:2rem;
+  padding-bottom:1rem;
+}
+
+#central-welcome h2 {
+    color:#fff;
+    font-size:2rem;
+}
+
+#central-welcome .button {
+  background:#0B0C0C;
+}

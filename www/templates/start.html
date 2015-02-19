@@ -11,24 +11,28 @@
       </h1>
     </nav>
   </div>
-  <div class="row">
+  <div id="central-welcome" class="row">
     <div class="small-12 columns">
-      <div class="panel">
-        <form action="/search" method="get">
-          <div class="row">
-            <div class="large-12 columns">
-              <div class="row collapse">
-                <div class="small-10 columns">
-                  <input type="text" placeholder="Search">
-                </div>
-                <div class="small-2 columns">
-                  <a href="#" class="button postfix">Go</a>
-                </div>
+      <h2>Welcome to GOV.UK</h2>
+      
+      <form action="/search" method="get">
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text" placeholder="Search GOV.UK">
+              </div>
+              <div class="small-2 columns">
+                <a href="#" class="button postfix">Go</a>
               </div>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">  
       <h3>Popular services</h3>
       <dl>
         {% for service in services %}
@@ -42,7 +46,6 @@
           </dd>
         {% endfor %}
       </dl>
-
     </div>
   </div>
 {% endblock %}
