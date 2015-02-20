@@ -6,10 +6,12 @@
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
-      {% if thing.organisation_type %}
-        <span class="round info label right">{{thing.organisation_type.replace('-',' ').upper()}}</span>
-      {% endif %}
       <h2>{{thing.name}}</h2>
+      {% if thing.organisation_type %}
+        <h5>
+          {{thing.organisation_type.replace('-',' ').upper()}}
+        </h5>
+      {% endif %}
       {% if thing.activities %}
         <p>{{thing.activities}}</p>
       {% endif %}
@@ -64,7 +66,6 @@
         {% if thing.register_data %}
           <li>
             Data protection registered
-            <a class="register-link" href="{{ thing.register_data }}"><i class="fa fa-list-alt fa-1"></i> view source</a>
           </li>
         {% endif %}
         {% if thing.register_employer %}
@@ -81,7 +82,10 @@
   <div class="row meta">
     <div class="small-12 columns">
       <div>
-        The data on this page is avalible as <a href="{{request.path}}.json">JSON</a> and <a href="{{request.path}}.xml">XML</a>, <a href="{{request.path}}.csv">a speadsheet (CSV format)</a>.
+        This page uses data from the <a href="{{ thing.uri }}">Organisations register</a>, <a href="{{ thing.register_data }}">Data protection register</a>
+        <br/>
+        <br/>
+        The data on this page is available as <a href="{{request.path}}.json">JSON</a> and <a href="{{request.path}}.xml">XML</a>, <a href="{{request.path}}.csv">a speadsheet (CSV format)</a>.
       </div>
     </div>
   </div>
