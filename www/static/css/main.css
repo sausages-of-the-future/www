@@ -585,3 +585,10 @@ textarea {
 #central-welcome .button {
   background:#0B0C0C;
 }
+
+.service-signout {
+  text-align:center;
+  margin:3rem 15px 0 15px;
+
+
+}

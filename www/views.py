@@ -112,6 +112,14 @@ def policy(service_slug):
 
     return render_template(get_scaffold_or_template(service_slug, 'policy'), service=service)
 
+@app.route("/<service_slug>/blog")
+def blog(service_slug):
+    try:
+        service = models.Service.objects.get(slug=service_slug)
+    except (DoesNotExist, ValidationError):
+        abort(404)
+    return render_template(get_scaffold_or_template(service_slug, 'blog'), service=service)
+
 @app.route("/<service_slug>/complain", methods=['GET', 'POST'])
 def complain(service_slug):
     sent = False
