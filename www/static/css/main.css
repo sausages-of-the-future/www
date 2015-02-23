@@ -371,7 +371,11 @@ ul.side-nav li > a.notbuilt:after {
 div.done {
   text-align:center;
   color:#fff;
-  background: #333;
+  background: #28A197;
+}
+
+.done.pending {
+  background:#6F777B;
 }
 
 div.done h2, div.done p, div.done a {
