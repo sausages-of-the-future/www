@@ -209,3 +209,12 @@ def work_book_appointment():
     except (DoesNotExist, ValidationError):
         abort(404)
     return render_template('work_book_appointment.html', service=service)
+
+@app.route("/local-alerts/done", methods=['POST'])
+def local_alerts_done():
+    try:
+        service = models.Service.objects.get(slug='local-alerts')
+    except (DoesNotExist, ValidationError):
+        abort(404)
+
+    return render_template('local_alerts_done.html', service=service)
