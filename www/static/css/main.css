@@ -352,10 +352,10 @@ ul.side-nav li a {
   padding: 0.875rem 0.875rem!important;
 }
 
-/*ul.side-nav li > a:after {
-  content: "&#10095;";
+ul.side-nav li > a:after {
+  content: "❯";
   float:right;
-}*/
+}
 
 ul.side-nav li > a.notbuilt, ul.side-nav li > a.notbuilt:hover {
   color:#ccc;
@@ -478,7 +478,6 @@ div.done p {
 }
 
 .banner {
-  text-align:center;
   margin:3rem 0;
 }
 

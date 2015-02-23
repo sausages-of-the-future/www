@@ -3,30 +3,56 @@
 {% block content %}
 
   <div class="row">
-    <div class="small-12 columns">  
+    <div class="large-12 columns">
 
       <div class="banner">
-        <h1>Hello.</h1>
+        <h1>Government as a platform</h1>
         <h3 class="subheader">
           This is a prototype of how government as a platform could work
         </h3>
       </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="large-8 columns">
       <h3>Services</h3>
-      <p>Services are focused on user need regardless of institutional boundaries. They are quick to build, change and run.</p>
+      <p>
+        Services are focused on user need, regardless of institutional boundaries, are quick to build and change.
+      </p>
+      <p>
+        They can be run by central and local government, and by 3rd sector and commercial organisations. Because making new services becomes cheap and quick, there is an ecosystem of overlapping services.
+      </p>
+      <p>
+        Small, interconnected services mean it is possible to interact with multiple layers of government and other organisations in a single transaction. Users taking proof across the boundaries of a service using digital-proof.
+      </p>
+      <p>
+        Accountability for services is clear. Services are real-time.
+      </p>
+    </div>
+    <div class="large-4 columns">
+      <h5>Examples</h5>
       <ul class="side-nav">
-        <li><a href="{{url_for('start')}}">Central government</a></li>
-        <li><a href="{{config['LOCALGOV_BASE_URL']}}">City government</a></li>
+        <li><a href="{{url_for('start')}}">Central government services</a></li>
+        <li><a href="{{config['LOCALGOV_BASE_URL']}}">City government services</a></li>
         <li><a class="notbuilt" href="">Devolved government</a></li>
         <li><a class="notbuilt" href="">Non-profit</a></li>
-        <li><a href="{{config['CATTLE_BASE_URL']}}">Commercial</a></li>
+        <li><a href="{{config['CATTLE_BASE_URL']}}">Commercial services</a></li>
      </ul>
-
-     <h3>Data governance &amp; privacy</h3>
-     <p>
-       Services access user's data via a data governance &amp; privacy layer. 
-     </p>
-     <ul class="side-nav">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns">
+      <h3>Trust and consent</h3>
+      <p>
+       Services access user's data via a data trust and consent layer. This layer is vital to maintain data quality and privacy, and to prevent fraud.
+      </p>
+      <p>
+        Because a user has control and oversight over what data is used and for what purpose, it is possible to allow 3rd party organsiaitons to build on the platform.
+      </p>
+    </div>
+    <div class="large-4 columns">
+      <ul class="side-nav">
        <li>
          <a href="{{config['REGISTRY_BASE_URL']}}/services">Service permissions</a>
        </li>
@@ -34,21 +60,38 @@
          <a href="{{config['REGISTRY_BASE_URL']}}/your-data">User permissions</a>
        </li>
      </ul>
-
-     <h3>Registries</h3>
-     <p>
-       Registries are organisations that look after the canonical personal and open data required for the functioning of the country, in the public interest.
-     </p>
-     <ul class="side-nav">
+    </div>
+  </div>
+  <div>
+  <div class="row">
+    <div class="large-8 columns">
+      <h3>Registries and registers</h3>
+       <p>
+         Registries are organisations that look after the canonical personal and open data required for the functioning of the country, in the public interest. These datasets are called <em>registers</em>.
+       </p>
+       <p>
+        Registries and registers are long lived, hard to create, hard to change and hard to abolish.
+       </p>
+    </div>
+    <div class="large-4 columns">
+      <ul class="side-nav">
        <li>
-         <a href="{{config['REGISTRY_BASE_URL']}}/registries">Registries</a>
+         <a href="{{config['REGISTRY_BASE_URL']}}/registries">List of registries</a>
        </li>
-     </ul>
-
-      <h3>Shared platforms</h3>
+       <li>
+         <a href="#" class="notbuilt">Example register</a>
+       </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns">
+      <h3>Common platforms</h3>
       <p>
-        Shared platforms and software make it easy to build services.
+        Shared platforms and software make it easy to build services. 
       </p>
+    </div>
+    <div class="large-4 columns">
       <ul class="side-nav">
         <li>
           <a class="notbuilt" href="">Blogs</a>
@@ -71,10 +114,15 @@
         <li>
           <a class="notbuilt" href="">Search</a>
         </li>
-     </ul>
-
-     <h3>Tools for government</h3>
-     <ul class="side-nav">
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns">
+      <h3>Tools for government</h3>
+    </div>
+    <div class="large-4 columns">
+      <ul class="side-nav">
         <li>
           <a href="{{config.INTERNAL_BASE_URL}}">Dashboards for ministers</a>
         </li>     
@@ -82,7 +130,6 @@
           <a class="notbuilt" href="">Tools for front-line staff</a>
         </li>
       </ul>
-
     </div>
   </div>
 {% endblock %}
