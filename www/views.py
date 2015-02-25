@@ -14,8 +14,12 @@ from flask import (
     session,
     flash,
     abort,
-    current_app
+    current_app,
+    render_template_string
 )
+
+from flask.ext.security import login_required
+from flask.ext.mail import Message
 
 from mongoengine import DoesNotExist, ValidationError
 
@@ -23,8 +27,26 @@ from www import (
     app,
     models,
     forms,
-    locator
+    locator,
+    mail
 )
+
+from .utils import log_traceback
+
+def _generate_token(email):
+    from itsdangerous import TimestampSigner
+    signer = TimestampSigner(app.config['SECRET_KEY'])
+    return signer.sign(email).decode('utf8')
+
+def _check_token(token):
+    from itsdangerous import TimestampSigner, SignatureExpired
+    signer = TimestampSigner(app.config['SECRET_KEY'])
+    try:
+        email = signer.unsign(token, max_age=app.config['TOKEN_MAX_AGE_SECONDS'])
+        return email
+    except SignatureExpired as e:
+        current_app.logger.info('token expired %s' % e)
+        return None
 
 def get_scaffold_or_template(service_slug, template_type):
     template = '%s_%s.html' % (service_slug.replace('-', '_'), template_type)
@@ -216,5 +238,57 @@ def local_alerts_done():
         service = models.Service.objects.get(slug='local-alerts')
     except (DoesNotExist, ValidationError):
         abort(404)
-
     return render_template('local_alerts_done.html', service=service)
+
+@app.route("/bazalgette")
+@login_required
+def bazalgette():
+    applicants = models.InviteApplicant.objects.all()
+    return render_template('invite_applications.html', applicants=applicants)
+
+@app.route("/apply-for-invite", methods=['GET','POST'])
+def apply():
+    form = forms.InviteForm()
+    if form.validate_on_submit():
+        full_name = form.full_name.data
+        email = form.email.data
+        if not models.InviteApplicant.objects.filter(email=email).first():
+            applicant = models.InviteApplicant(full_name=full_name, email=email)
+            applicant.save()
+            token = _generate_token(email)
+            confirmation_url = "%s/confirm/%s" % (app.config['BASE_URL'], token)
+            html = render_template('confirm_mail.html',  full_name=full_name, confirmation_url=confirmation_url)
+
+            msg = Message(html=html,
+                subject="Your application for an idealgov login",
+                sender="noreply@idealnotreal.gov",
+                recipients=[email])
+
+            try:
+                mail.send(msg)
+                flash("Thanks. You'll be getting a confirmation email soon at: %s." % email)
+            except Exception as ex:
+                log_traceback(current_app.logger, ex)
+                applicant.delete()
+                flash("We weren't able to handle your request", 'error')
+        else:
+            flash("We've already had an application from : %s." % email)
+
+        return redirect(url_for('apply'))
+    return render_template('invite.html', form=form)
+
+@app.route("/confirm/<token>")
+def confirm(token):
+    email = _check_token(token).decode('utf8')
+    if email:
+        current_app.logger.info('email is %s' % email)
+        message = "Email: %s confirmed." % email
+        success=True
+        user = models.InviteApplicant.objects.filter(email=email).first()
+        user.email_confirmed = True
+        user.save()
+    else:
+        current_app.logger.info('token has expired.')
+        message = "Token %s has expired." % token
+        success=False
+    return render_template('confirmed.html', message=message, success=success)

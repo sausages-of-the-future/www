@@ -1,6 +1,6 @@
 from flask.ext.script import Manager, Command, prompt_bool, prompt, prompt_pass, prompt_choices
 from mongoengine import connect
-from www import app, models
+from www import app, models, user_datastore
 import json
 import glob
 import os
@@ -33,9 +33,27 @@ class ImportData(Command):
 
                 print("Saved %s" % service_.name)
 
+
+
+class CreateUser(Command):
+    """
+    Creates an admin user of www app. Primarily for processing user account applications
+    """
+    def run(self):
+        from flask_security.utils import encrypt_password
+        email = prompt('email')
+        password = prompt_pass('password')
+        if not models.User.objects.filter(email=email).first():
+            user = user_datastore.create_user(email=email, password=encrypt_password(password))
+            admin_role = user_datastore.find_or_create_role('ADMIN')
+            user_datastore.add_role_to_user(user, admin_role)
+        else:
+            print("User with email:", email, "already exists")
+
 #register commands
 manager = Manager(app)
 manager.add_command('import-data', ImportData())
+manager.add_command('create-user', CreateUser())
 
 if __name__ == "__main__":
     manager.run()

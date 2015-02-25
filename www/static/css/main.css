@@ -34,7 +34,7 @@ dl dd {
 }
 
 .top-bar #header_crown {
-  height: 27px; 
+  height: 27px;
   margin-top: -10px;
   margin-right: 7px;
   margin-left:4px;
@@ -170,7 +170,7 @@ a.register-link, a.register-link:hover {
   margin-bottom: 10px;
 }
 
-.header.service, .header.service .top-bar, 
+.header.service, .header.service .top-bar,
 .off-canvas-wrap.service .tab-bar,
 .off-canvas-wrap.service .left-off-canvas-menu,
 .off-canvas-wrap.service .right-off-canvas-menu {
@@ -192,7 +192,7 @@ ul.off-canvas-list .round.alert.label {
   font-weight:bold;
 }
 
-ul.off-canvas-list .fa { 
+ul.off-canvas-list .fa {
     margin-right:14px;
     font-weight:bold;
 }
@@ -569,7 +569,7 @@ textarea {
   font-size: 14px;
   font-weight: 400;
   color: #777;
-}              
+}
 
 #central-welcome {
   background:#005EA5;
@@ -592,6 +592,14 @@ textarea {
 .service-signout {
   text-align:center;
   margin:3rem 15px 0 15px;
+}
 
+#admin-header {
+  background: #9ACD32;
+  padding: 10px;
+  font-size:1.2rem;
+}
 
+.messages {
+  margin-top: 5px;
 }

@@ -1,6 +1,13 @@
 import json
-from wtforms import Form, TextField, TextAreaField, validators
+from flask.ext.wtf import Form
+from wtforms.fields import TextField, TextAreaField
+from wtforms.validators import Required, Email
+
 
 class ComplaintForm(Form):
-    email = TextField('Your email address', validators=[validators.required('Enter an email address'), validators.Email('Enter a valid email')])
-    message = TextAreaField('Feedback', validators=[validators.required('Enter a message')])
+    email = TextField('Email', validators=[Required(), Email()])
+    message = TextAreaField('Feedback', validators=[Required()])
+
+class InviteForm(Form):
+    full_name = TextField('Full name', validators=[Required()])
+    email = TextField('Email', validators=[Required(), Email()])

@@ -12,4 +12,17 @@ cors = CORS(app, resources={r"/static/*": {"origins": "*"}})
 from messenger import Locator
 locator = Locator(app)
 
+from flask.ext.mail import Mail
+mail = Mail()
+mail.init_app(app)
+
+from flask.ext.security import (
+    Security,
+    MongoEngineUserDatastore
+)
+
+from .models import User, Role
+user_datastore = MongoEngineUserDatastore(db, User, Role)
+security = Security(app, user_datastore)
+
 from www import views

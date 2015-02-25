@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Email confirmation{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="large-11 large-offset-1 columns">
+      <div class="banner">
+        <h1>Email confirmation</h1>
+        <p>{{message}}</p>
+        {% if success == True %}
+          <p>We'll be in touch when we have spaces.</a>
+        {% else %}
+          <p><a href="{{url_for('apply')}}">Apply again</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

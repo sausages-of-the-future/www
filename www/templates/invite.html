@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Invite application{% endblock %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+  <div class="row">
+    <div class="large-11 large-offset-1 columns">
+      <div class="banner">
+        <h1>Request a user account</h1>
+      </div>
+       <form action="{{url_for('apply')}}" method="post">
+        {{ render_field(form.full_name, placeholder="Enter your full name") }}
+        {{ render_field(form.email, placeholder="Enter a valid email address") }}
+        {{ form.csrf_token }}
+        <button type="submit" class="button">Yes please!</button>
+       </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}This is where the plumbing lives{% endblock %}
+{% block content %}
+  <div id="admin-header" class="clearfix">
+    <a class="right" href="/logout">Logout</a>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="banner">
+        <h1>This is where the plumbing lives</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 columns">
+      <h3>Applications for user accounts</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns">
+      <table>
+        <thead>
+          <tr>
+            <th>Full name</th>
+            <th>Email</th>
+            <th>Email confirmed</th>
+            <th>Invited</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for applicant in applicants %}
+            <tr>
+            <td>{{applicant.full_name}}</td>
+            <td>{{applicant.email}}</td>
+            <td>{{applicant.email_confirmed}}</td>
+            <td>{{applicant.invited}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}
