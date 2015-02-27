@@ -36,5 +36,6 @@ class InviteApplicant(db.Document):
     email = db.StringField(max_length=255)
     email_confirmed = db.BooleanField(default=False)
     invited = db.BooleanField(default=False)
+    password_set = db.BooleanField(default=False)
 
 

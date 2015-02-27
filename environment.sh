@@ -16,4 +16,6 @@ export REDISCLOUD_URL="redis://user:@127.0.0.1:6379"
 export CATTLE_BASE_URL="http://cattle.gov.local"
 export WORK_BASE_URL="http://work.gov.local"
 export INTERNAL_BASE_URL="http://internal.gov.local"
-export TOKEN_MAX_AGE_SECONDS=3600
+export TOKEN_MAX_AGE_SECONDS=86400
+export WWW_CLIENT_ID='local-dev-not-secret'
+export WWW_CLIENT_KEY='local-dev-not-secret'

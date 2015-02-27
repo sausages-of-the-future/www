@@ -24,6 +24,9 @@ class Config(object):
     MAIL_PASSWORD = os.environ['MAILGUN_SMTP_PASSWORD']
     DEFAULT_MAIL_SENDER = ''
     TOKEN_MAX_AGE_SECONDS = int(os.environ['TOKEN_MAX_AGE_SECONDS'])
+    WWW_CLIENT_ID = os.environ['WWW_CLIENT_ID']
+    WWW_CLIENT_KEY = os.environ['WWW_CLIENT_KEY']
+
 
 
 class DevelopmentConfig(Config):

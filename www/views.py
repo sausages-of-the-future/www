@@ -4,6 +4,10 @@ import json
 import random
 from datetime import datetime, timedelta
 import dateutil.parser
+import time
+
+import hashlib
+from itsdangerous import TimestampSigner
 
 from flask import (
     Flask,
@@ -240,9 +244,9 @@ def local_alerts_done():
         abort(404)
     return render_template('local_alerts_done.html', service=service)
 
-@app.route("/bazalgette")
+@app.route("/the-hatch")
 @login_required
-def bazalgette():
+def the_hatch():
     applicants = models.InviteApplicant.objects.all()
     return render_template('invite_applications.html', applicants=applicants)
 
@@ -256,8 +260,8 @@ def apply():
             applicant = models.InviteApplicant(full_name=full_name, email=email)
             applicant.save()
             token = _generate_token(email)
-            confirmation_url = "%s/confirm/%s" % (app.config['BASE_URL'], token)
-            html = render_template('confirm_mail.html',  full_name=full_name, confirmation_url=confirmation_url)
+            confirmation_url = "%s/confirm-email/%s" % (app.config['BASE_URL'], token)
+            html = render_template('confirm_email.html',  full_name=full_name, confirmation_url=confirmation_url)
 
             msg = Message(html=html,
                 subject="Your application for an idealgov login",
@@ -277,8 +281,51 @@ def apply():
         return redirect(url_for('apply'))
     return render_template('invite.html', form=form)
 
-@app.route("/confirm/<token>")
-def confirm(token):
+
+@app.route("/invite-user")
+@login_required
+def invite_user():
+    email = request.args.get('email')
+    full_name = request.args.get('full_name')
+    if not (email or full_name):
+        current_app.logger.info('must provide email and full name')
+        return 400, 'Bad Request'
+
+    www_id = app.config['WWW_CLIENT_ID']
+    www_key = app.config['WWW_CLIENT_KEY']
+    to_sign = '%s:%s:%s' % (www_id, email, full_name)
+    signer = TimestampSigner(www_key, digest_method=hashlib.sha256)
+    signed = signer.sign(to_sign)
+    headers = { 'Authorisation': signed }
+    url = '%s/register-user' % app.config['REGISTRY_BASE_URL']
+    resp = requests.post(url, data={'email':email, 'full_name': full_name}, headers=headers)
+
+    if resp.status_code == 201:
+        user = models.InviteApplicant.objects.filter(email=email).first()
+        user.invited = True
+        user.save()
+        token = _generate_token(email)
+        confirmation_url = "%s/confirm-account/%s" % (app.config['BASE_URL'], token)
+        html = render_template('confirm_account.html',  full_name=full_name, confirmation_url=confirmation_url)
+
+        msg = Message(html=html,
+                subject="Your idealgov account",
+                sender="noreply@idealnotreal.gov",
+                recipients=[email])
+        try:
+            mail.send(msg)
+            flash("User account created. Invite sent to: %s." % email)
+        except Exception as ex:
+            log_traceback(current_app.logger, ex)
+            flash("Failed to send invite to: %s" % email, 'error')
+    else:
+        flash('Error creating account', 'error')
+
+    return redirect(url_for('the_hatch'))
+
+
+@app.route("/confirm-email/<token>")
+def confirm_email(token):
     email = _check_token(token).decode('utf8')
     if email:
         current_app.logger.info('email is %s' % email)
@@ -292,3 +339,37 @@ def confirm(token):
         message = "Token %s has expired." % token
         success=False
     return render_template('confirmed.html', message=message, success=success)
+
+
+@app.route("/confirm-account/<token>", methods=['GET','POST'])
+def confirm_account(token):
+    email = _check_token(token).decode('utf8')
+    form = forms.SetPasswordForm()
+    user = models.InviteApplicant.objects.filter(email=email).first()
+    if not email:
+        current_app.logger.info('token has expired.')
+        flash('Link has expired', 'error')
+    else:
+        if user.password_set:
+            flash('Account already confirmed and password set')
+            return render_template('set_account_password.html', form=form, token=token, user=user)
+
+    if form.validate_on_submit():
+        password = form.password.data
+        www_id = app.config['WWW_CLIENT_ID']
+        www_key = app.config['WWW_CLIENT_KEY']
+        to_sign = '%s:%s:%s' % (www_id, email, password)
+        signer = TimestampSigner(www_key, digest_method=hashlib.sha256)
+        signed = signer.sign(to_sign)
+        headers = { 'Authorisation': signed }
+        url = '%s/update-user-password' % app.config['REGISTRY_BASE_URL']
+        resp = requests.post(url, data={'email': email}, headers=headers)
+        if resp.status_code == 200:
+            user = models.InviteApplicant.objects.filter(email=email).first()
+            user.password_set = True
+            user.save()
+            flash('Set new password in registry')
+        else:
+            flash('Failed to set new password in registry', 'error')
+
+    return render_template('set_account_password.html', form=form, token=token, user=user)

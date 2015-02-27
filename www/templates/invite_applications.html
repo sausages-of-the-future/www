@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block title %}This is where the plumbing lives{% endblock %}
-{% block content %}
-  <div id="admin-header" class="clearfix">
+{% block head %}
+<div id="admin-header" class="clearfix">
     <a class="right" href="/logout">Logout</a>
   </div>
-
+{% endblock %}
+{% block content %}
   <div class="row">
     <div class="large-12 columns">
       <div class="banner">
@@ -32,15 +33,18 @@
         <tbody>
             {% for applicant in applicants %}
             <tr>
-            <td>{{applicant.full_name}}</td>
-            <td>{{applicant.email}}</td>
-            <td>{{applicant.email_confirmed}}</td>
-            <td>{{applicant.invited}}</td>
+              <td>{{applicant.full_name}}</td>
+              <td>{{applicant.email}}</td>
+              <td>{{applicant.email_confirmed }}</td>
+              <td>{% if not applicant.invited and applicant.email_confirmed %}<a href="{{url_for('invite_user', full_name=applicant.full_name, email=applicant.email)}}">invite user</a>{% elif applicant.invited %}
+                Applicant invited
+                {% elif not applicant.email_confirmed %}
+                Email not confirmed
+                {% endif%}</td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
-
 {% endblock %}
