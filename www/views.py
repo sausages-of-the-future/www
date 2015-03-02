@@ -270,7 +270,9 @@ def apply():
 
             try:
                 mail.send(msg)
-                flash("Thanks. You'll be getting a confirmation email soon at: %s." % email)
+                message  = "Thanks. You'll be getting a confirmation email soon at: %s." % email
+                flash(message)
+                return render_template('done.html', message=message)
             except Exception as ex:
                 log_traceback(current_app.logger, ex)
                 applicant.delete()
@@ -352,7 +354,7 @@ def confirm_account(token):
     else:
         if user.password_set:
             flash('Account already confirmed and password set')
-            return render_template('set_account_password.html', form=form, token=token, user=user)
+            return render_template('done.html', message='Account already confirmed and password set')
 
     if form.validate_on_submit():
         password = form.password.data
@@ -368,7 +370,8 @@ def confirm_account(token):
             user = models.InviteApplicant.objects.filter(email=email).first()
             user.password_set = True
             user.save()
-            flash('Set new password in registry')
+            flash('Your password has been updated')
+            return render_template('done.html', message='Your password has been updated')
         else:
             flash('Failed to set new password in registry', 'error')
 
