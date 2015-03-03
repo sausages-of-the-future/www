@@ -35,7 +35,7 @@ from www import (
     mail
 )
 
-from .utils import log_traceback, to_xml
+from .utils import log_traceback, to_xml, to_csv
 
 def _generate_token(email):
     from itsdangerous import TimestampSigner
@@ -189,6 +189,8 @@ def thing(service_slug, things_slug, thing_slug, format="html"):
         return json.dumps(thing), 200, {'Content-Type': 'application/json; charset=utf-8'}
     elif format == "xml":
         return to_xml(thing), 200, {'Content-Type': 'application/xml; charset=utf-8'}
+    elif format == "csv":
+        return to_csv(thing), 200, {'Content-Type': 'text/csv; charset=utf-8'}
     else:
        abort(404)
 

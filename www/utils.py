@@ -23,3 +23,20 @@ def to_xml(thing):
     from xml.etree.ElementTree import tostring
     element = dict_to_xml('organisation', thing)
     return tostring(element, 'utf-8')
+
+def to_csv(thing):
+    import csv, io
+    fieldnames = list(thing.keys())
+    row = thing.values()
+    stream = io.StringIO()
+    writer = csv.DictWriter(
+            stream,
+            fieldnames=fieldnames,
+            delimiter=',',
+            lineterminator='\r\n',
+            quotechar='"',
+            quoting=csv.QUOTE_ALL)
+    writer.writeheader()
+    writer.writerow(thing)
+    text = stream.getvalue().lstrip()
+    return text
