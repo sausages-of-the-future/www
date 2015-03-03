@@ -35,7 +35,7 @@ from www import (
     mail
 )
 
-from .utils import log_traceback
+from .utils import log_traceback, to_xml
 
 def _generate_token(email):
     from itsdangerous import TimestampSigner
@@ -186,7 +186,9 @@ def thing(service_slug, things_slug, thing_slug, format="html"):
     if format == "html":
         return render_template(get_scaffold_or_template(service_slug, 'thing'), service=service, service_base_url=service_base_url, thing=thing, thing_slug=thing_slug)
     elif format == "json":
-        return json.dumps(thing)
+        return json.dumps(thing), 200, {'Content-Type': 'application/json; charset=utf-8'}
+    elif format == "xml":
+        return to_xml(thing), 200, {'Content-Type': 'application/xml; charset=utf-8'}
     else:
        abort(404)
 
