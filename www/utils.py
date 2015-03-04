@@ -18,9 +18,9 @@ def dict_to_xml(tag, thing):
 
 
 def to_xml(thing):
-    import io, sys
+    from io import BytesIO
     from xml.etree.ElementTree import ElementTree
-    stream = io.BytesIO()
+    stream = BytesIO()
     element = dict_to_xml('organisation', thing)
     ElementTree(element).write(stream, encoding='utf-8', xml_declaration=True)
     return stream.getvalue().lstrip()
