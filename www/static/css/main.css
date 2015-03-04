@@ -453,6 +453,7 @@ div.done p {
   background-color:#ededed;
   clear: both;
   margin-bottom: 15px;
+  margin-top:0;
 }
 
 .panel.ticket h2 {
@@ -473,7 +474,7 @@ div.done p {
 }
 
 .panel.ticket h3 {
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .panel.ticket .ticket-footer {
@@ -484,6 +485,22 @@ div.done p {
 
 .panel.ticket p.validity {
   margin-bottom:7px;
+}
+
+.panel.ticket dl {
+  font-size:0.975rem;
+}
+
+.panel.ticket dl dd {
+  margin-bottom:10px;
+  font-size:0.975rem;
+  text-align: left;
+}
+
+.panel.ticket dl dt {
+  float:left;
+  width:6rem;
+  text-align: left;
 }
 
 .panel.ticket span.reference-number {
