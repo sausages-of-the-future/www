@@ -8,6 +8,7 @@ body, h1, h2,h3, h4, h5 .button, table, label {
   font-family: 'nta', Arial, Helvetica;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-weight:bold;
 }
@@ -82,6 +83,10 @@ a.register-link, a.register-link:hover {
   font-size: 1.35rem;
   padding-bottom: 0.5rem;
   padding-top: 0.75rem;
+}
+
+.button.postfix {
+  margin-top:0;
 }
 
 .button:hover, .button:focus {
@@ -602,6 +607,7 @@ textarea {
   font-weight: 500;
   margin-bottom: 0;
 }
+
 .person p:nth-child(3) {
   font-size: 14px;
   font-weight: 400;
@@ -617,6 +623,10 @@ textarea {
   padding-bottom:1rem;
 }
 
+#central-welcome form {
+  margin-bottom:20px;
+}
+
 #central-welcome h2 {
     color:#fff;
     font-size:2rem;
@@ -624,6 +634,7 @@ textarea {
 
 #central-welcome .button {
   background:#0B0C0C;
+  margin-top:0;
 }
 
 .service-signout {
