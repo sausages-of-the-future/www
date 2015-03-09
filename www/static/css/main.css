@@ -107,30 +107,22 @@ a.register-link, a.register-link:hover {
   padding-top: 2px;
 }
 
-.panel.unconfirmed {
-  background:#fafafa;
-  color:#808080;
-  opacity:0.8;
-}
-
 .switch input:checked + label {
   background: url("../images/tick-icon.png") no-repeat scroll 7px 5px #468B30;
   background-size: 30px 30px;
 }
 
-  .switch {
-    float:left;
-    width:80px;
-    margin-right:10px;
-  }
-  .switch-label {
-    font-weight:bold;
-    font-size:1.3rem;
-    position:relative;
-    top:5px;
-  }
-
-
+.switch {
+  float:left;
+  width:80px;
+  margin-right:10px;
+}
+.switch-label {
+  font-weight:bold;
+  font-size:1.3rem;
+  position:relative;
+  top:5px;
+}
 
 .label.expand {
   width:100%;
@@ -535,6 +527,22 @@ div.done p {
   color:#fff;
   padding:15px 8px 5px 8px;
   color:#333;
+}
+
+.panel.confirmation {
+  background: #ededed url(../images/crest-bookmark-green.png) no-repeat right 15px top;
+  background-size: 80px;
+}
+
+.panel.confirmation dt, .panel.confirmation dd {
+  
+}
+
+.panel.confirmation.unconfirmed {
+  background: #ededed url(../images/crest-bookmark-grey.png) no-repeat right 15px top;
+  background-size: 80px;
+  color:#808080;
+  opacity:0.8;
 }
 
 ul.save-print {
