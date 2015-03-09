@@ -131,6 +131,7 @@ a.register-link, a.register-link:hover {
 
 .hint {
   border-bottom:solid 1px #ccc;
+  font-size:0.95rem;
   padding:0 0 1rem 0;
 }
 
@@ -360,7 +361,7 @@ form ul.radio li input {
 
 form ul.radio li input[type="radio"] {
   vertical-align: top;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
 }
 
 ul.verified-facts span {
@@ -704,4 +705,11 @@ textarea {
 
 .alert-box {
   margin-bottom: 0;
+}
+
+
+.undo {
+  border: double #0078A0 1px;
+  padding:1px 5px;
+  display: inline-block;
 }

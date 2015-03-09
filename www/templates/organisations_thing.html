@@ -9,7 +9,7 @@
       <h2>{{thing.name}}</h2>
       {% if thing.organisation_type %}
         <h5>
-          {{thing.organisation_type.replace('-',' ').upper()}}
+          {{thing.organisation_type.replace('-',' ').title()}}
         </h5>
       {% endif %}
       {% if thing.activities %}
@@ -17,11 +17,10 @@
       {% endif %}
       <hr/>
       <h3>Directors and officers</h3>
-      <ul class="small-block-grid-{{thing.directors|length}}">
+      <ul>
         {% for director in thing.directors %}
           <li>
-            <h4>{{director}}</h4>
-            <p>Director</p>
+            {{ director }} &mdash; Director
           </li>
         {% endfor %}
       </ul>
