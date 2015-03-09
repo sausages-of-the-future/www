@@ -1,8 +1,8 @@
 {
-  "name": "Organisations",
-  "description": "Start and manage a business, charity or partnership. View open data on any organisation",
+  "name": "Companies",
+  "description": "Start and manage a business or partnership. View open data on any organisation",
   "minister": "Minister for business",
-  "registers": ["Licences", "Organisations"],
+  "registers": ["Licences", "Organisations", "Data Protection", "Employers"],
   "slug": "organisations",
   "service_base_url_config": "ORGANISATIONS_BASE_URL",
   "policies": [],
