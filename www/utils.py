@@ -18,11 +18,13 @@ def dict_to_xml(tag, thing):
 
 
 def to_xml(thing):
-    # TODO - crazily the tostring method can't be make to include xml
-    # declaration. find another way
-    from xml.etree.ElementTree import tostring
+    from io import BytesIO
+    from xml.etree.ElementTree import ElementTree
+    stream = BytesIO()
     element = dict_to_xml('organisation', thing)
-    return tostring(element, 'utf-8')
+    ElementTree(element).write(stream, encoding='utf-8', xml_declaration=True)
+    return stream.getvalue().lstrip()
+
 
 def to_csv(thing):
     import csv, io

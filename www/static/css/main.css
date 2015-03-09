@@ -8,6 +8,7 @@ body, h1, h2,h3, h4, h5 .button, table, label {
   font-family: 'nta', Arial, Helvetica;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-weight:bold;
 }
@@ -82,6 +83,10 @@ a.register-link, a.register-link:hover {
   font-size: 1.35rem;
   padding-bottom: 0.5rem;
   padding-top: 0.75rem;
+}
+
+.button.postfix {
+  margin-top:0;
 }
 
 .button:hover, .button:focus {
@@ -448,6 +453,7 @@ div.done p {
   background-color:#ededed;
   clear: both;
   margin-bottom: 15px;
+  margin-top:0;
 }
 
 .panel.ticket h2 {
@@ -468,7 +474,7 @@ div.done p {
 }
 
 .panel.ticket h3 {
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .panel.ticket .ticket-footer {
@@ -479,6 +485,22 @@ div.done p {
 
 .panel.ticket p.validity {
   margin-bottom:7px;
+}
+
+.panel.ticket dl {
+  font-size:0.975rem;
+}
+
+.panel.ticket dl dd {
+  margin-bottom:10px;
+  font-size:0.975rem;
+  text-align: left;
+}
+
+.panel.ticket dl dt {
+  float:left;
+  width:6rem;
+  text-align: left;
 }
 
 .panel.ticket span.reference-number {
@@ -602,6 +624,7 @@ textarea {
   font-weight: 500;
   margin-bottom: 0;
 }
+
 .person p:nth-child(3) {
   font-size: 14px;
   font-weight: 400;
@@ -617,6 +640,10 @@ textarea {
   padding-bottom:1rem;
 }
 
+#central-welcome form {
+  margin-bottom:20px;
+}
+
 #central-welcome h2 {
     color:#fff;
     font-size:2rem;
@@ -624,6 +651,7 @@ textarea {
 
 #central-welcome .button {
   background:#0B0C0C;
+  margin-top:0;
 }
 
 .service-signout {

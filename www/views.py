@@ -92,6 +92,14 @@ def index():
     locator.send_message({ "active": "www" })
     return render_template('index.html')
 
+@app.route("/greenpaper")
+def greenpaper():
+    return render_template('greenpaper.html')
+
+@app.route("/background-and-findings")
+def background_and_findings():
+    return render_template('background_and_findings.html')
+
 @app.route("/start")
 def start():
     services = models.Service.objects.all()

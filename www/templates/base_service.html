@@ -33,19 +33,21 @@
         <p>
           The <a href="#">{{service.minister}}</a> is responsible for this service and it uses data from
           {% for register in service.registers %}
-            <a href="#">
               {% if loop.last and not loop.first %}
-                and 
+                and
+              {% else %} 
+               ,
               {% endif %}
-              {{register|lower}}
-            </a>
-            {% if loop.last %}
-              {% if service.registers|length > 1 %}
-                registers.
-              {% else %}
-                register.
-              {% endif %}
-            {% endif %}
+              <a href="#">
+                {{register|lower}}
+                {% if loop.last %}
+                  {% if service.registers|length > 1 %}
+                    registers.
+                  {% else %}
+                    register.
+                  {% endif %}
+                {% endif %}
+              </a>
           {% endfor %}
         </p>
         <ul class="off-canvas-list">
