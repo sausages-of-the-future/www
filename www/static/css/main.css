@@ -216,6 +216,10 @@ ul.off-canvas-list label {
   font-size:0.875rem;
 }
 
+ul.off-canvas-list form {
+  margin-bottom:0;
+}
+
 ul.off-canvas-list .round.alert.label {
   position:relative;
   top:-3px;
