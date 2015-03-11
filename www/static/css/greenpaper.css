@@ -156,7 +156,7 @@ ul.learnings {
   padding:0;
   border-bottom:0;
   margin-bottom:60px;
-  text-decoration: none; 
+  text-decoration: none;
   font-size: 19px;
   margin-left: 0;
 }
@@ -269,33 +269,33 @@ ul.learnings li > a:after {
   padding: 10px 0;
 }
 
-.ecosystem {
+#ecosystem {
   margin-top: 75px;
   padding: 30px;
   color: #FFFFFF;
-  background: rgba(0, 94, 165, 0.85) url(/static/images/greenpaper/ecosystem.png) top left no-repeat;
+  background: rgba(0, 94, 165, 0.85) url(/static/images/greenpaper/ecosystem.png) no-repeat;
   background-size: contain;
-  height: 650px;
-
+  height: 600px;
 }
 
-.ecosystem h2 {
+#ecosystem h2 {
  font-size: 1.9rem;
 }
 
-.ecosystem h3 {
+#ecosystem h3 {
  font-size: 1.3rem;
 }
 
-.ecosystem h2, h3 {
+#ecosystem h2, h3 {
   color: inherit;
   margin-top: 2.5rem;
 }
-.ecosystem ul {
+
+#ecosystem ul {
   list-style: none;
 }
 
-.ecosystem li>span {
+#ecosystem li>span {
   font-size: 1.6rem;
   margin-right: 0.4rem;
 }
@@ -314,5 +314,63 @@ span.green {
 
 span.pink {
   color: #DF62A4;
+}
+
+#infrastructure {
+  margin-top: 50px;
+  color: #FFFFFF;
+  background: url(/static/images/greenpaper/four-levels-zoom-a.png) no-repeat;
+  background-size: contain;
+  height: 600px;
+}
+
+#infrastructure h2 {
+  margin-left: 2.1rem;
+  font-size: 1.5rem;
+}
+
+#infrastructure-summary {
+  margin-top: 2.3rem;
+  text-align: center;
+}
+
+#infrastructure-summary img {
+    width: 100px;
+}
+
+#fishing-service {
+  background-color: #ECEDED;
+  padding: 30px;
+}
+
+#fishing-service-image {
+  height: 100%;
+  background: url(/static/images/greenpaper/fishing-service.png) no-repeat;
+  background-size: contain;
+}
+
+
+@media only screen and (max-width: 40em) {
+
+  #ecosystem {
+    padding: 0px;
+    height: 450px;
+  }
+
+  #infrastructure {
+    padding: 0px;
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    #ecosystem h3 {
+      margin-top: 8.5rem;
+    }
+
+    #infrastructure {
+      padding: 0px;
+      height: 450px;
+    }
 }
 

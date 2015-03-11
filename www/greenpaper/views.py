@@ -11,11 +11,11 @@ def greenpaper():
 
 @paper.route("/background-and-findings")
 def background_and_findings():
-    return render_template('background_and_findings.html')
+    return render_template('background-and-findings.html')
 
-@paper.route("/the-concept")
-def the_concept():
-    return render_template('the-concept.html')
+@paper.route("/concept")
+def concept():
+    return render_template('concept.html')
 
 @paper.route("/registers")
 def registers():

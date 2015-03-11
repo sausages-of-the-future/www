@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}The Concept{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
+{% endblock %}
+{% block content %}
+  <div class="row">
+      <div class="small-12 large-12 columns">
+        <header id="global-header">
+              <div class="header-wrapper">
+                  <div class="text-header">The Concept</div>
+                  <div class="text-sub-header">An ecosystem of services built on a common digital civic infrastructure</div>
+                </div>
+        </header>
+      </div>
+    </div>
+    <div id="ecosystem" class="row">
+        <div class="small-12 large-3 columns">
+            <h2>The ecosystem of services</h2>
+            <p>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
+        </div>
+
+        <div class="small-12 large-4 columns">
+           <h3>Service types</h3>
+           <ul>
+                <li><span class="light-blue">&#9632;</span> Central government</li>
+                <li><span class="orange">&#9632;</span> Devolved government</li>
+                <li><span class="green">&#9632;</span> Local government</li>
+                <li><span class="pink">&#9632;</span> Commercial</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="infrastructure" class="row">
+      <div class="small-6 large-3 columns">
+          <h2>The infrastructure looks something like this</h2>
+      </div>
+    </div>
+
+    <div id="infrastructure-summary" class="row">
+        <div class="small-12 large-3 columns">
+            <img src="/static/images/greenpaper/service-icon.png">
+            <h4>Services</h4>
+            <p>Far simpler, more focused &amp; diverse, dynamic, overlapping. Public services run by private/public/3rd sector. Commercial services also supported by this digital civic infrastructure.</p>
+        </div>
+        <div class="small-12 large-3 columns">
+            <img src="/static/images/greenpaper/platform-icon.png">
+            <h4>Common Platforms</h4>
+            <p>Payment, publishing,identity assurance, geospatial, addresses, mapping, notification, secure messaging etc.Centrally hosted or SaaS or open source.</p>
+        </div>
+        <div class="small-12 large-3 columns">
+            <img src="/static/images/greenpaper/trust-consent-icon.png">
+            <h4>Trust &amp; Consent</h4>
+            <p>Independent scrutiny so data (open &amp; private) is managed to maintain users’ trust. Responsible for data quality, security, informed consent.</p>
+        </div>
+        <div class="small-12 large-3 columns">
+            <img src="/static/images/greenpaper/register-icon.png">
+            <h4>Registers</h4>
+            <p>Foundations of a digital state. Canonical data, managed by Registrars who serve users of all services – public &amp;  private.</p>
+        </div>
+    </div>
+
+    <div id="fishing-service" class="row">
+      <div class="small-12 large-4 columns">
+         <h2>A single service view of fishing</h2>
+        <p>Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa</p>
+      </div>
+      <div id="fishing-service-image" class="small-12 large-6 columns">
+      </div>
+    </div>
+
+
+{% endblock %}
