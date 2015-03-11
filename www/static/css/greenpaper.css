@@ -3,38 +3,38 @@
 }
 
 body {
-font: helvetica neue, arial;
-background-color: none;
-color: #0b0c0c;
-line-height: 1.5;
-font-weight: 400;
-margin: 0;
+  font: helvetica neue, arial;
+  background-color: none;
+  color: #0b0c0c;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
 
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
 #global-header {
-background-color: none;
-width: 100%;
-font-family: Helvetica neue;
-font-style: none;
-font-weight: 400;
-font-size: 27px;
-color: white;
-min-height: 50px;
+  background-color: none;
+  width: 100%;
+  font-family: Helvetica neue;
+  font-style: none;
+  font-weight: 400;
+  font-size: 27px;
+  color: white;
+  min-height: 50px;
 }
 
 #global-header .header-wrapper {
-padding-left: 15px;
-padding-right: 15px;
-min-height: 50px;
-background-color: none;
-max-width: 1720px;
-margin: 0 auto;
-padding-top: 10px;
-padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 50px;
+  background-color: none;
+  max-width: 1720px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -59,11 +59,12 @@ padding-bottom: 10px;
 }
 
 .row {
-max-width: 100%!important;
+  max-width: 100%!important;
 }
+
 .row-video {
-max-width: 100%!important;
-background-color: #eeeeee;
+  max-width: 100%!important;
+  background-color: #eeeeee;
 }
 
 .video-holder {
@@ -73,7 +74,6 @@ background-color: #eeeeee;
     padding-bottom: 30px;
     /*padding-bottom: 15px;*/
     background-color: #eeeeee;
-
 }
 
 .findings-column {
@@ -94,14 +94,14 @@ background-color: #eeeeee;
     /*url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/owl1.jpg);*/
 }
 .findings-column:hover {
-background:
-    linear-gradient(
-      rgba(0, 94, 165, 0.95),
-      rgba(0, 94, 165, 0.95)
-    ),
+  background:
+      linear-gradient(
+        rgba(0, 94, 165, 0.95),
+        rgba(0, 94, 165, 0.95)
+      ),
 
-    url(/static/images/findings.jpg) no-repeat;
-    background-size: cover;
+      url(/static/images/findings.jpg) no-repeat;
+      background-size: cover;
 
     /*url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/owl1.jpg);*/
 }
@@ -238,35 +238,81 @@ ul.learnings li > a:after {
 }
 
 .findings-column h1 {
-font-size: 27px;
-line-height: 30px;
-color: white;
-font-weight: 700;
-margin-top: 15px;
+  font-size: 27px;
+  line-height: 30px;
+  color: white;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 .concept-column h1 {
-font-size: 27px;
-line-height: 30px;
-color: white;
-font-weight: 700;
-margin-top: 15px;
+  font-size: 27px;
+  line-height: 30px;
+  color: white;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 .demo-column h1 {
-font-size: 27px;
-line-height: 30px;
-color: white;
-font-weight: 700;
-margin-top: 15px;
+  font-size: 27px;
+  line-height: 30px;
+  color: white;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 .area-summary {
-font-size: 19px;
-line-height: 25px;
-color: white;
-font-weight: 400;
-padding: 10px 0;
+  font-size: 19px;
+  line-height: 25px;
+  color: white;
+  font-weight: 400;
+  padding: 10px 0;
 }
 
+.ecosystem {
+  margin-top: 75px;
+  padding: 30px;
+  color: #FFFFFF;
+  background: rgba(0, 94, 165, 0.85) url(/static/images/greenpaper/ecosystem.png) top left no-repeat;
+  background-size: contain;
+  height: 650px;
+
+}
+
+.ecosystem h2 {
+ font-size: 1.9rem;
+}
+
+.ecosystem h3 {
+ font-size: 1.3rem;
+}
+
+.ecosystem h2, h3 {
+  color: inherit;
+  margin-top: 2.5rem;
+}
+.ecosystem ul {
+  list-style: none;
+}
+
+.ecosystem li>span {
+  font-size: 1.6rem;
+  margin-right: 0.4rem;
+}
+
+span.light-blue {
+  color: #26A9E0;
+}
+
+span.orange {
+  color: #F9A51A;
+}
+
+span.green {
+  color: #8BC53F;
+}
+
+span.pink {
+  color: #DF62A4;
+}
 
