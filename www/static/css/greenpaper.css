@@ -88,7 +88,8 @@ background-color: #eeeeee;
       rgba(0, 94, 165, 0.8)
     ),
 
-    url(/static/images/findings.jpg);
+    url(/static/images/findings.jpg) no-repeat;
+    background-size: cover;
 
     /*url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/owl1.jpg);*/
 }
@@ -99,7 +100,8 @@ background:
       rgba(0, 94, 165, 0.95)
     ),
 
-    url(/static/images/findings.jpg);
+    url(/static/images/findings.jpg) no-repeat;
+    background-size: cover;
 
     /*url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/owl1.jpg);*/
 }
@@ -173,6 +175,7 @@ ul.learnings li > a:after {
     ),
 
     url(/static/images/concept.jpg);
+    background-size: cover;
 }
 
 .concept-column:hover {
@@ -183,6 +186,7 @@ ul.learnings li > a:after {
     ),
 
     url(/static/images/concept.jpg);
+    background-size: cover;
 }
 
 .demo-column {
@@ -197,6 +201,7 @@ ul.learnings li > a:after {
     ),
 
     url(/static/images/demo.jpg);
+    background-size: cover;
 }
 .demo-column:hover {
     background:
@@ -206,6 +211,7 @@ ul.learnings li > a:after {
     ),
 
     url(/static/images/demo.jpg);
+    background-size: cover;
 }
 
 .findings-column h1 {

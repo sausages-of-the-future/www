@@ -26,3 +26,6 @@ user_datastore = MongoEngineUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
 
 from www import views
+
+from www.greenpaper.views import paper
+app.register_blueprint(paper)
