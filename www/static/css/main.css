@@ -3,7 +3,7 @@ body {
 }
 
 /* Typography */
-body, h1, h2,h3, h4, h5 .button, table, label {
+body, h1, h2,h3, h4, h5, .button, table, label {
   /*font-family: 'Roboto Slab', serif;*/
   font-family: 'nta', Arial, Helvetica;
 }
