@@ -309,14 +309,28 @@ ul.learnings li > a:after {
   background: rgba(0, 94, 165, 0.85)
 }
 
+.ecosystem-text {
+  padding-left: 0;
+}
+
+.ecosystem-maps {
+  padding: 0;
+}
+
+.ecosystem img{
+  padding: 0;
+}
+
 .ecosystem h2 {
  font-size: 36px;
  line-height: 40px;
  margin-top: 15px!important;
+ margin-bottom: 30px;
 }
 
 .ecosystem h3 {
  font-size: 19px;
+ margin-top: 30px;
 }
 
 .ecosystem h2, h3 {
@@ -358,9 +372,17 @@ span.pink {
   color: #FFFFFF;
 }
 
+.infrastructure img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .infrastructure h2 {
-  margin-left: 2.1rem;
-  font-size: 1.5rem;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  line-height: 40px;
 }
 
 .infrastructure-summary {
