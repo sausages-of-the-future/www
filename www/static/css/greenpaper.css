@@ -42,6 +42,7 @@ body {
     text-align: center;
     padding-top: 15px;
     font-size: 48px;
+    line-height: 60px;
     font-weight: 700;
     color: black;
 }
@@ -124,13 +125,16 @@ body {
       rgba(0, 94, 165, 0.95)
     );
 }
-.learnings-list {
-  margin-top: 15px;
-  padding: 30px!important;
+
+.summary-subhead {
+  font-size: 36px;
+  padding-bottom: 30px;
+  line-height: 40px;
 }
 
 .summary-detail-text {
   font-size: 24px;
+  line-height: 30px;
   padding-bottom: 30px;
 }
 
@@ -140,17 +144,13 @@ body {
   padding-bottom: 15px;
 }
 
+
 .summary,
 .blog {
   padding: 20px;
   margin-bottom: 25px;
 }
 
-.summary-subhead {
-  font-size: 36px;
-  padding-bottom: 30px;
-  line-height: 40px;
-}
 
 .summary-list ul  {
   margin-top: 1.1rem;
@@ -158,6 +158,11 @@ body {
 
 h4 {
   font-size: 27px;
+}
+
+.learnings-list {
+  margin-top: 15px;
+  padding: 30px!important;
 }
 
 .learnings-list h3 {
@@ -200,6 +205,10 @@ ul.learnings li > a:after {
   background: #ddd;
 }
 
+.blog h2 {
+  margin-bottom: 30px;
+}
+
 .blog-header {
   color: red;
   background: #ddd;
@@ -209,9 +218,10 @@ ul.learnings li > a:after {
   font-size: 19px;
   font-weight: 700;
   margin-top: 30px;
-
 }
-
+.post-single {
+  margin-bottom: 30px!important;
+}
 
 .concept-column {
     height: 400px;
@@ -500,6 +510,17 @@ span.pink {
     font-size: 19px;
     line-height: 25px;
 } 
+
+.summary-subhead {
+  font-size: 24px;
+  padding-bottom: 30px;
+  line-height: 30px;
+}
+
+.summary-detail-text {
+  font-size: 19px;
+  line-height: 25px;
+}
 
 }
 
