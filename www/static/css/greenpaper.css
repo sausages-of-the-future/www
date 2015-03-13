@@ -456,19 +456,36 @@ span.pink {
 }
 
 .info-page {
-
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 60px;
+}
+
+a.back-button {
+  font-size: 19px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.info-page h1 {
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.info-page h2 {
+  padding-top: 30px;
+}
+
+.info-page h4 {
+  font-size: 19px;
 }
 
 .intro-para {
   font-weight: 700;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   margin-top: 15px;
-  padding-left: 0;
 }
 
 @media only screen and (max-width : 720px) {
@@ -520,6 +537,10 @@ span.pink {
 .summary-detail-text {
   font-size: 19px;
   line-height: 25px;
+}
+
+.info-page {
+  margin-top: 30px;
 }
 
 }
