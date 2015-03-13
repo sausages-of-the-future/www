@@ -158,7 +158,6 @@ body {
 
 h4 {
   font-size: 27px;
-  margin-top:30px; 
 }
 
 .learnings-list h3 {
@@ -198,7 +197,6 @@ ul.learnings li > a:after {
 
 .blog {
   padding: 30px!important;
-  margin-bottom: 0;
   background: #ddd;
 }
 
@@ -207,19 +205,12 @@ ul.learnings li > a:after {
   background: #ddd;
 }
 
-.read-more {
-  font-weight: 700;
-  font-size: 19px;
-}
-
-
-/*.posts h4 {
+.posts  {
   font-size: 19px;
   font-weight: 700;
   margin-top: 30px;
-  font-family: nta;
 
-}*/
+}
 
 
 .concept-column {
@@ -311,35 +302,39 @@ ul.learnings li > a:after {
   padding: 10px 0;
 }
 
-#ecosystem {
+.ecosystem {
   margin-top: 75px;
   padding: 30px;
   color: #FFFFFF;
-  background: rgba(0, 94, 165, 0.85) url(/static/images/greenpaper/ecosystem.png) no-repeat;
-  background-size: contain;
-  height: 600px;
+  background: rgba(0, 94, 165, 0.85)
 }
 
-#ecosystem h2 {
- font-size: 1.9rem;
+.ecosystem h2 {
+ font-size: 36px;
+ line-height: 40px;
+ margin-top: 15px!important;
 }
 
-#ecosystem h3 {
- font-size: 1.3rem;
+.ecosystem h3 {
+ font-size: 19px;
 }
 
-#ecosystem h2, h3 {
+.ecosystem h2, h3 {
   color: inherit;
   margin-top: 2.5rem;
 }
 
-#ecosystem ul {
+.ecosystem ul {
   list-style: none;
+  font-size: 16px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
-#ecosystem li>span {
-  font-size: 1.6rem;
-  margin-right: 0.4rem;
+.ecosystem li>span {
+  font-size: 19px;
+  margin-right: 10px;
+  line-height: 25px;
 }
 
 span.light-blue {
@@ -358,25 +353,22 @@ span.pink {
   color: #DF62A4;
 }
 
-#infrastructure {
+.infrastructure {
   margin-top: 50px;
   color: #FFFFFF;
-  background: url(/static/images/greenpaper/four-levels-zoom-a.png) no-repeat;
-  background-size: contain;
-  height: 600px;
 }
 
-#infrastructure h2 {
+.infrastructure h2 {
   margin-left: 2.1rem;
   font-size: 1.5rem;
 }
 
-#infrastructure-summary {
+.infrastructure-summary {
   margin-top: 2.3rem;
   text-align: center;
 }
 
-#infrastructure-summary img {
+.infrastructure-summary img {
     width: 100px;
 }
 
