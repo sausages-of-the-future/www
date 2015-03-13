@@ -426,7 +426,10 @@ span.pink {
 }
 
 .fishing-service-text {
-  padding: 0;
+  padding-left: 0px;
+  padding-right: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .fishing-service-text p {
