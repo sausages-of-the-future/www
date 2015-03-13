@@ -33,7 +33,7 @@ app.register_blueprint(paper)
 from flask.ext.basicauth import BasicAuth
 http_basic_user = os.environ.get('BASIC_AUTH_USERNAME')
 http_basic_password = os.environ.get('BASIC_AUTH_PASSWORD')
-if http_basic_user and http_basic_pasword:
+if http_basic_user and http_basic_password:
     app.config['BASIC_AUTH_USERNAME'] = http_basic_user
     app.config['BASIC_AUTH_PASSWORD'] = http_basic_password
     app.config['BASIC_AUTH_FORCE'] = True
