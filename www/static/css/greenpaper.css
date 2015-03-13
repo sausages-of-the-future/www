@@ -370,6 +370,7 @@ span.pink {
 .infrastructure {
   margin-top: 50px;
   color: #FFFFFF;
+/*  padding: 30px;*/
 }
 
 .infrastructure img {
@@ -385,24 +386,55 @@ span.pink {
   line-height: 40px;
 }
 
-.infrastructure-summary {
-  margin-top: 2.3rem;
+#infrastructure-summary {
+  margin-top: 60px;
   text-align: center;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 
-.infrastructure-summary img {
+#infrastructure-summary h4 {
+  font-size: 27px;
+}
+
+#infrastructure-summary p {
+  font-size: 19px;
+  color: gray;
+}
+
+#infrastructure-summary img {
     width: 100px;
 }
 
 #fishing-service {
   background-color: #ECEDED;
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
-#fishing-service-image {
-  height: 100%;
-  background: url(/static/images/greenpaper/fishing-service.png) no-repeat;
-  background-size: contain;
+#fishing-service img {
+  padding: 0;
+}
+
+#fishing-service h2 {
+ font-size: 36px;
+ line-height: 40px;
+ margin-top: 15px!important;
+ margin-bottom: 30px;
+}
+
+.fishing-service-text {
+  padding: 0;
+}
+
+.fishing-service-text p {
+  font-size: 19px;
+}
+
+.fishing-service-diagram {
+  padding: 0;
 }
 
 .footer {
@@ -431,6 +463,12 @@ span.pink {
  .demo-column{
   height: 300px;
 } 
+
+.infrastructure h2 {
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 }
 
