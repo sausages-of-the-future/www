@@ -460,6 +460,8 @@ span.pink {
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
+  margin-bottom: 100px!important;
+  padding: 15px;
 }
 
 a.back-button {
@@ -474,7 +476,11 @@ a.back-button {
 }
 
 .info-page h2 {
-  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.info-page h3 {
+  margin-top: 30px;
 }
 
 .info-page h4 {
@@ -541,6 +547,13 @@ a.back-button {
 
 .info-page {
   margin-top: 30px;
+}
+
+.intro-para {
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 }
