@@ -445,6 +445,22 @@ span.pink {
   margin-top: 30px;
 }
 
+.info-page {
+
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.intro-para {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  padding-left: 0;
+}
+
 @media only screen and (max-width : 720px) {
 
 #global-header .text-sub-header {
