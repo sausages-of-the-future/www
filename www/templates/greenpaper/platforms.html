@@ -4,5 +4,50 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Platforms</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>Platforms</h1>
+   		<div class="small-12 large-12 columns intro-para">Platforms are boring, reusable components, not attempts to try and rationalise a wide range of desperate processes under a single piece of software. They are available to the wider public sector, and exist to make it easier to make great services for users.</div>
+   		<div class="small-12 large-8 columns">
+   			<h2>Characteristics</h2>
+   			<ul>
+   			    <li>simple</li>
+   			    <li>boring</li>
+   			    <li>well documented</li>
+   			    <li>self-serve</li>
+   			    <li>generally avoid imposing a particular UI on the end service</li>
+   			    <li>emerge</li>
+   			</ul>
+   			
+   			<h3>Types</h3>
+			<p>Not all platforms (under the definition of 'make it easier to make great services for users') will be single, centrally hosted things. There will be a mixed economy of:</p> 
+			<ul>
+			    <li>single, centrally hosted shared services (eg payment)</li>
+			    <li>simple to install an instance of a service (eg secure logging < need better example)</li>
+			    <li>shared investment in opensource projects (ie government supports OS projects it relies on)</li>
+			</ul>
+			
+			<h3>Users of platforms</h3>
+			<p>There are 3 types of user:</p>
+			<ul>
+			    <li>end users of the service the platform appears in (eg someone paying for something)</li>
+			    <li>developers and designers who are building on the platform</li>
+			    <li>any backoffice staff administrating use of the platform (eg a service team running payment reports)</li>
+			</ul>
+			<p>In the short term, the second groups of users are the most important. A platform that is difficult for a developer to use is not a platform.</p> 
+			<p>Documentation, example code, code libraries in a range of languages are all critical to attracting developers to help build GaaP and to building quality services quickly.</p> 
+			
+			<h3>Who runs them</h3>
+			<p>Different platforms will be run by different parts of government, There should not be an assumption that everything is centrally run.</p>
+			
+			
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
