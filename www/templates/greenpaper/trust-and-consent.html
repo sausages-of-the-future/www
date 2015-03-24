@@ -1,8 +1,62 @@
 {% extends 'base.html' %}
-{% block title %}Trust and Consent{% endblock %}
+{% block title %}Trust and consent{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Trust &amp; Consent</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>Trust and consent</h1>
+   		<div class="small-12 large-12 columns intro-para">Users must knowingly understand what data is being accessed for what purpose and by whom, both at the point of use and retrospectively.</div>
+   		<div class="small-12 large-8 columns">
+   			<h3>You can't just digitise the existing system</h3>
+			<p>Just digitizing the existing system, making what we have work is scary. </p> 
+			<p>There will be unintended consequences (eg Land Registry blindly trusting submissions from solicitors, is already a problem, but becomes a systemic risk when the system accepts digital applications in near real-time).</p>
+			<p>There is also a potential for the creation of new power silios, and of misuse.</p>
+			<p>Putting users in control of their data. Millions of engaged curators are the  best protection government has against fraud and citizens have against  misuse.</p>
+			<p>Secondly, government has  an obligation to help citizens understand the functioning of their country. Users should know, or at least have the opportunity to know, what is happening to their data.</p>
+			<p>Thirdly, we are talking about a mixed economy or central, arms-length, local, devolved, commercial entities providing services and registries. For that world to functional all there needs to be a permissions layer. Without it, any entity, once accepted into the system, could schlurp up all the data is likes for whatever purpose (yes, you could have regulations that seek to prevent it, but better to make it impossible).</p>>
+			
+			<h3>Who runs it?</h3>
+			<p>The trust and consent layer is very powerful. It should probably be operated at arms length by an organization that is constituted to last and be funded beyond the length of a single parliament (much as the BBC Royal charter guarantees), has powers to to prevent misuse and multiple routes for independent oversight.</p>
+			<p>Even small tweaks to the UI will have an effect on how people use the system. The wording or placement of buttons should never come under the pressure short term political imperatives  (see Universal Jobmatch permissions). It should be the mission of whoever operates this layer to ensure that users understand, not just accept. </p>
+			<p>This should be the focus of ongoing research. We need to gain an understanding of how we can educate people about their data at a time of rapid change.</p>
+
+            <h3>User control of data</h3>
+            <p>Users should be able to see what services have access to their data and what access has been made.</p>
+            <p>There will always be some circumstances when a user is not asked to confirm an update (eg speeding points on driving licence), but even them, the user will be notified and it will be recorded and displayed to the user.</p>
+            <p>Users should also be able to export their data, for free. This replaces the need for most Subject Access Requests under the Data Protection Act.</p>
+            
+            <h3>Design patterns for authorisation and permissions</h3>
+            <p>Services  access a user's data via a 'Trust and consent' layer (aka  'permissions'). A user must understand what is happening to them and  their data before proceeding. This is doubly important for any  commercial services built on top of a users data (exact wording may be  different, but principle is the same).</p>
+            <p>There  is (very probably) no one design pattern to ask for permission, sharing  or notification. It will depend on the circumstances. The main thing is  that users knowingly understand what is happening [note risk of  ministers being perceived to not want users to not understand fully -  Universal Jobmatch]. This should be the subject of <a href="http://blog.memespring.co.uk/2015/02/27/permissions/">much research</a>.</p>
+            <img src="image from here: https://idealgov.hackpad.com/Trust-and-consent-6Xf1FHvIG4H"/>
+            
+            <h3>Checks of trusted data</h3>
+            <p>Rather than direct access to raw data, services should be able to request (with a users permission) that a given fact is true.</p>
+            <p>What do consented checks of trusted data sources look like? </p>
+            <p>They should aspire to being as minimal as possible and tailored to the transaction. </p>
+            <p>These are ideally framed as Yes/ No queries that minimise data exchange, for example:</p>
+            <ul>
+                <li>Is this person an adult?</li>
+                <li>Is this a valid vehicle?</li>
+                <li>Is this vehicle in this persons name?</li>
+                <li>Do they have a spouse? </li>
+                <li>Do they have a disability? </li>
+                <li>Do they have a UK visa? </li>
+                <li>Do they have a tax record? </li>
+                <li>Do they have a licence for this? </li>
+                <li>Do they have X number of children?</li>
+                <li>Do they have the right to live in the UK?</li>
+            </ul>
+					
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
