@@ -1,8 +1,37 @@
 {% extends 'base.html' %}
-{% block title %}Accountability and Transparency{% endblock %}
+{% block title %}Accountability and transparency{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Accountability &amp; Transparency</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>Accountability and transparency</h1>
+   		<div class="small-12 large-12 columns intro-para">As  public services start becoming digital, both those things -  exposing  the workings, and providing understandable feedback mechanisms  that are  useful to politicians and  the public -  become a lot  easier. You can reveal the workings of a  policy by clicking a button  directly in the service and send feedback  from within the service (that  sort of integration is just harder with  paper forms and disparate  organisations).</div>
+   		<div class="small-12 large-8 columns">
+   			
+			<p>The system should actively educate people about how their democracy works and where power and accountability lie. Transparency/accountability at the point of use.</p> 
+			<p>Within a service it should be clear:</p>
+			<ul>
+			    <li>who runs the service (team, minister responsible)</li>
+			    <li>who looks after the registers it uses (organisation, minister)</li>
+			    <li>link to any legislation that relates to the service</li>
+			    <li>provide feed back machanisms (including dates of AGM)</li>
+			    <li>highlight any proposed changes to legislation or open consultations</li>
+			</ul>
+			
+			<p>[<a href="http://blog.memespring.co.uk/2015/01/23/democracy-at-the-point-of-use/">This might be useful in explaining better</a>]</p>
+			
+			<h3>Annual General Meetings for services and registers</h3>
+			<p>Each service should hold an annual general meeting where service users can make representations to the service team and / or ministers responsible.</p>
+		
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
