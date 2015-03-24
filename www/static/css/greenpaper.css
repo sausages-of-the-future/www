@@ -49,7 +49,7 @@ body {
 #global-header .text-sub-header {
     text-align: center;
     padding-top: 10px;
-    padding-left: 15%;
+    padding-left: 10%;
     padding-right:15%;
    /* font-size: 36px;*/
     font-size: 36px;
@@ -493,68 +493,91 @@ a.back-button {
   margin-top: 15px;
 }
 
+#global-nav {
+  margin-top: 25px;
+  margin-right: 50px;
+}
+
+#global-nav > a {
+  display:block;
+  text-indent:-9999px;
+  height: 40px;
+  width: 40px;
+  background: url(/static/images/burger_icon.png) no-repeat;
+  background-size: contain;
+}
+
 @media only screen and (max-width : 720px) {
 
-#global-header .text-sub-header {
-    text-align: center;
-    padding-top: 10px;
+  #global-header .text-sub-header {
+      text-align: center;
+      padding-top: 10px;
+      padding-left: 15px;
+      padding-right:15px;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 400;
+  }
+
+  .findings-column{
+    height: 300px;
+  }
+   .concept-column{
+    height: 300px;
+  }
+   .demo-column{
+    height: 300px;
+  }
+
+  .infrastructure h2 {
+    text-align: left;
     padding-left: 15px;
-    padding-right:15px;
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 400;
-}
+    padding-right: 15px;
+  }
 
-.findings-column{
-  height: 300px;
-}
- .concept-column{
-  height: 300px;
-} 
- .demo-column{
-  height: 300px;
-} 
+  #global-nav {
+      margin-top: 40px;
+      height: 30px;
+  }
 
-.infrastructure h2 {
-  text-align: left;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+  #global-nav > a {
+      height: 30px;
+      width: 30px;
+  }
 
 }
 
 @media only screen and (max-width : 480px) {
 
-#global-header .text-sub-header {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right:10px;
+  #global-header .text-sub-header {
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right:10px;
+      font-size: 19px;
+      line-height: 25px;
+  }
+
+  .summary-subhead {
+    font-size: 24px;
+    padding-bottom: 30px;
+    line-height: 30px;
+  }
+
+  .summary-detail-text {
     font-size: 19px;
     line-height: 25px;
-} 
+  }
 
-.summary-subhead {
-  font-size: 24px;
-  padding-bottom: 30px;
-  line-height: 30px;
-}
+  .info-page {
+    margin-top: 30px;
+  }
 
-.summary-detail-text {
-  font-size: 19px;
-  line-height: 25px;
-}
-
-.info-page {
-  margin-top: 30px;
-}
-
-.intro-para {
-  font-weight: 700;
-  font-size: 19px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-
+  .intro-para {
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
 }
 
 @media only screen and (max-width: 40em) {

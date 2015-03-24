@@ -6,11 +6,19 @@
 {% block content %}
   <div class="row">
       <div class="small-12 large-12 columns">
+        <nav id="global-nav" class="right">
+          <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown">burger</a><br>
+            <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+              <li><a href="{{url_for('paper.greenpaper')}}">Greenpaper</a></li>
+              <li><a href="{{url_for('paper.background_and_findings')}}">Background</a></li>
+              <li><a href="{{url_for('paper.concept')}}">Concept</a></li>
+            </ul>
+        </nav>
         <header id="global-header">
               <div class="header-wrapper">
-                  <div class="text-header">The Concept</div>
-                  <div class="text-sub-header">An ecosystem of services built on a common digital civic infrastructure</div>
-                </div>
+                <div class="text-header">The Concept</div>
+                <div class="text-sub-header">An ecosystem of services built on a common digital civic infrastructure</div>
+              </div>
         </header>
       </div>
     </div>
@@ -25,19 +33,19 @@
                   <li><span class="green">&#9632;</span> Local government</li>
                   <li><span class="pink">&#9632;</span> Commercial</li>
                 </ul>
-          
+
       </div>
           <div class="small-12 large-8 columns ecosystem-maps">
             <img src="{{url_for('static', filename='images/greenpaper/ecosystem1.png')}}"/>
-            </div>   
+            </div>
     </div>
 
     <div class="row infrastructure">
         <div class="small-12 large-12 columns">
             <h2>The infrastructure looks something like this</h2>
         </div>
-    
-        <div class="small-12 large-12 columns">   
+
+        <div class="small-12 large-12 columns">
               <img src="{{url_for('static', filename='images/greenpaper/four-levels-zoom-a.png')}}" />
         </div>
     </div>

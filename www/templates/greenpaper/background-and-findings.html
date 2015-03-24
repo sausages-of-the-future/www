@@ -6,6 +6,14 @@
 {% block content %}
     <div class="row">
       <div class="small-12 large-12 columns">
+         <nav id="global-nav" class="right">
+          <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown">burger</a><br>
+            <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+              <li><a href="{{url_for('paper.greenpaper')}}">Greenpaper</a></li>
+              <li><a href="{{url_for('paper.background_and_findings')}}">Background</a></li>
+              <li><a href="{{url_for('paper.concept')}}">Concept</a></li>
+            </ul>
+        </nav>
         <header id="global-header">
               <div class="header-wrapper">
                   <div class="text-header">Background and Findings</div>
