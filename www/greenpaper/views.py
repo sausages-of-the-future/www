@@ -53,4 +53,9 @@ def accountability():
 def where_to_start():
     return render_template('where-to-start.html')
 
+@paper.route("/rules")
+def rules():
+    return render_template('rules.html')
+
+
 
