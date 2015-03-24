@@ -1,8 +1,60 @@
 {% extends 'base.html' %}
-{% block title %}Services{% endblock %}
+{% block title %}Services & service ecosystem{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Services</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>Services & service ecosystem</h1>
+   		<div class="small-12 large-12 columns intro-para">Services exist to satisfy user needs regardless of institutional boundries.  They are easy to create, change rapidly, cheap and easy to create and run. They rely on registries to do much of the work.</div>
+   		<div class="small-12 large-8 columns">
+   			<h2>Who runs them?</h2>
+			<p>Services can be provided by central, local and devolved government, and by commercial and third  sector organisations. It's OK when they overlap, complement and duplicate. It's possible interact with multiple layers of government at once while respecting their organizational and democratic sovereignty. So maybe you can apply for a planning application via central government, via a London borough council, via the Greater London Authority websites or via company that sells conservatories. <strong>In short, this is what has changed.</strong></p> 
+			
+			<h2>Small parts loosely joined</h2>
+			<p>We expect composite services to develop where small parts services are easily assembled into composite services by government, by third parties and by users themselves.</p>
+			<p>For example, the majority of a service to sell your home might take place on a specialist commercial website only using a government run service to confirm the transaction / digitally sign the transaction.</p>
+			<p>Similarly, the (simple one-screen) tool to get proof of eligibility for a free eye test and glasses might appear (via a hyperlink) within several benefits related services, </p>
+			<p>We believe the temptation to model the whole of a problem space in a single user interface should be avoided. There is a high risk of failing to meet all user needs, of irretrievably  embedding mini-transactions required by 3rd party services within a government service and of building a digital bureaucracy.</p>
+			<p>The alternative is to make it easy to assemble composite services and to allow users to choose how to route information between services using digital proof. Links are cool, and so are barcodes.</p>
+			<p>We need to be careful we don't create new silos of data in helping people   move data between devices eg why send an email copy of a receipt via a   central email service, when you can use emerging webstandards to let  the  user decide how to share/save something.</p>
+			
+			<h2>Multiple overlapping services</h2>
+			<p>Services becoming cheap and simple to makes it easy for commercial and 3rd sector organisations to meet unmet user needs, and to incorperate the 'government parts' or an otherwise non-government process such as buying a car. </p>
+			<p>There is an additional effect - that for the first time government can produce multiple services to address an underlying user need. Not to try and develop some sort of internal market or competition, but to explore the potential service-space that might exist to meet a minister's policy intent; or to run an experiment.</p>
+			<p>This potentially has the added advantage of reduce the need for personalisation of a single monolithic service, reducing data collection and increasing simplicity of the user interface. users can self select the relevant service variant (or be guided by front-line staff).</p>
+			
+			<h2>What it takes to build a service</h2>
+			<p>For services to be simple to build, teams need high quality APIs, public documentation etc. Building services on the platform needs to be as good or better than building against commercial APIs like <a href="https://stripe.com/gb">Stripe</a> or <a href="https://www.twilio.com">Twilio</a>.</p>
+			<p>While most platforms and open-data registers are self serve, there is a process for services to apply to use a register containing private data.</p>
+			
+			
+			<h2>Exposing the underlying / democratic accountability</h2>
+			<p>A user not having to understand government does not mean obfuscating the workings of the system. </p>
+			<p>Removing all traces of the underlying structure of government in the interests of minimalist UI or prioritizing a dominant user need risks missing user needs for those who (for whatever reason) need to understand who runs a given thing. [aka "<a href="https://t.co/799wWrZrBx">magic is a power relationship</a>"]</p>
+			<p>One of the things that is different about digital public services is that they can provide understandable feedback mechanisms that are useful to politicians and the public, to expose the workings of a democracy and a point for education and feedback at the point of use.  [see <a href="http://blog.memespring.co.uk/2015/01/23/democracy-at-the-point-of-use/">this</a>, if not clear]</p>
+			<p>Government run services have an obligation to help educate users for good of wider democracy. The services (and the wider system) should actively educate people about how their democracy works  and where power and accountability lie.</p>
+			<p>We imagine new design patterns to achieve this (the sort of thing that are impossible with paper forms and disparate organisations) for government, and some minimal requirements on 3rd party services to acknowledge where underlying accountability lays.</p>
+			
+			<h2>Services in the real world</h2>
+			<p>Services will never be entirely digital. Physical locations where users can access offline parts of a service, and where frontline staff can operate remain essential. However, like GOV.UK has done for the government web estate, they should reflect user need, not the structure of government departments.</p>
+			<p>Jobcentres and other central government centres should be rebranded to make it clear that they are part of the same service / journey.</p>
+			<img src="image from here: https://idealgov.hackpad.com/Services-service-ecosystem-5JoJgZdEWSX"/>
+			<p>New design patterns will be required where  digital intertwine with the physical world. For example, a user should  be able to simply sign in and share information at a 'jobcentre'  interview or a Citizens Advice Bureau. </p>
+			<p>New high quality tools are required for front-line staff to be as effective as possible at helping users of a service, and be designed as part of the wider service (learn from approach of UC digital team).</p>
+			
+			
+			<h2>New technology</h2>
+			<p>The web is now truly an <a href="http://blog.memespring.co.uk/2015/01/17/the-challenge-for-web-designers-in-2015/">app platform</a>. This is huge. Services should make use of the full capability of the modern web.</p>
+			
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
