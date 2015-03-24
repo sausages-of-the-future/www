@@ -717,3 +717,11 @@ textarea {
   padding:1px 5px;
   display: inline-block;
 }
+
+.draft {
+  text-align:center;
+  background:#333;
+  color:#fff;
+  font-weight:bold;
+  padding:5px;
+}

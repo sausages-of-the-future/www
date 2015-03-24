@@ -1,9 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'greenpaper_base.html' %}
 {% block title %}Green Paper{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
+    <div class="draft">
+      THIS IS A DRAFT
+    </div>
     <div class="row">
       <div class="small 12 large-12 columns">
         <header id="global-header">
