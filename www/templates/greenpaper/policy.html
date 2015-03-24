@@ -4,5 +4,41 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Policy</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>Policy</h1>
+   		<div class="small-12 large-12 columns intro-para">Policy still matters. You need a clear policy intent, policy rules, set by Ministers backed by legislation in Parliament</div>
+   		<div class="small-12 large-8 columns">
+   			
+			<p>Majority of policy rules are set in the service layer. Most of the "Who can do what, when, and why" rules are enacted here.</p> 
+			<p><em>I think there's a distinction betweentypes of policy we havent cracked yet. UC rules are clearly service layer: minister says X, single place to pay out the money based on the rules. But for selling property, eligibility for being registered as a legal driver the rules are probably at the registry layer? I think anyway. Maybe the difference between the reads and the writes? [just realised, this is all explained below ]</em></p>
+			<p>Not too different from today, so long as policy remains at the level of high level rules, rather than service design detail (the "How")</p>
+			<p>Policy should set the rules, don't design THE service. There could be many services, designed differently to follow same policy rules, seeking same policy intent</p>
+			<p>However... </p>
+			<p>Some important policy decisions now reside with registrars, notably when should the information in a register be updated? In what circumstances would an individual service we allowed to update the information in a register, given many services would rely on said register. </p>
+			
+			<h3>We can now support many, different services delivering the same policy intent.</h3>
+			<p>Ministers could deliver policy intent via a portfolio of many services, since services much cheaper to build and run, with more measurable results. </p>
+			<p>"One set of policy rules; many different services following the rules". Overlaps OK, since data canonical.</p>
+			<p>Each service in a policy portfolio could be more focused, tailored and adaptable. Could try very different service design approaches, and compete with other services to deliver better outcomes. Inside public sector; or outside; or across both.</p>
+			<p>Services meeting same policy intent could be run by public, private or 3rd sector, all enacting same policy rules.</p>
+			
+			<h3>Proper experimentation now easier, because canonical data and agility</h3>
+			<p>Management info transformed. More measureable outcomes, cross-service (with consent)</p>
+			<p>Randomised Control Trial's much easier due to service flexibility and better data</p>
+			
+			<h3>Show the democratic seams</h3>
+			<p>Doing the hard work to make it more democratic (mission to explain who accountable for what et. Because Democracy)</p>
+			<p>Beware unintended consequences (e.g. simple to create 100 x companies... is that OK?)</p>
+			
+						
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
