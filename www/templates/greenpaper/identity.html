@@ -1,8 +1,51 @@
 {% extends 'base.html' %}
-{% block title %}Identity{% endblock %}
+{% block title %}Identity, authentication and matching{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Identity</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>Identity, authentication and matching</h1>
+   		<div class="small-12 large-12 columns intro-para">Services access registers via a trust and consent layer, authenticating using Verify.</div>
+   		<div class="small-12 large-8 columns">
+   			<h2>Identity / Verify</h2>
+			<p>GOV.UK Verify (or its natural successors / v2) is the desired approach to identity. Users should be able to choose what identity to associate with what services and registers. The user is the glue. There are significant questions about the appropriate organisational home and legislative framework for Verify once it becomes widely used beyond central government.</p> 
+			
+			<h3>Matching services</h3>
+			<p>Verify requires the ability to match an identity to a dataset. There should always be multiple matching services, never a single central one.</p>
+			<p>There are a range of reasons for this:</p>
+			<ul>
+			    <li>The shear range of data that various bits of government holds about people. Not just the obvious stuff like driving licences, tax records, benefits, passports; but things like people’s adoption contact wishes, people who have undergone fertility treatment, if a person has been on strike, if someone owns a gun [you don't want to make it easy to know where all the guns in the country are in the case of a data leak!, note the risk of civil servants not understanding the risks of joining everything together]</li>
+			    <li>creates a single point of failure </li>
+			    <li>risk of data leak</li>
+			    <li>creates a single target for fraud and cybercrime</li>
+			    <li>offers no flexibility and creates a rigid architecture/ service design</li>
+			    <li>offers individuals no choices or control over their data</li>
+			    <li>is likely to require new legislation</li>
+			    <li>will cost more over time due to the risk premium that grows with scale</li>
+			    <li>sets a bad precedent for blending the role of “platform” and “register”</li>
+			</ul>
+			
+			<h3>Identifiers</h3>
+			<p>Existing identifiers (National Insurance numbers, UTRN etc) should be replaced by new, (secret) domain specific identifiers. Where users need a reference number to interact with a service / share permission, it should be tied to the context (eg a particular user + service + time combination), not the user. </p>
+            <p>Users should be able to enter some reference numbers directly into the search box on GOV.UK and be taken to the correct thing.</p>
+            
+            <h3>New roles for identity providers in the future</h3>
+            <p>Identity providers should start offering more than just proof of an identity. They should offer VRM  type services, for example being the definitive source of a users address or date of birth (which has value beyond government services).</p>
+            <p>It  would be probably be possible for user permissions / history to be  managed by IDPs, but that would give IDPs visibility of the services  being used and the datasets being accessed, so probably undesirable.</p>
+
+            <h3>New technology</h3>
+            <p>New   methods of authentication (FIDO Alliance and similar) will yield new  design  patterns for progressive authentication and permissions.   Government should be actively encouraging the development of simpler and  stronger forms of online authentication by Verify providers and  beyond.  Not only does frictionless  signing in makes composite services  simpler (<a href="http://blog.memespring.co.uk/2015/02/06/when-sign-in-becomes-frictionless/">http://blog.memespring.co.uk/2015/02/06/when-sign-in-becomes-frictionless/</a>), reducing reliance on insecure username/password pattern is part of the wider good.</p>
+
+			
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
