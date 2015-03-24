@@ -1,8 +1,30 @@
 {% extends 'base.html' %}
-{% block title %}Technology{% endblock %}
+{% block title %}New technology{% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/greenpaper.css') }}">
 {% endblock %}
 {% block content %}
-   <h1>Technology</h1>
+  <div class="info-page">
+   <a class ="back-button" href="{{url_for('paper.background_and_findings')}}">&larr; Back </a>
+   	<h1>New technology</h1>
+   		<div class="small-12 large-12 columns intro-para">Government as a Platform will probably require new technologies</div>
+   		<div class="small-12 large-8 columns">
+   		        <ul>
+   		            <li>Tech will keep on changing</li>
+   		            <li>People's expectations will continue to change</li>
+   		            <li>The web is now truly an <a href="http://blog.memespring.co.uk/2015/01/17/the-challenge-for-web-designers-in-2015/">app platform</a>. This is huge.</li>
+   		            <li>Blockchain and similar mean we can have smart registries that are self validating and managed by multiple organizations (see <a href="https://www.ethereum.org/">https://www.ethereum.org/</a>). Blockchain, Matrix and alike don't have to be for massively distributed systems, they can make existing federated systems (eg planning applications) work more efficiently whilst maintaining federation.</li>>
+    	            <li>We need to be careful we don't create new silos of data in helping people move data between devices eg why send an email copy of a receipt via a central email service, when you can use emerging webstandards to let the user decide how to share/save something.
+    	            <li>New methods of authentication (FIDO Alliance and similar), yield new design patterns for progressive authentication and permissions.  Frictionless signing in makes composite services simpler (<a href="http://blog.memespring.co.uk/2015/02/06/when-sign-in-becomes-frictionless/">http://blog.memespring.co.uk/2015/02/06/when-sign-in-becomes-frictionless/</a>).</li>
+   		            <li>The .dat project will help government migrate data to the new world in a transparent and replicable way (ie don't just pay a data migration company). This is a project government should support.</li>
+   		        </ul>
+		</div>
+	</div>
+	<div class="row">
+    <div class="large-12 columns">
+        <div class="footer">
+          <p class="footer-text">This is a GDS prototype</p>
+        </div>
+    </div>
+    </div>
 {% endblock %}
