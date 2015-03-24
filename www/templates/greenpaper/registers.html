@@ -16,9 +16,10 @@
 			<p>Government rarely reuses its own data. HMRC, DVLA, Land Registry and a host of other registers cite company names to describe organisations who trade or own a vehicle, and procurements demand suppliers provide a proprietary D&B DUNS number, rather than cite their Companies House registration. </p>
 			<p>Where data is shared it is copied to the next silo (eg RTe is DWPs subset of the RTI dataset held by HMRC) rather than accessed.</p>
 			<p>APIs are not available, open, consistent or good.</p>
-			<h3>New world</h3>
+			
+			<h2>New world</h2>
 			<p>Data (registers) are institutionally split from the services that use it. Registers are held by organisations with appropriate accountability whose primary mission is to maintain the quality of the information. The quality of the information is independently verifiable.</p> 
-			<h4>Characteristics of a register</h4>
+			<h3>Characteristics of a register</h3>
 			<p>A register consists of:</p>
 			<ul>
 			    <li>a single dataset</li>
@@ -30,27 +31,27 @@
 			    <li>a tamper-proof audit trail of changes made to a register</li>
 			</ul>
 			
-			<h4>Creating registers</h4>
+			<h3>Creating registers</h3>
 			<p>Registers are long lived (compared to services), hard to create and hard to abolish. Normally, a register will come into existence through legislation.</p> 
 			
-			<h4>Updating registers</h4>
+			<h3>Updating registers</h3>
 			<p>Register entries are appended to, not edited. The full history is preserved. Updates are accepted through a uniform REST API. An addition to a register will undergo processing which will vary depending upon the register: updating a Land Registry title will involve different exception and fraud processing to buying a fishing licence which may be completely automated.</p> 
 			<p>Updating a register is asynchronous, and may occationally include some manual checks (for example for fraud checks).</p> 
 			
-			<h4>Integrity and public tests</h4>
+			<h3>Integrity and public tests</h3>
 			<p>In the same way that software code is published along with 'tests' that verify that the codebase is functioning correctly, registers should include (and publish) tests that verify that their data is correct.</p>
 			<p>Example tests for the register of property ownership might include: verify all registered land is within the legal boundary of England and Wales.</p>
 			
-			<h4>Data formats</h4>
+			<h3>Data formats</h3>
 			<p>Making data available in a  consistent format, and available at source,  clarifies the responsibilities of stewardship for data and will form the  foundations of an ecosystem with greater overall integrity.</p>
 			<p>Standard naming convention for fields.</p>
 			
-			<h4>What is stored?</h4>
+			<h3>What is stored?</h3>
 			<p>Only the minimum amount of data that needs to be stored is stored. This will normally be set out in legislation.</p>
 			<p>This has implications for policy formulation and ability to personalize services and is a good trade off to have. </p>
 			<p>Where data from one register relies on data in another register (for example a licensing application relates to the address of a property), the data is not duplicated. Instead a link to the other register is stored (as a URL).</p>
 			
-			<h4>Register of registers</h4>
+			<h3>Register of registers</h3>
 			<p>There should be a new, central place that records:</p>
 			<ul>
 			    <li>a list of all the registers </li>
@@ -58,7 +59,7 @@
 			    <li>formal meta data about each register including the ownership, date created, legal underpinnings</li>
 			</ul>
 			
-			<h4>Grouping registers together</h4>
+			<h3>Grouping registers together</h3>
 			<p>Registers will probably end up grouped together into institutions (for example, the Land Registry is custodian of a register of legal extent polygons, a register of ownership and a register of mineral rights).</p>
 			<p>There are several competing criteria that will need to be weighed up when grouping together registers:</p>
 			<ul>
@@ -68,12 +69,12 @@
                 <li>Minimisation of power silos (putting too much data in one place)</li>
 			</ul>
 			
-			<h4>Technology</h4>
+			<h3>Technology</h3>
 			<p>There should be a standard core technology for the creation and running of of registers. </p>
 			<p>Some registers may require extensions for specialised aspects such as geo-indexing, and realtime eventing.</p>
 			<p>Hosting of registers should prevent horizontal communication between registers.</p>
 			
-			<h4>Federation, devolution and types of register</h4>
+			<h3>Federation, devolution and types of register</h3>
 			<p>Registers can be run by central, local and devolved government, sometimes by all of them simultaneously. Broadly the types are:</p>
 			<ul>
 			    <li>Centrally hosted/run and centrally updated</li>
@@ -82,25 +83,25 @@
 			</ul>
 			<p>There are probably some circumstances were registers are run by 3rd parties, but these are almost certainly limited to professional bodies like the BMA who have the definitive register of doctors. Government should not impose a structure on those organisation, but work out how to help them work in the wider ecosystem.</p>
 			
-			<h4>What isn't stored in a register?</h4>
+			<h3>What isn't stored in a register?</h3>
 			<p>There is no definitive answer to this, and there is little gain in trying to seek one. We can however set out a guides to help make decisions on a case-by-case basis.</p>
 			<p>Ephemeral information such as passwords, login tokens or session keys should not be in registers.</p>
 			<p>Statistics, performance and data used to process updates such as fraud intelligence should not be in registers.</p>
 			<p>State information (eg saving an application mid-way) should probably not be stored in a register. Although you could argue that  'provisional' is a state of driving license, there should certainly be a register of driving licenses that includes provisional licenses. </p>
 			
-			<h4>Accountability</h4>The .dat project will help government  migrate data to the new world in a transparent and replicable way (ie  don't just pay a data migration company). This is a project government  should support.
+			<h3>Accountability</h3>
 			<p>The position of 'Chief Registrar' exists for some, but not all registers. [add more - Tom?] Either way, there should be clear responsibility for both a civil servant and a minister. Ministers responsible for registers should not generally be responsibility for the main services built on top of them.</p>
 			
-			<h4>Importance of documentation, code libraries etc for access to registers</h4>
+			<h3>Importance of documentation, code libraries etc for access to registers</h3>
 			<p>Just as with shared platforms, developer documentation and example code are critical.</p>
 			
-			<h4>Who has access to registers / how to they request access?</h4>
+			<h3>Who has access to registers / how to they request access?</h3>
 			<p>For registers that contain private data, there is a process where by  a service can request access (they will need to justify both access and the fidelity of the questions they want to ask of the register). If accepted by the custodian of the register (chief registrar?), the fact that the service has access and what it has access to will be listed in a public register of services.</p>
 			
-			<h4>Migration</h4>
+			<h3>Migration</h3>
 			<p>The .dat project will help government  migrate data to the new world in a transparent and replicable way (ie  don't just pay a data migration company). This is a project government  should support.</p>
 			
-			<h4>New technology</h4>
+			<h3>New technology</h3>
 			<p>Blockchain and similar mean we can have smart registries that are self validating and managed by multiple organizations (see <a href="https://www.ethereum.org/">https://www.ethereum.org/</a>).  Blockchain, Matrix and alike don't have to be for massively distributed  systems, they can make existing federated systems (eg planning  applications) work more efficiently whilst maintaining federation.</p>
 			
 		</div>
