@@ -578,6 +578,19 @@ a.back-button {
     margin-bottom: 15px;
     margin-top: 15px;
   }
+
+  #global-header .text-header {
+    font-size: 50px;
+  }
+
+  #global-header .header-wrapper {
+    padding-right: 60px;
+  }
+
+  #global-nav > a {
+      height: 25px;
+      width: 25px;
+  }
 }
 
 @media only screen and (max-width: 40em) {
