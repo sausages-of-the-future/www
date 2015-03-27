@@ -495,15 +495,15 @@ a.back-button {
 }
 
 #global-nav {
-  margin-top: 25px;
-  margin-right: 50px;
+  margin-top: 30px;
+  margin-right: 20px;
 }
 
 #global-nav > a {
   display:block;
   text-indent:-9999px;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background: url(/static/images/Burger_Icon.png) no-repeat;
   background-size: contain;
 }
@@ -536,15 +536,6 @@ a.back-button {
     padding-right: 15px;
   }
 
-  #global-nav {
-      margin-top: 40px;
-      height: 30px;
-  }
-
-  #global-nav > a {
-      height: 30px;
-      width: 30px;
-  }
 }
 
 @media only screen and (max-width : 480px) {
