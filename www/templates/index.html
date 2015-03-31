@@ -1,20 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block content %}
-
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="banner">
-        <h1>Government as a platform</h1>
-        <h3 class="subheader">
-          This is a prototype of how government as a platform could work
-        </h3>
-      </div>
+  <div class="draft">
+      THIS IS A DEMO
     </div>
+  <div class="row www-demo">
+    <div class="small-12 large-12 columns banner">
+      <nav id="global-nav" class="right">
+        <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown">burger</a><br>
+          <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+            <li><a href="{{url_for('paper.greenpaper')}}">Greenpaper</a></li>
+            <li><a href="{{url_for('paper.background_and_findings')}}">Background</a></li>
+            <li><a href="{{url_for('paper.concept')}}">Concept</a></li>
+            <li><a href="{{url_for('index')}}">Demo</a></li>
+          </ul>
+      </nav>
+      <header id="global-header">
+        <div class="header-wrapper">
+        <div class="text-header">Government as a platform</div>
+        <div class="text-sub-header">This is a prototype of how government as a platform could work</div>
+        </div>
+    </header>
   </div>
 
-  <div class="row">
-    <div class="large-8 columns">
+  <div class="row www-demo">
+    <div class="small-12 large-5 columns">
       <h3>Services</h3>
       <p>
         Services are focused on user need, regardless of institutional boundaries, are quick to build and change.
@@ -29,9 +39,9 @@
         Accountability for services is clear. Services are real-time.
       </p>
     </div>
-    <div class="large-4 columns">
+    <div class="small-12 large-6 columns">
       <h5>Examples</h5>
-      <ul class="side-nav">
+      <ul class="links">
         <li><a href="{{url_for('start')}}">Central government services</a></li>
         <li><a href="{{config['LOCALGOV_BASE_URL']}}">City government services</a></li>
         <li><a class="notbuilt" href="">Non-profit</a></li>
@@ -39,19 +49,19 @@
      </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="large-8 columns">
+  <div class="row www-demo">
+    <div class="small-12 large-5 columns">
       <h3>Common platforms</h3>
       <p>
-        Shared platforms and software make it easy to build services. 
+        Shared platforms and software make it easy to build services.
       </p>
       <p>
         Government helps maintain open-source code libraries, documentation and  communities of people building on the platform.
       </p>
     </div>
-    <div class="large-4 columns">
+    <div class="small-12 large-6 columns">
       <h5>Examples</h5>
-      <ul class="side-nav">
+      <ul class="links">
         <li>
           <a class="notbuilt" href="">Blogs</a>
         </li>
@@ -60,7 +70,7 @@
         </li>
         <li>
           <a class="notbuilt" href="">Notifications</a>
-        </li>        
+        </li>
         <li>
           <a href="{{url_for('note', note_slug='payments')}}">Payments</a>
         </li>
@@ -76,8 +86,8 @@
       </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="large-8 columns">
+  <div class="row www-demo">
+    <div class="small-12 large-5 columns">
       <h3>Trust and consent</h3>
       <p>
        Services access user's data via a data trust and consent layer. This layer is vital to maintain data quality and privacy, and to prevent fraud.
@@ -86,9 +96,9 @@
         Because a user has control and oversight over what data is used and for what purpose, it is possible to allow 3rd party organsiaitons to build on the platform.
       </p>
     </div>
-    <div class="large-4 columns">
+    <div class="small-12 large-6 columns">
       <h5>Examples</h5>
-      <ul class="side-nav">
+      <ul class="links">
        <li>
          <a href="{{config['REGISTRY_BASE_URL']}}/services">Service permissions</a>
        </li>
@@ -99,8 +109,8 @@
     </div>
   </div>
   <div>
-  <div class="row">
-    <div class="large-8 columns">
+  <div class="row www-demo">
+    <div class="small-12 large-5 columns">
       <h3>Registers</h3>
        <p>
          Registries are organisations that look after the canonical personal and open data required for the functioning of the country, in the public interest. These datasets are called <em>registers</em>.
@@ -109,8 +119,9 @@
         Registries and registers are long lived, hard to create, hard to change and hard to abolish.
        </p>
     </div>
-    <div class="large-4 columns">
-      <ul class="side-nav">
+    <div class="small-12 large-6 columns">
+      <h5>Examples</h5>
+      <ul class="links">
        <li>
          <a href="{{config['REGISTRY_BASE_URL']}}/registries">List of registries</a>
        </li>
@@ -120,16 +131,16 @@
       </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="large-8 columns">
+  <div class="row www-demo">
+    <div class="small-12 large-5 columns">
       <h3>Tools for government</h3>
     </div>
-    <div class="large-4 columns">
+    <div class="small-12 large-6 columns">
       <h5>Examples</h5>
-      <ul class="side-nav">
+      <ul class="links">
         <li>
           <a href="{{config.INTERNAL_BASE_URL}}">Dashboards for ministers</a>
-        </li>     
+        </li>
         <li>
           <a class="notbuilt" href="">Tools for front-line staff</a>
         </li>

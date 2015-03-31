@@ -540,7 +540,7 @@ div.done p {
 }
 
 .panel.confirmation dt, .panel.confirmation dd {
-  
+
 }
 
 .panel.confirmation.unconfirmed {
@@ -724,4 +724,108 @@ textarea {
   color:#fff;
   font-weight:bold;
   padding:5px;
+}
+
+.www-demo {
+  padding: 15px !important;
+  max-width: 100% !important;
+}
+
+.www-demo > h3 {
+  margin-top: 0px;
+}
+
+
+/* Duplicated greenpaper css stuff */
+
+#global-header .header-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 50px;
+  background-color: none;
+  max-width: 1720px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+#global-header .text-header {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+    color: black;
+}
+
+#global-header .text-sub-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10%;
+    padding-right:15%;
+   /* font-size: 36px;*/
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    color: black;
+}
+
+#global-nav {
+  margin-top: 15px;
+  margin-right: 5px;
+}
+
+#global-nav > a {
+  display:block;
+  text-indent:-9999px;
+  height: 30px;
+  width: 30px;
+  background: url(/static/images/Burger_Icon.png) no-repeat;
+  background-size: contain;
+}
+
+#global-header .text-header {
+  font-size: 50px;
+}
+
+#global-header .header-wrapper {
+  padding-right: 60px;
+}
+
+.links-list {
+  margin-top: 15px;
+  padding: 30px!important;
+}
+
+.links-list h3 {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+ul.links {
+  list-style-type: none;
+  padding:0;
+  border-bottom:0;
+  margin-bottom:60px;
+  text-decoration: none;
+  font-size: 19px;
+  margin-left: 0;
+}
+
+ul.links li {
+  border-bottom: solid 1px #dfdfdf;
+  padding-bottom:10px;
+  margin-top: 10px;
+}
+
+ul.links li > a:after {
+  content: "❯";
+  float:right;
+  padding-right: 5px;
+}
+
+.banner {
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
