@@ -535,6 +535,11 @@ a.back-button {
     padding-right: 15px;
   }
 
+  #global-nav {
+    margin-top: 15px;
+    margin-right: 5px;
+  }
+
 }
 
 @media only screen and (max-width : 480px) {
@@ -574,8 +579,10 @@ a.back-button {
   }
 
   #global-header .header-wrapper {
-    padding-right: 60px;
+    margin-right: 5px;
+    padding: 10px 40px 0px 40px;
   }
+
 
   #global-nav > a {
       height: 25px;
