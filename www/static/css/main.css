@@ -829,3 +829,95 @@ ul.links li > a:after {
   margin-top: 0px;
   margin-bottom: 50px;
 }
+
+
+@media only screen and (max-width : 720px) {
+
+  #global-header .text-sub-header {
+      text-align: center;
+      padding-top: 10px;
+      padding-left: 15px;
+      padding-right:15px;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 400;
+  }
+
+  .findings-column{
+    height: 300px;
+  }
+   .concept-column{
+    height: 300px;
+  }
+   .demo-column{
+    height: 300px;
+  }
+
+  .infrastructure h2 {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #global-nav {
+    margin-top: 0px;
+    margin-right: -10px;
+  }
+
+}
+
+@media only screen and (max-width : 480px) {
+
+  #global-header .text-sub-header {
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right:10px;
+      font-size: 19px;
+      line-height: 25px;
+  }
+
+  .summary-subhead {
+    font-size: 24px;
+    padding-bottom: 30px;
+    line-height: 30px;
+  }
+
+  .summary-detail-text {
+    font-size: 19px;
+    line-height: 25px;
+  }
+
+  .info-page {
+    margin-top: 30px;
+  }
+
+  .intro-para {
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  #global-header .text-header {
+    font-size: 50px;
+  }
+
+  #global-header .header-wrapper {
+    margin-right: 5px;
+    padding: 0px 40px 0px 40px;
+  }
+
+
+  #global-nav > a {
+      height: 25px;
+      width: 25px;
+  }
+
+  #infrastructure-image {
+    background: url(/static/images/greenpaper/four-levels-zoom-b.png) no-repeat;
+    background-size: contain;
+    background-position: 50% 50%, center;
+    height: 700px;
+  }
+
+}
